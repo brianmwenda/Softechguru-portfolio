@@ -34,12 +34,21 @@ export const en = {
   },
   testimonials: {
     title: "What Clients Say",
-    subtitle: "Hear from some of our satisfied clients"
+    subtitle: "Hear from some of our satisfied clients",
+    description: "Real feedback from clients who have worked with us on their projects."
   },
   blog: {
     title: "Latest Blog Posts",
     subtitle: "Insights, tutorials, and industry updates",
     readMore: "Read More"
+  },
+  gallery: {
+    title: "Portfolio",
+    subtitle: "Showcasing our latest work and creative projects",
+    allProjects: "All Projects",
+    webApps: "Web Applications",
+    design: "UI/UX Design",
+    mobile: "Mobile Apps"
   },
   contact: {
     title: "Get Custom Service",
@@ -106,5 +115,10 @@ export const en = {
     webApps: "Web Apps", 
     uiDesign: "UI Design",
     automation: "Automation"
+  },
+  notFound: {
+    title: "Page Not Found",
+    description: "The page you're looking for doesn't exist or has been moved.",
+    returnHome: "Return Home"
   }
 };

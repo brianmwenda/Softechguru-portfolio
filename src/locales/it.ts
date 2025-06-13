@@ -34,12 +34,21 @@ export const it = {
   },
   testimonials: {
     title: "Cosa Dicono i Clienti",
-    subtitle: "Ascolta alcuni dei nostri clienti soddisfatti"
+    subtitle: "Ascolta alcuni dei nostri clienti soddisfatti",
+    description: "Feedback reale da clienti che hanno lavorato con noi sui loro progetti."
   },
   blog: {
     title: "Ultimi Post del Blog",
     subtitle: "Approfondimenti, tutorial e aggiornamenti del settore",
     readMore: "Leggi di Più"
+  },
+  gallery: {
+    title: "Portfolio",
+    subtitle: "Mostrando i nostri ultimi lavori e progetti creativi",
+    allProjects: "Tutti i Progetti",
+    webApps: "Applicazioni Web",
+    design: "Design UI/UX",
+    mobile: "App Mobile"
   },
   contact: {
     title: "Richiedi Servizio Personalizzato",
@@ -106,5 +115,10 @@ export const it = {
     webApps: "App Web",
     uiDesign: "Design UI",
     automation: "Automazione"
+  },
+  notFound: {
+    title: "Pagina Non Trovata",
+    description: "La pagina che stai cercando non esiste o è stata spostata.",
+    returnHome: "Torna alla Home"
   }
 };
