@@ -10,75 +10,75 @@ import { useLanguage } from "@/contexts/LanguageContext";
 const galleryImages = [
   {
     id: 1,
-    src: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop",
-    alt: "Beachfront view",
-    category: "exterior"
+    src: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop",
+    alt: "Website development",
+    category: "websites"
   },
   {
     id: 2,
-    src: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&h=600&fit=crop",
-    alt: "Luxury suite interior",
-    category: "rooms"
+    src: "https://images.unsplash.com/photo-1587440871875-191322ee64b0?w=800&h=600&fit=crop",
+    alt: "UI/UX Design",
+    category: "design"
   },
   {
     id: 3,
-    src: "https://images.unsplash.com/photo-1584132905271-512c958d674a?w=800&h=600&fit=crop",
-    alt: "Swimming pool",
-    category: "amenities"
+    src: "https://images.unsplash.com/photo-1606857521015-7f9fcf423740?w=800&h=600&fit=crop",
+    alt: "Product photography",
+    category: "photography"
   },
   {
     id: 4,
-    src: "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=800&h=600&fit=crop",
-    alt: "Premium apartment",
-    category: "rooms"
+    src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+    alt: "E-commerce platform",
+    category: "websites"
   },
   {
     id: 5,
-    src: "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=800&h=600&fit=crop",
-    alt: "Beach sunset",
-    category: "exterior"
+    src: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=800&h=600&fit=crop",
+    alt: "Brand design",
+    category: "design"
   },
   {
     id: 6,
-    src: "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&h=600&fit=crop",
-    alt: "Dining area",
-    category: "amenities"
+    src: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&h=600&fit=crop",
+    alt: "Corporate video",
+    category: "video"
   },
   {
     id: 7,
-    src: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&h=600&fit=crop",
-    alt: "Bathroom",
-    category: "rooms"
+    src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop",
+    alt: "Mobile app design",
+    category: "design"
   },
   {
     id: 8,
-    src: "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800&h=600&fit=crop",
-    alt: "Beach pathway",
-    category: "exterior"
+    src: "https://images.unsplash.com/photo-1486312338219-ce68e2c6b81d?w=800&h=600&fit=crop",
+    alt: "Web application",
+    category: "websites"
   },
   {
     id: 9,
-    src: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&h=600&fit=crop",
-    alt: "Restaurant",
-    category: "amenities"
+    src: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&h=600&fit=crop",
+    alt: "Professional headshots",
+    category: "photography"
   },
   {
     id: 10,
-    src: "https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?w=800&h=600&fit=crop",
-    alt: "Bedroom",
-    category: "rooms"
+    src: "https://images.unsplash.com/photo-1559028006-448665bd7c7f?w=800&h=600&fit=crop",
+    alt: "Marketing video",
+    category: "video"
   },
   {
     id: 11,
-    src: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&h=600&fit=crop",
-    alt: "Beach umbrellas",
-    category: "exterior"
+    src: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop",
+    alt: "Dashboard design",
+    category: "design"
   },
   {
     id: 12,
-    src: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&h=600&fit=crop",
-    alt: "Spa",
-    category: "amenities"
+    src: "https://images.unsplash.com/photo-1504270997636-07ddfbd48945?w=800&h=600&fit=crop",
+    alt: "Event photography",
+    category: "photography"
   },
 ];
 
@@ -167,7 +167,7 @@ export default function Gallery() {
         <section className="py-8">
           <div className="container">
             <div className="flex flex-wrap justify-center gap-2 mb-8 animate-fade-in">
-              {["all", "exterior", "rooms", "amenities"].map((category) => (
+              {["all", "websites", "design", "photography", "video"].map((category) => (
                 <button
                   key={category}
                   onClick={() => filterGallery(category)}
@@ -178,13 +178,7 @@ export default function Gallery() {
                       : "bg-card hover:bg-muted"
                   )}
                 >
-                  {category === "all" 
-                    ? t.gallery.filters.all 
-                    : category === "exterior" 
-                      ? t.gallery.filters.exterior 
-                      : category === "rooms" 
-                        ? t.gallery.filters.rooms 
-                        : t.gallery.filters.amenities}
+                  {t.gallery.filters[category as keyof typeof t.gallery.filters]}
                 </button>
               ))}
             </div>

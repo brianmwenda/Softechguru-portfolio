@@ -1,8 +1,9 @@
+
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Droplets, Dumbbell, Waves, Activity, Utensils, Wine, Coffee, Clock, Car, Plane, MapPin, Users, Music, BookOpen } from "lucide-react";
+import { Code, Palette, Camera, Video, Globe, Smartphone, Search, Zap } from "lucide-react";
 
 export default function Amenities() {
   const { t } = useLanguage();
@@ -12,17 +13,48 @@ export default function Amenities() {
     window.scrollTo(0, 0);
   }, []);
   
-  // Helper function to get the appropriate icon for each amenity
-  const getIcon = (categoryName: string, index: number) => {
-    const icons = {
-      wellness: [<Droplets key={0} />, <Dumbbell key={1} />, <Waves key={2} />, <Activity key={3} />],
-      dining: [<Utensils key={0} />, <Coffee key={1} />, <Wine key={2} />, <Clock key={3} />],
-      services: [<Clock key={0} />, <Plane key={1} />, <Car key={2} />, <MapPin key={3} />],
-      entertainment: [<Waves key={0} />, <Users key={1} />, <Music key={2} />, <BookOpen key={3} />]
-    };
-    
-    return icons[categoryName as keyof typeof icons]?.[index] || <Coffee />;
-  };
+  const serviceCategories = [
+    {
+      title: "Web Development",
+      description: "Modern, responsive websites built with cutting-edge technologies",
+      items: [
+        { title: "Frontend Development", description: "React, Vue, Angular applications", icon: <Code /> },
+        { title: "Backend Development", description: "Node.js, Python, database integration", icon: <Globe /> },
+        { title: "Mobile Apps", description: "React Native, responsive design", icon: <Smartphone /> },
+        { title: "Performance Optimization", description: "Fast loading, SEO optimized", icon: <Zap /> }
+      ]
+    },
+    {
+      title: "Design Services",
+      description: "Beautiful and intuitive user experiences",
+      items: [
+        { title: "UI/UX Design", description: "User-centered design approaches", icon: <Palette /> },
+        { title: "Brand Identity", description: "Logo and brand design", icon: <Palette /> },
+        { title: "Wireframing", description: "Prototyping and user flows", icon: <Palette /> },
+        { title: "Design Systems", description: "Consistent design components", icon: <Palette /> }
+      ]
+    },
+    {
+      title: "Visual Content",
+      description: "Professional photography and videography services",
+      items: [
+        { title: "Product Photography", description: "High-quality product images", icon: <Camera /> },
+        { title: "Corporate Videos", description: "Professional video content", icon: <Video /> },
+        { title: "Brand Photography", description: "Lifestyle and brand imagery", icon: <Camera /> },
+        { title: "Social Media Content", description: "Engaging visual content", icon: <Video /> }
+      ]
+    },
+    {
+      title: "Digital Marketing",
+      description: "Grow your online presence and reach more customers",
+      items: [
+        { title: "SEO Optimization", description: "Improve search rankings", icon: <Search /> },
+        { title: "Content Strategy", description: "Engaging content creation", icon: <Globe /> },
+        { title: "Social Media", description: "Platform management and growth", icon: <Globe /> },
+        { title: "Analytics", description: "Performance tracking and insights", icon: <Zap /> }
+      ]
+    }
+  ];
   
   return (
     <div className="min-h-screen flex flex-col">
@@ -34,13 +66,13 @@ export default function Amenities() {
           <div className="container relative z-10 pt-20">
             <div className="text-center max-w-3xl mx-auto">
               <span className="text-sm text-primary font-medium uppercase tracking-wider">
-                MareSereno
+                WebDev Studio
               </span>
               <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6">
-                {t.amenitiesPage.title}
+                Our Services & Capabilities
               </h1>
               <p className="text-muted-foreground">
-                {t.amenitiesPage.subtitle}
+                Comprehensive digital solutions to help your business thrive online
               </p>
             </div>
           </div>
@@ -57,38 +89,37 @@ export default function Amenities() {
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
               <p className="text-lg text-muted-foreground">
-                {t.amenitiesPage.description}
+                From concept to launch, we provide end-to-end digital solutions that drive results and help your business grow.
               </p>
             </div>
           </div>
         </section>
         
-        {/* Categories Sections */}
-        {Object.keys(t.amenitiesPage.categories).map((category, categoryIndex) => {
-          const categoryData = t.amenitiesPage.categories[category as keyof typeof t.amenitiesPage.categories];
+        {/* Service Categories Sections */}
+        {serviceCategories.map((category, categoryIndex) => {
           const isEven = categoryIndex % 2 === 0;
           
           return (
-            <section key={category} className={`py-16 ${isEven ? 'bg-card' : ''}`}>
+            <section key={category.title} className={`py-16 ${isEven ? 'bg-card' : ''}`}>
               <div className="container">
                 <div className="text-center max-w-3xl mx-auto mb-12">
                   <h2 className="text-3xl font-bold mb-4">
-                    {categoryData.title}
+                    {category.title}
                   </h2>
                   <p className="text-muted-foreground">
-                    {categoryData.description}
+                    {category.description}
                   </p>
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                  {categoryData.items.map((item, index) => (
+                  {category.items.map((item, index) => (
                     <div 
                       key={index} 
                       className="glass-card p-6 rounded-xl flex flex-col items-center text-center animate-fade-in"
                       style={{ animationDelay: `${(index + 1) * 100}ms` }}
                     >
                       <div className="mb-4 p-3 rounded-full bg-primary/10 text-primary">
-                        {getIcon(category, index)}
+                        {item.icon}
                       </div>
                       <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
                       <p className="text-muted-foreground">{item.description}</p>
@@ -120,7 +151,7 @@ export default function Amenities() {
                 >
                   <img 
                     src={`https://images.unsplash.com/photo-${1550000000000 + index * 100000}?w=400&h=400&fit=crop`}
-                    alt={`Amenity ${index + 1}`}
+                    alt={`Service ${index + 1}`}
                     className="w-full h-full object-cover"
                   />
                 </div>
