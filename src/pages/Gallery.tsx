@@ -137,6 +137,24 @@ export default function Gallery() {
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [selectedImage, filteredImages]);
+
+  // Map categories to their translations
+  const getFilterLabel = (category: string) => {
+    switch (category) {
+      case "all":
+        return t.gallery.allProjects;
+      case "websites":
+        return t.gallery.webApps;
+      case "design":
+        return t.gallery.design;
+      case "photography":
+        return "Photography";
+      case "video":
+        return "Video";
+      default:
+        return category;
+    }
+  };
   
   return (
     <div className="min-h-screen flex flex-col">
@@ -178,7 +196,7 @@ export default function Gallery() {
                       : "bg-card hover:bg-muted"
                   )}
                 >
-                  {t.gallery.filters[category as keyof typeof t.gallery.filters]}
+                  {getFilterLabel(category)}
                 </button>
               ))}
             </div>
