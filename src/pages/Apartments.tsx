@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ApartmentCard, { ApartmentProps } from "@/components/ApartmentCard";
 import { Button } from "@/components/ui/button";
 import {
   Select,
@@ -11,85 +10,71 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Slider } from "@/components/ui/slider";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Code, Palette, Camera, Video, Globe, Smartphone, ShoppingCart, Zap } from "lucide-react";
 
-// Sample apartments data (will use translations from context)
-const allApartments: ApartmentProps[] = [
+// Service types data
+const allServices = [
   {
     id: "1",
-    name: "Deluxe Sea View Suite",
-    description: "Luxurious suite with panoramic sea views, modern amenities, and a private balcony.",
-    price: 180,
-    capacity: 2,
-    size: 45,
-    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&h=600&fit=crop",
-    location: "Beachfront",
-    features: ["Wi-Fi", "Kitchen", "Bathroom", "Air Conditioning", "TV", "Balcony"]
+    name: "Custom Website Development",
+    description: "Professional websites built with modern technologies like React, TypeScript, and responsive design.",
+    category: "Web Development",
+    icon: <Code className="h-8 w-8" />,
+    features: ["Responsive Design", "SEO Optimized", "Fast Loading", "Modern Tech Stack"],
+    image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop"
   },
   {
     id: "2",
-    name: "Premium Family Apartment",
-    description: "Spacious apartment ideal for families, with full kitchen and stunning coastal views.",
-    price: 250,
-    capacity: 4,
-    size: 75,
-    image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=600&fit=crop",
-    location: "Second row",
-    features: ["Wi-Fi", "Kitchen", "Bathroom", "Air Conditioning", "TV", "Washing Machine"]
+    name: "E-commerce Solutions", 
+    description: "Complete online stores with payment integration, inventory management, and customer accounts.",
+    category: "Web Development",
+    icon: <ShoppingCart className="h-8 w-8" />,
+    features: ["Payment Integration", "Inventory Management", "Customer Accounts", "Analytics"],
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop"
   },
   {
     id: "3",
-    name: "Executive Beach Studio",
-    description: "Elegant studio with direct beach access, modern design, and premium finishes.",
-    price: 150,
-    capacity: 2,
-    size: 35,
-    image: "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=800&h=600&fit=crop",
-    location: "Beachfront",
-    features: ["Wi-Fi", "Kitchenette", "Bathroom", "Air Conditioning", "TV"]
+    name: "UI/UX Design",
+    description: "Beautiful and intuitive user interfaces that provide exceptional user experiences.",
+    category: "Design",
+    icon: <Palette className="h-8 w-8" />,
+    features: ["User Research", "Wireframing", "Prototyping", "Design Systems"],
+    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop"
   },
   {
     id: "4",
-    name: "Luxury Penthouse Suite",
-    description: "Exclusive top-floor suite with expansive terrace and panoramic sea views.",
-    price: 350,
-    capacity: 4,
-    size: 90,
-    image: "https://images.unsplash.com/photo-1562438668-bcf0ca6578f0?w=800&h=600&fit=crop",
-    location: "Beachfront",
-    features: ["Wi-Fi", "Full Kitchen", "2 Bathrooms", "Air Conditioning", "TV", "Terrace", "Jacuzzi"]
+    name: "Mobile-First Development",
+    description: "Websites optimized for mobile devices with progressive web app capabilities.",
+    category: "Web Development", 
+    icon: <Smartphone className="h-8 w-8" />,
+    features: ["Mobile Responsive", "PWA Ready", "Touch Optimized", "App-like Experience"],
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop"
   },
   {
     id: "5",
-    name: "Classic Double Room",
-    description: "Comfortable hotel room with modern amenities and partial sea views.",
-    price: 120,
-    capacity: 2,
-    size: 28,
-    image: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800&h=600&fit=crop",
-    location: "Hotel building",
-    features: ["Wi-Fi", "Bathroom", "Air Conditioning", "TV", "Mini Fridge"]
+    name: "Brand Photography",
+    description: "Professional photography for your business, products, and marketing materials.",
+    category: "Photography",
+    icon: <Camera className="h-8 w-8" />,
+    features: ["Product Photos", "Corporate Headshots", "Brand Content", "Event Coverage"],
+    image: "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=800&h=600&fit=crop"
   },
   {
     id: "6",
-    name: "Garden View Apartment",
-    description: "Peaceful apartment surrounded by lush gardens, just a short walk from the beach.",
-    price: 160,
-    capacity: 3,
-    size: 55,
-    image: "https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=800&h=600&fit=crop",
-    location: "Garden area",
-    features: ["Wi-Fi", "Kitchen", "Bathroom", "Air Conditioning", "TV", "Terrace"]
-  },
+    name: "Video Production",
+    description: "High-quality video content for marketing, training, and promotional purposes.",
+    category: "Videography",
+    icon: <Video className="h-8 w-8" />,
+    features: ["Promotional Videos", "Corporate Content", "Social Media", "Live Streaming"],
+    image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&h=600&fit=crop"
+  }
 ];
 
 export default function Apartments() {
   const { t } = useLanguage();
-  const [filteredApartments, setFilteredApartments] = useState<ApartmentProps[]>(allApartments);
-  const [capacityFilter, setCapacityFilter] = useState<string>("all");
-  const [locationFilter, setLocationFilter] = useState<string>("all");
-  const [priceRange, setPriceRange] = useState<number[]>([100, 350]);
+  const [filteredServices, setFilteredServices] = useState(allServices);
+  const [categoryFilter, setCategoryFilter] = useState<string>("all");
   
   useEffect(() => {
     // Scroll to top when component mounts
@@ -98,27 +83,18 @@ export default function Apartments() {
   
   // Apply filters
   useEffect(() => {
-    let result = allApartments;
+    let result = allServices;
     
-    // Filter by capacity
-    if (capacityFilter !== "all") {
-      const capacity = parseInt(capacityFilter);
-      result = result.filter(apt => apt.capacity >= capacity);
+    // Filter by category
+    if (categoryFilter !== "all") {
+      result = result.filter(service => service.category === categoryFilter);
     }
     
-    // Filter by location
-    if (locationFilter !== "all") {
-      result = result.filter(apt => apt.location === locationFilter);
-    }
-    
-    // Filter by price range
-    result = result.filter(apt => apt.price >= priceRange[0] && apt.price <= priceRange[1]);
-    
-    setFilteredApartments(result);
-  }, [capacityFilter, locationFilter, priceRange]);
+    setFilteredServices(result);
+  }, [categoryFilter]);
   
-  // Get unique locations for filter
-  const locations = ["all", ...new Set(allApartments.map(apt => apt.location))];
+  // Get unique categories for filter
+  const categories = ["all", ...new Set(allServices.map(service => service.category))];
   
   return (
     <div className="min-h-screen flex flex-col">
@@ -130,10 +106,10 @@ export default function Apartments() {
           <div className="container relative z-10">
             <div className="max-w-3xl mx-auto text-center animate-fade-in">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-                {t.apartments.title}
+                {t.services.title}
               </h1>
               <p className="text-muted-foreground text-lg mb-6">
-                {t.apartments.subtitle}
+                {t.services.subtitle}
               </p>
             </div>
           </div>
@@ -148,103 +124,86 @@ export default function Apartments() {
         {/* Filter Section */}
         <section className="py-8 border-b">
           <div className="container">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-fade-in">
-              {/* Capacity Filter */}
+            <div className="flex justify-between items-center animate-fade-in">
               <div>
                 <label className="block text-sm font-medium mb-2">
-                  {t.apartments.filters.guests}
+                  Filter by Category
                 </label>
-                <Select value={capacityFilter} onValueChange={setCapacityFilter}>
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder={t.apartments.filters.guests} />
+                <Select value={categoryFilter} onValueChange={setCategoryFilter}>
+                  <SelectTrigger className="w-64">
+                    <SelectValue placeholder="Select category" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="all">{t.apartments.filters.anyGuests}</SelectItem>
-                    <SelectItem value="1">{t.apartments.filters.onePlus}</SelectItem>
-                    <SelectItem value="2">{t.apartments.filters.twoPlus}</SelectItem>
-                    <SelectItem value="3">{t.apartments.filters.threePlus}</SelectItem>
-                    <SelectItem value="4">{t.apartments.filters.fourPlus}</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-              
-              {/* Location Filter */}
-              <div>
-                <label className="block text-sm font-medium mb-2">
-                  {t.apartments.filters.location}
-                </label>
-                <Select value={locationFilter} onValueChange={setLocationFilter}>
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder={t.apartments.filters.location} />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="all">{t.apartments.filters.allLocations}</SelectItem>
-                    {locations.filter(loc => loc !== "all").map(location => (
-                      <SelectItem key={location} value={location}>{location}</SelectItem>
+                    <SelectItem value="all">All Services</SelectItem>
+                    {categories.filter(cat => cat !== "all").map(category => (
+                      <SelectItem key={category} value={category}>{category}</SelectItem>
                     ))}
                   </SelectContent>
                 </Select>
               </div>
               
-              {/* Price Range Filter */}
-              <div>
-                <label className="block text-sm font-medium mb-2">
-                  {t.apartments.filters.priceRange}: ${priceRange[0]} - ${priceRange[1]}
-                </label>
-                <Slider
-                  defaultValue={[100, 350]}
-                  min={100}
-                  max={350}
-                  step={10}
-                  value={priceRange}
-                  onValueChange={setPriceRange}
-                  className="my-4"
-                />
+              <div className="text-muted-foreground">
+                Showing {filteredServices.length} of {allServices.length} services
               </div>
-            </div>
-            
-            <div className="flex justify-between items-center mt-6 animate-fade-in [animation-delay:200ms]">
-              <p className="text-muted-foreground">
-                {t.apartments.filters.showing} {filteredApartments.length} {t.apartments.filters.of} {allApartments.length} {t.apartments.filters.accommodations}
-              </p>
-              <Button 
-                variant="outline" 
-                onClick={() => {
-                  setCapacityFilter("all");
-                  setLocationFilter("all");
-                  setPriceRange([100, 350]);
-                }}
-              >
-                {t.apartments.filters.resetFilters}
-              </Button>
             </div>
           </div>
         </section>
         
-        {/* Apartments Grid */}
+        {/* Services Grid */}
         <section className="section">
           <div className="container">
-            {filteredApartments.length > 0 ? (
+            {filteredServices.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {filteredApartments.map((apartment, index) => (
-                  <div key={apartment.id} className="animate-fade-in" style={{ animationDelay: `${(index + 1) * 100}ms` }}>
-                    <ApartmentCard apartment={apartment} />
+                {filteredServices.map((service, index) => (
+                  <div key={service.id} className="glass-card rounded-xl overflow-hidden animate-fade-in hover:shadow-xl transition-all duration-300" style={{ animationDelay: `${(index + 1) * 100}ms` }}>
+                    <div className="aspect-video rounded-t-xl overflow-hidden">
+                      <img 
+                        src={service.image}
+                        alt={service.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <div className="flex items-center mb-4">
+                        <div className="p-2 rounded-lg bg-primary/10 text-primary mr-3">
+                          {service.icon}
+                        </div>
+                        <span className="text-sm text-muted-foreground">{service.category}</span>
+                      </div>
+                      <h3 className="text-xl font-semibold mb-3">{service.name}</h3>
+                      <p className="text-muted-foreground mb-4">{service.description}</p>
+                      <div className="mb-6">
+                        <div className="flex flex-wrap gap-2">
+                          {service.features.slice(0, 3).map((feature, featureIndex) => (
+                            <span key={featureIndex} className="text-xs bg-card px-2 py-1 rounded-md">
+                              {feature}
+                            </span>
+                          ))}
+                          {service.features.length > 3 && (
+                            <span className="text-xs text-muted-foreground">
+                              +{service.features.length - 3} more
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                      <Button asChild className="w-full">
+                        <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">
+                          Get Quote
+                        </a>
+                      </Button>
+                    </div>
                   </div>
                 ))}
               </div>
             ) : (
               <div className="text-center py-12 animate-fade-in">
-                <h3 className="text-xl font-semibold mb-2">{t.apartments.filters.noMatch}</h3>
-                <p className="text-muted-foreground mb-6">{t.apartments.filters.adjustFilters}</p>
+                <h3 className="text-xl font-semibold mb-2">No services match your filter</h3>
+                <p className="text-muted-foreground mb-6">Try adjusting your filter criteria to see more options.</p>
                 <Button 
                   variant="outline" 
-                  onClick={() => {
-                    setCapacityFilter("all");
-                    setLocationFilter("all");
-                    setPriceRange([100, 350]);
-                  }}
+                  onClick={() => setCategoryFilter("all")}
                 >
-                  {t.apartments.filters.resetFilters}
+                  Reset Filters
                 </Button>
               </div>
             )}

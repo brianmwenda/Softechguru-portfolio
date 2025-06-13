@@ -9,8 +9,11 @@ import BlogSection from "@/components/BlogSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Index() {
+  const { t } = useLanguage();
+  
   useEffect(() => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
@@ -41,13 +44,13 @@ export default function Index() {
           <div className="container">
             <div className="max-w-3xl mx-auto text-center animate-fade-in">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Ready to Transform Your Digital Presence?
+                {t.home.cta.title}
               </h2>
               <p className="text-muted-foreground mb-8">
-                Let's discuss your project and create something amazing together. Our team is ready to bring your vision to life.
+                {t.home.cta.description}
               </p>
               <Button asChild size="lg" className="btn-primary">
-                <Link to="/contact">Start Your Project</Link>
+                <Link to="/contact">{t.home.cta.getStarted}</Link>
               </Button>
             </div>
           </div>
