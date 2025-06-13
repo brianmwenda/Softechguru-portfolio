@@ -21,7 +21,7 @@ export default function Cart() {
     const totalPrice = getTotalPrice();
     const whatsappMessage = `Hello! I'd like to proceed with the following services:\n\n${cartSummary}\n\nTotal: $${totalPrice}\n\nPlease contact me to discuss the project details.`;
     
-    const whatsappUrl = `https://wa.me/1234567890?text=${encodeURIComponent(whatsappMessage)}`;
+    const whatsappUrl = `https://wa.me/254701443181?text=${encodeURIComponent(whatsappMessage)}`;
     window.open(whatsappUrl, '_blank');
     
     clearCart();
@@ -50,8 +50,8 @@ export default function Cart() {
 
       {/* Cart Modal - Fixed fullscreen overlay */}
       {isOpen && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 animate-fade-in">
-          <div className="w-full max-w-2xl max-h-[90vh] bg-background rounded-lg shadow-2xl overflow-hidden">
+        <div className="fixed inset-10 bg-black/50 z-50 flex items-center justify-center p-4 animate-fade-in">
+          <div className="w-full max-w-2xl max-h-[auto] bg-background rounded-lg shadow-2xl overflow-hidden">
             <div className="flex items-center justify-between p-6 border-b">
               <h2 className="text-2xl font-bold">{t.cart.title}</h2>
               <Button 

@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Github, Linkedin, Mail, Code, Palette, Camera, Video } from "lucide-react";
 
@@ -8,8 +9,9 @@ export default function PortfolioHero() {
   const titles = [
     "Full-Stack Developer",
     "UI/UX Designer", 
-    "Creative Director",
-    "Digital Innovator"
+    "Part-time Photographer",
+    "Graphic Designer",
+    "Part-time Videographer"
   ];
 
   useEffect(() => {
@@ -28,12 +30,7 @@ export default function PortfolioHero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-primary/5">
-      {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-pink-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
-      </div>
+      
       
       <div className="container relative z-10 pt-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -44,7 +41,7 @@ export default function PortfolioHero() {
                 👋 Hello, I'm
               </div>
               <h1 className="text-5xl md:text-7xl font-bold gradient-text animate-slide-up">
-                Alex Johnson
+                Brian M. Ndumba
               </h1>
               <div className="text-2xl md:text-3xl text-foreground h-12 animate-slide-up animate-stagger-1">
                 <span className="typewriter">
@@ -59,13 +56,13 @@ export default function PortfolioHero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 animate-fade-in animate-stagger-3">
-              <Button className="btn-primary group">
+              <Link to="/gallery"><Button className="btn-primary group">
                 View My Work
                 <ArrowDown className="ml-2 h-4 w-4 transition-transform group-hover:translate-y-1" />
-              </Button>
-              <Button variant="outline" className="btn-secondary">
-                Get In Touch
-              </Button>
+              </Button></Link>
+              <Link to="/contact"><Button variant="outline" className="btn-secondary">
+                Get In Touch 
+              </Button></Link>
             </div>
 
             {/* Social Links */}
@@ -89,8 +86,8 @@ export default function PortfolioHero() {
               <div className="absolute inset-0 bg-gradient-to-r from-primary to-purple-500 rounded-full animate-pulse-glow"></div>
               <div className="absolute inset-2 bg-background rounded-full overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
-                  alt="Alex Johnson"
+                  src="/assets/images/profile.png"
+                  alt="Brian"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -110,6 +107,7 @@ export default function PortfolioHero() {
                   <div className="text-xs text-muted-foreground">{skill.count}</div>
                 </div>
               ))}
+              <br /><br /><br /><br />
             </div>
           </div>
         </div>

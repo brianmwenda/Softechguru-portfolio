@@ -38,12 +38,11 @@ export default function Footer() {
             <h4 className="text-lg font-bold mb-4">{t.footer.quickLinks}</h4>
             <ul className="space-y-2 text-sm">
               {[
-                { name: t.nav.home, path: "/" },
                 { name: t.nav.services, path: "/services" },
-                { name: t.nav.gallery, path: "/gallery" },
+                { name: t.nav.portfolio, path: "/gallery" },
                 { name: t.nav.blog, path: "/blog" },
-                { name: t.nav.faq, path: "/faq" },
-                { name: t.nav.contact, path: "/contact" },
+                { name: t.nav.faq, path: "/faq" }
+             
               ].map((link) => (
                 <li key={link.name}>
                   <Link 
@@ -63,7 +62,7 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex items-center">
                 <Phone className="w-4 h-4 mr-2 text-primary" />
-                <span className="text-muted-foreground">+1 (555) 123-4567</span>
+                <span className="text-muted-foreground">+(254) 701-443-181</span>
               </li>
               <li className="flex items-center">
                 <Mail className="w-4 h-4 mr-2 text-primary" />

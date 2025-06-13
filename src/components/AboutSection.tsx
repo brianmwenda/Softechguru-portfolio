@@ -48,19 +48,26 @@ export default function AboutSection() {
           </div>
           
           <div className="relative animate-fade-in [animation-delay:300ms]">
-            <div className="aspect-[4/3] rounded-2xl overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop"
-                alt="Team working together" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="absolute -bottom-6 -right-6 w-2/3 rounded-2xl overflow-hidden shadow-xl">
-              <img 
-                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=300&fit=crop"
-                alt="Developer working on laptop" 
-                className="w-full h-full object-cover"
-              />
+             <div className="aspect-[4/3] rounded-2xl overflow-hidden">
+                  <img 
+                    src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&h=600&fit=crop"
+                    alt="Seaside view" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="absolute -bottom-6 -left-6 w-2/3 rounded-2xl overflow-hidden shadow-xl">
+                  <img 
+                    src="https://images.unsplash.com/photo-1545579133-99bb5ab189bd?w=400&h=300&fit=crop"
+                    alt="Luxury apartment interior" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="absolute -top-6 -right-6 w-1/2 rounded-2xl overflow-hidden shadow-xl">
+                  <img 
+                    src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=400&h=300&fit=crop"
+                    alt="Pool view" 
+                    className="w-full h-full object-cover"
+                  />
             </div>
           </div>
         </div>

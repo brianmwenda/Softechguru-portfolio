@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { 
@@ -23,26 +24,26 @@ const services = [
     icon: <Code2 className="h-8 w-8" />,
     title: "Web Development",
     description: "Full-stack applications with modern frameworks",
-    features: ["React/Next.js", "Node.js/Python", "Database Design", "API Integration"],
-    price: 2500,
+    features: ["HTML5/CSS3", "React/Node.js", "Database Design", "API Integration"],
+    price: 200,
     popular: true
   },
   {
     id: "ui-ux",
-    icon: <Palette className="h-8 w-8" />,
+    icon: <Smartphone className="h-8 w-8" />,
     title: "UI/UX Design",
     description: "User-centered design that converts",
     features: ["User Research", "Wireframing", "Prototyping", "Design Systems"],
-    price: 1500,
+    price: 100,
     popular: false
   },
   {
-    id: "mobile",
-    icon: <Smartphone className="h-8 w-8" />,
-    title: "Mobile Apps",
+    id: "ui-ux",
+    icon: <Palette className="h-8 w-8" />,
+    title: "Graphic Design",
     description: "Native and cross-platform solutions",
-    features: ["React Native", "iOS/Android", "App Store Deployment", "Push Notifications"],
-    price: 3500,
+    features: ["Photoshop", "Adobe Premiere pro", "Illustrator", "After Effects"],
+    price: 50,
     popular: false
   },
   {
@@ -50,8 +51,8 @@ const services = [
     icon: <Camera className="h-8 w-8" />,
     title: "Photography",
     description: "Professional product and lifestyle photography",
-    features: ["Product Photos", "Lifestyle Shoots", "Photo Editing", "Commercial Rights"],
-    price: 500,
+    features: ["Wedding Photos", "Event Photos", "lifestyle Photos", "Commercial Photos"],
+    price: 100,
     popular: false
   },
   {
@@ -59,8 +60,8 @@ const services = [
     icon: <Video className="h-8 w-8" />,
     title: "Videography",
     description: "Engaging video content for your brand",
-    features: ["Promotional Videos", "Product Demos", "Social Content", "Post-Production"],
-    price: 1200,
+    features: ["Promotional Videos", "Wedding videos", "Event videos", "Post-Production"],
+    price: 300,
     popular: false
   },
   {
@@ -69,7 +70,7 @@ const services = [
     title: "Domain & Hosting",
     description: "Complete hosting and domain management",
     features: ["Domain Registration", "Cloud Hosting", "SSL Certificates", "Performance Optimization"],
-    price: 200,
+    price: 40,
     popular: false
   }
 ];
@@ -90,7 +91,7 @@ export default function ModernServicesSection() {
 
   const handleGetQuote = (service: typeof services[0]) => {
     const whatsappMessage = `Hello! I'm interested in getting a quote for ${service.title}.\n\nService Details:\n- ${service.description}\n- Price: From $${service.price}\n\nPlease provide me with a detailed quote for this service.`;
-    const whatsappUrl = `https://wa.me/1234567890?text=${encodeURIComponent(whatsappMessage)}`;
+    const whatsappUrl = `https://wa.me/254701443181?text=${encodeURIComponent(whatsappMessage)}`;
     window.open(whatsappUrl, '_blank');
   };
 
@@ -157,25 +158,7 @@ export default function ModernServicesSection() {
                     <span className="text-2xl font-bold gradient-text">From ${service.price}</span>
                   </div>
                   
-                  <div className="flex gap-2">
-                    <Button 
-                      size="sm" 
-                      variant="outline"
-                      className="flex-1"
-                      onClick={() => handleGetQuote(service)}
-                    >
-                      Get Quote
-                      <MessageCircle className="ml-2 h-4 w-4" />
-                    </Button>
-                    <Button 
-                      size="sm" 
-                      onClick={() => handleAddToCart(service)}
-                      className="flex-1"
-                    >
-                      <ShoppingCart className="mr-2 h-4 w-4" />
-                      Add to Cart
-                    </Button>
-                  </div>
+                 
                 </div>
               </CardContent>
 
@@ -190,12 +173,12 @@ export default function ModernServicesSection() {
         {/* CTA Section */}
         <div className="text-center mt-16 animate-fade-in animate-stagger-5">
           <div className="inline-flex flex-col sm:flex-row gap-4">
-            <Button className="btn-primary">
+            <Link to="/contact"><Button className="btn-primary">
               Request Custom Quote
-            </Button>
-            <Button variant="outline" className="btn-secondary">
+            </Button></Link>
+            <Link to="/services"><Button variant="outline" className="btn-secondary">
               View All Services
-            </Button>
+            </Button></Link>
           </div>
         </div>
       </div>

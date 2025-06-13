@@ -16,7 +16,7 @@ export default function Navbar() {
   const navLinks = [
     { name: t.nav.home, path: "/" },
     { name: t.nav.services, path: "/services" },
-    { name: t.nav.gallery, path: "/gallery" },
+    { name: t.nav.portfolio, path: "/gallery" },
     { name: t.nav.blog, path: "/blog" },
     { name: t.nav.faq, path: "/faq" },
     { name: t.nav.contact, path: "/contact" }
@@ -62,10 +62,10 @@ export default function Navbar() {
         </ul>
 
         <div className="hidden md:flex items-center space-x-2">
-          <Cart />
+          {/* <Cart /> */}
           <ThemeToggle />
           <Button asChild className="btn-primary">
-            <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/254701443181" target="_blank" rel="noopener noreferrer">
               {t.hero.talkToDeveloper}
             </a>
           </Button>
@@ -73,7 +73,7 @@ export default function Navbar() {
 
         {/* Mobile Navigation */}
         <div className="md:hidden flex items-center space-x-2">
-          <Cart />
+          {/* <Cart /> */}
           <ThemeToggle />
           <Button 
             variant="ghost" 
@@ -125,7 +125,7 @@ export default function Navbar() {
             
             <Button asChild className="w-full btn-primary mt-6">
               <a 
-                href="https://wa.me/1234567890" 
+                href="https://wa.me/254701443181" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}
