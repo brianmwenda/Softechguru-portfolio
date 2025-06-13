@@ -10,8 +10,11 @@ import {
   Globe, 
   Smartphone,
   ArrowRight,
-  Check
+  Check,
+  ShoppingCart
 } from "lucide-react";
+import { useCart } from "@/contexts/CartContext";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const services = [
   {
@@ -20,7 +23,7 @@ const services = [
     title: "Web Development",
     description: "Full-stack applications with modern frameworks",
     features: ["React/Next.js", "Node.js/Python", "Database Design", "API Integration"],
-    price: "From $2,500",
+    price: 2500,
     popular: true
   },
   {
@@ -29,7 +32,7 @@ const services = [
     title: "UI/UX Design",
     description: "User-centered design that converts",
     features: ["User Research", "Wireframing", "Prototyping", "Design Systems"],
-    price: "From $1,500",
+    price: 1500,
     popular: false
   },
   {
@@ -38,7 +41,7 @@ const services = [
     title: "Mobile Apps",
     description: "Native and cross-platform solutions",
     features: ["React Native", "iOS/Android", "App Store Deployment", "Push Notifications"],
-    price: "From $3,500",
+    price: 3500,
     popular: false
   },
   {
@@ -47,7 +50,7 @@ const services = [
     title: "Photography",
     description: "Professional product and lifestyle photography",
     features: ["Product Photos", "Lifestyle Shoots", "Photo Editing", "Commercial Rights"],
-    price: "From $500",
+    price: 500,
     popular: false
   },
   {
@@ -56,7 +59,7 @@ const services = [
     title: "Videography",
     description: "Engaging video content for your brand",
     features: ["Promotional Videos", "Product Demos", "Social Content", "Post-Production"],
-    price: "From $1,200",
+    price: 1200,
     popular: false
   },
   {
@@ -65,13 +68,24 @@ const services = [
     title: "Domain & Hosting",
     description: "Complete hosting and domain management",
     features: ["Domain Registration", "Cloud Hosting", "SSL Certificates", "Performance Optimization"],
-    price: "From $200/year",
+    price: 200,
     popular: false
   }
 ];
 
 export default function ModernServicesSection() {
+  const { t } = useLanguage();
+  const { addItem } = useCart();
   const [hoveredService, setHoveredService] = useState<string | null>(null);
+
+  const handleAddToCart = (service: typeof services[0]) => {
+    addItem({
+      name: service.title,
+      price: service.price,
+      category: "Service",
+      description: service.description
+    });
+  };
 
   return (
     <section className="section bg-gradient-to-b from-background to-muted/20">
@@ -131,17 +145,29 @@ export default function ModernServicesSection() {
                 </div>
 
                 {/* Price & CTA */}
-                <div className="flex items-center justify-between pt-4 border-t border-border">
-                  <span className="text-2xl font-bold gradient-text">{service.price}</span>
-                  <Button 
-                    size="sm" 
-                    className={`transition-all duration-300 ${
-                      hoveredService === service.id ? 'scale-110' : ''
-                    }`}
-                  >
-                    Learn More
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
+                <div className="space-y-3 pt-4 border-t border-border">
+                  <div className="flex items-center justify-between">
+                    <span className="text-2xl font-bold gradient-text">From ${service.price}</span>
+                  </div>
+                  
+                  <div className="flex gap-2">
+                    <Button 
+                      size="sm" 
+                      variant="outline"
+                      className="flex-1"
+                    >
+                      Learn More
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                    <Button 
+                      size="sm" 
+                      onClick={() => handleAddToCart(service)}
+                      className="flex-1"
+                    >
+                      <ShoppingCart className="mr-2 h-4 w-4" />
+                      {t.services.addToCart}
+                    </Button>
+                  </div>
                 </div>
               </CardContent>
 

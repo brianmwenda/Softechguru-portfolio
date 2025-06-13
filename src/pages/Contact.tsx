@@ -2,10 +2,12 @@
 import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { MapPin, Phone, Mail, Clock, Send, Check } from "lucide-react";
+import { Phone, Mail, Clock, MessageCircle, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Contact() {
@@ -14,14 +16,15 @@ export default function Contact() {
     name: "",
     email: "",
     phone: "",
-    subject: "",
-    message: ""
+    serviceType: "",
+    budget: "",
+    timeline: "",
+    details: ""
   });
   
   const [isSubmitted, setIsSubmitted] = useState(false);
   
   useEffect(() => {
-    // Scroll to top when component mounts
     window.scrollTo(0, 0);
   }, []);
   
@@ -30,11 +33,29 @@ export default function Contact() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
   
+  const handleSelectChange = (name: string, value: string) => {
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+  
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // In a real app, this would send the form data to a server
-    console.log("Form submitted:", formData);
+    const whatsappMessage = `Hello! I'd like to request a custom service:
+
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Service Type: ${formData.serviceType}
+Budget: ${formData.budget}
+Timeline: ${formData.timeline}
+
+Service Details:
+${formData.details}
+
+Please contact me to discuss this project further.`;
+
+    const whatsappUrl = `https://wa.me/1234567890?text=${encodeURIComponent(whatsappMessage)}`;
+    window.open(whatsappUrl, '_blank');
     
     setIsSubmitted(true);
     
@@ -45,8 +66,10 @@ export default function Contact() {
         name: "",
         email: "",
         phone: "",
-        subject: "",
-        message: ""
+        serviceType: "",
+        budget: "",
+        timeline: "",
+        details: ""
       });
     }, 3000);
   };
@@ -57,7 +80,7 @@ export default function Contact() {
       
       <main className="flex-1 pt-20">
         {/* Header Section */}
-        <section className="relative py-20 bg-gradient-to-r from-sea-light to-white dark:from-sea-dark dark:to-background overflow-hidden">
+        <section className="relative py-20 bg-gradient-to-r from-primary/10 via-purple-500/10 to-pink-500/10 overflow-hidden">
           <div className="container relative z-10">
             <div className="max-w-3xl mx-auto text-center animate-fade-in">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
@@ -72,7 +95,7 @@ export default function Contact() {
           {/* Decorative elements */}
           <div className="absolute top-0 right-0 w-1/3 h-full opacity-10">
             <div className="absolute top-10 right-10 w-64 h-64 rounded-full bg-primary/50 blur-3xl" />
-            <div className="absolute bottom-10 right-40 w-48 h-48 rounded-full bg-sea-light blur-3xl" />
+            <div className="absolute bottom-10 right-40 w-48 h-48 rounded-full bg-purple-500/50 blur-3xl" />
           </div>
         </section>
         
@@ -85,20 +108,6 @@ export default function Contact() {
                 <h2 className="text-2xl font-bold mb-6">{t.contact.getInTouch}</h2>
                 
                 <div className="glass-card p-6 space-y-6 mb-8">
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
-                      <MapPin className="h-5 w-5 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-1">{t.contact.address}</h3>
-                      <p className="text-muted-foreground">
-                        123 Tech Street<br />
-                        Digital City, 12345<br />
-                        United States
-                      </p>
-                    </div>
-                  </div>
-                  
                   <div className="flex items-start">
                     <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
                       <Phone className="h-5 w-5 text-primary" />
@@ -134,21 +143,9 @@ export default function Contact() {
                     </div>
                   </div>
                 </div>
-                
-                <div className="aspect-video rounded-xl overflow-hidden">
-                  <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387191.03606358136!2d-74.30932777761632!3d40.697670063978244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sus!4v1628613152777!5m2!1sen!2sus" 
-                    width="100%" 
-                    height="100%" 
-                    style={{ border: 0 }} 
-                    allowFullScreen 
-                    loading="lazy"
-                    title="Location Map"
-                  />
-                </div>
               </div>
               
-              {/* Contact Form */}
+              {/* Custom Service Request Form */}
               <div className="animate-fade-in [animation-delay:300ms]">
                 <h2 className="text-2xl font-bold mb-6">{t.contact.sendMessage}</h2>
                 
@@ -191,37 +188,76 @@ export default function Contact() {
                             value={formData.phone}
                             onChange={handleInputChange}
                             placeholder="+1 234 567 8900" 
+                            required
                           />
                         </div>
                         
                         <div className="space-y-2">
-                          <Label htmlFor="subject">{t.contact.subject}</Label>
-                          <Input 
-                            id="subject" 
-                            name="subject"
-                            value={formData.subject}
-                            onChange={handleInputChange}
-                            placeholder="Project Inquiry" 
-                            required 
-                          />
+                          <Label htmlFor="serviceType">Service Type</Label>
+                          <Select onValueChange={(value) => handleSelectChange('serviceType', value)}>
+                            <SelectTrigger>
+                              <SelectValue placeholder="Select a service" />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="web-development">Web Development</SelectItem>
+                              <SelectItem value="ui-ux-design">UI/UX Design</SelectItem>
+                              <SelectItem value="mobile-app">Mobile App</SelectItem>
+                              <SelectItem value="photography">Photography</SelectItem>
+                              <SelectItem value="videography">Videography</SelectItem>
+                              <SelectItem value="hosting">Domain & Hosting</SelectItem>
+                              <SelectItem value="other">Other</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div className="space-y-2">
+                          <Label htmlFor="budget">Budget Range</Label>
+                          <Select onValueChange={(value) => handleSelectChange('budget', value)}>
+                            <SelectTrigger>
+                              <SelectValue placeholder="Select budget range" />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="under-1000">Under $1,000</SelectItem>
+                              <SelectItem value="1000-5000">$1,000 - $5,000</SelectItem>
+                              <SelectItem value="5000-10000">$5,000 - $10,000</SelectItem>
+                              <SelectItem value="10000-plus">$10,000+</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </div>
+                        
+                        <div className="space-y-2">
+                          <Label htmlFor="timeline">Timeline</Label>
+                          <Select onValueChange={(value) => handleSelectChange('timeline', value)}>
+                            <SelectTrigger>
+                              <SelectValue placeholder="Select timeline" />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="asap">ASAP</SelectItem>
+                              <SelectItem value="1-month">Within 1 month</SelectItem>
+                              <SelectItem value="2-3-months">2-3 months</SelectItem>
+                              <SelectItem value="flexible">Flexible</SelectItem>
+                            </SelectContent>
+                          </Select>
                         </div>
                       </div>
                       
                       <div className="space-y-2">
-                        <Label htmlFor="message">{t.contact.message}</Label>
-                        <textarea 
-                          id="message" 
-                          name="message"
-                          value={formData.message}
+                        <Label htmlFor="details">Service Details</Label>
+                        <Textarea 
+                          id="details" 
+                          name="details"
+                          value={formData.details}
                           onChange={handleInputChange}
                           placeholder={t.contact.tellUsAboutProject} 
-                          className="w-full min-h-[150px] p-3 rounded-md border border-input bg-background"
+                          className="min-h-[150px]"
                           required 
                         />
                       </div>
                       
                       <Button type="submit" className="w-full btn-primary">
-                        <Send className="mr-2 h-4 w-4" />
+                        <MessageCircle className="mr-2 h-4 w-4" />
                         {t.contact.send}
                       </Button>
                     </form>
@@ -238,31 +274,6 @@ export default function Contact() {
                   )}
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-        
-        {/* FAQ Section */}
-        <section className="section bg-muted">
-          <div className="container">
-            <div className="max-w-3xl mx-auto text-center mb-12 animate-fade-in">
-              <h2 className="text-3xl font-bold mb-4">{t.contact.faq}</h2>
-              <p className="text-muted-foreground">
-                {t.contact.faqSubtitle}
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-fade-in [animation-delay:200ms]">
-              {Object.entries(t.contact.questions).map(([key, question], index) => (
-                <div key={key} className="glass-card p-6">
-                  <h3 className="font-semibold text-lg mb-2">
-                    {question.question}
-                  </h3>
-                  <p className="text-muted-foreground">
-                    {question.answer}
-                  </p>
-                </div>
-              ))}
             </div>
           </div>
         </section>

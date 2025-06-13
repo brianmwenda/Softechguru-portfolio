@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import ThemeToggle from "./ThemeToggle";
-import LanguageSelector from "./LanguageSelector";
+import Cart from "./Cart";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -17,6 +17,8 @@ export default function Navbar() {
     { name: t.nav.home, path: "/" },
     { name: t.nav.services, path: "/services" },
     { name: t.nav.gallery, path: "/gallery" },
+    { name: t.nav.blog, path: "/blog" },
+    { name: t.nav.faq, path: "/faq" },
     { name: t.nav.contact, path: "/contact" }
   ];
 
@@ -60,7 +62,7 @@ export default function Navbar() {
         </ul>
 
         <div className="hidden md:flex items-center space-x-2">
-          <LanguageSelector />
+          <Cart />
           <ThemeToggle />
           <Button asChild className="btn-primary">
             <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">
@@ -71,7 +73,7 @@ export default function Navbar() {
 
         {/* Mobile Navigation */}
         <div className="md:hidden flex items-center space-x-2">
-          <LanguageSelector />
+          <Cart />
           <ThemeToggle />
           <Button 
             variant="ghost" 
