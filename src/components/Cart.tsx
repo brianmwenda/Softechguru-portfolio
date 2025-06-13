@@ -48,67 +48,78 @@ export default function Cart() {
         )}
       </Button>
 
-      {/* Cart Modal */}
+      {/* Cart Modal - Fixed fullscreen overlay */}
       {isOpen && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-          <Card className="w-full max-w-md max-h-[80vh] overflow-hidden">
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
-              <CardTitle>{t.cart.title}</CardTitle>
-              <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
-                <X className="h-4 w-4" />
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 animate-fade-in">
+          <div className="w-full max-w-2xl max-h-[90vh] bg-background rounded-lg shadow-2xl overflow-hidden">
+            <div className="flex items-center justify-between p-6 border-b">
+              <h2 className="text-2xl font-bold">{t.cart.title}</h2>
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                onClick={() => setIsOpen(false)}
+                className="hover:bg-muted rounded-full"
+              >
+                <X className="h-5 w-5" />
               </Button>
-            </CardHeader>
+            </div>
             
-            <CardContent className="space-y-4 max-h-[60vh] overflow-y-auto">
+            <div className="p-6 max-h-[70vh] overflow-y-auto">
               {items.length === 0 ? (
-                <p className="text-center text-muted-foreground py-8">{t.cart.empty}</p>
+                <div className="text-center py-12">
+                  <ShoppingCart className="h-16 w-16 mx-auto text-muted-foreground mb-4" />
+                  <p className="text-lg text-muted-foreground">{t.cart.empty}</p>
+                </div>
               ) : (
-                <>
+                <div className="space-y-6">
                   {items.map((item) => (
                     <div key={item.id} className="border rounded-lg p-4 space-y-3">
                       <div className="flex justify-between items-start">
-                        <div>
-                          <h4 className="font-semibold">{item.name}</h4>
+                        <div className="flex-1">
+                          <h4 className="font-semibold text-lg">{item.name}</h4>
                           <p className="text-sm text-muted-foreground">{item.category}</p>
-                          <p className="font-bold text-primary">${item.price}</p>
+                          <p className="text-2xl font-bold text-primary mt-2">${item.price}</p>
                         </div>
                         <Button 
                           variant="ghost" 
                           size="icon"
                           onClick={() => removeItem(item.id)}
+                          className="text-red-500 hover:text-red-700 hover:bg-red-50"
                         >
                           <Minus className="h-4 w-4" />
                         </Button>
                       </div>
                       
                       <div>
-                        <label className="text-sm font-medium">{t.cart.additionalDetails}</label>
+                        <label className="text-sm font-medium block mb-2">{t.cart.additionalDetails}</label>
                         <Textarea
                           placeholder="Add any specific requirements or details..."
                           value={item.additionalDetails || ''}
                           onChange={(e) => updateItemDetails(item.id, e.target.value)}
-                          className="mt-1"
-                          rows={2}
+                          rows={3}
+                          className="resize-none"
                         />
                       </div>
                     </div>
                   ))}
-                  
-                  <div className="border-t pt-4">
-                    <div className="flex justify-between items-center mb-4">
-                      <span className="font-semibold">{t.cart.total}:</span>
-                      <span className="font-bold text-lg">${getTotalPrice()}</span>
-                    </div>
-                    
-                    <Button onClick={handleCheckout} className="w-full btn-primary">
-                      <MessageCircle className="mr-2 h-4 w-4" />
-                      {t.cart.checkout}
-                    </Button>
-                  </div>
-                </>
+                </div>
               )}
-            </CardContent>
-          </Card>
+            </div>
+            
+            {items.length > 0 && (
+              <div className="border-t p-6 bg-muted/50">
+                <div className="flex justify-between items-center mb-4">
+                  <span className="text-xl font-semibold">{t.cart.total}:</span>
+                  <span className="text-3xl font-bold text-primary">${getTotalPrice()}</span>
+                </div>
+                
+                <Button onClick={handleCheckout} className="w-full h-12 text-lg">
+                  <MessageCircle className="mr-2 h-5 w-5" />
+                  {t.cart.checkout}
+                </Button>
+              </div>
+            )}
+          </div>
         </div>
       )}
     </>

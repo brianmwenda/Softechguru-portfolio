@@ -11,7 +11,8 @@ import {
   Smartphone,
   ArrowRight,
   Check,
-  ShoppingCart
+  ShoppingCart,
+  MessageCircle
 } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -87,6 +88,12 @@ export default function ModernServicesSection() {
     });
   };
 
+  const handleGetQuote = (service: typeof services[0]) => {
+    const whatsappMessage = `Hello! I'm interested in getting a quote for ${service.title}.\n\nService Details:\n- ${service.description}\n- Price: From $${service.price}\n\nPlease provide me with a detailed quote for this service.`;
+    const whatsappUrl = `https://wa.me/1234567890?text=${encodeURIComponent(whatsappMessage)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <section className="section bg-gradient-to-b from-background to-muted/20">
       <div className="container">
@@ -155,9 +162,10 @@ export default function ModernServicesSection() {
                       size="sm" 
                       variant="outline"
                       className="flex-1"
+                      onClick={() => handleGetQuote(service)}
                     >
-                      Learn More
-                      <ArrowRight className="ml-2 h-4 w-4" />
+                      Get Quote
+                      <MessageCircle className="ml-2 h-4 w-4" />
                     </Button>
                     <Button 
                       size="sm" 
@@ -165,7 +173,7 @@ export default function ModernServicesSection() {
                       className="flex-1"
                     >
                       <ShoppingCart className="mr-2 h-4 w-4" />
-                      {t.services.addToCart}
+                      Add to Cart
                     </Button>
                   </div>
                 </div>

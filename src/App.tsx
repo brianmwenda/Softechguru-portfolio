@@ -17,6 +17,7 @@ import TermsOfService from "./pages/TermsOfService";
 import NotFound from "./pages/NotFound";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import { CartProvider } from "./contexts/CartContext";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 // Create a react-query client
 const queryClient = new QueryClient();
@@ -43,6 +44,7 @@ const App = () => (
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
+            <WhatsAppButton />
           </BrowserRouter>
         </CartProvider>
       </LanguageProvider>
