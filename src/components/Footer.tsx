@@ -13,7 +13,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div className="animate-fade-in [animation-delay:100ms]">
-            <h4 className="text-lg font-bold mb-4">WebDev Studio</h4>
+            <h4 className="text-lg font-bold mb-4">SoftechGuru</h4>
             <p className="text-muted-foreground text-sm mb-4">
               {t.footer.description}
             </p>
@@ -66,15 +66,15 @@ export default function Footer() {
               </li>
               <li className="flex items-center">
                 <Mail className="w-4 h-4 mr-2 text-primary" />
-                <span className="text-muted-foreground">info@webdevstudio.com</span>
+                <span className="text-muted-foreground">info@softechguru.com</span>
               </li>
               <li className="flex items-center">
                 <MapPin className="w-4 h-4 mr-2 text-primary" />
-                <span className="text-muted-foreground">123 Tech Street, Digital City</span>
+                <span className="text-muted-foreground">Nairobi, Kenya, 00100</span>
               </li>
               <li className="flex items-center">
                 <Globe className="w-4 h-4 mr-2 text-primary" />
-                <span className="text-muted-foreground">www.webdevstudio.com</span>
+                <span className="text-muted-foreground">www.softechguru.com</span>
               </li>
             </ul>
           </div>
@@ -103,7 +103,7 @@ export default function Footer() {
         
         {/* Bottom Bar */}
         <div className="border-t border-border pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground">
-          <p>&copy; {currentYear} WebDev Studio. {t.footer.allRights}</p>
+          <p>&copy; {currentYear} Softechguru. {t.footer.allRights}</p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             <Link to="/privacy-policy" className="hover:text-primary transition-colors">
               {t.footer.privacyPolicy}

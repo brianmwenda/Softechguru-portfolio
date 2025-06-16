@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const stats = [
   { icon: <Users className="h-6 w-6" />, number: "50+", label: "Happy Clients" },
-  { icon: <Award className="h-6 w-6" />, number: "100+", label: "Projects Completed" },
+  { icon: <Award className="h-6 w-6" />, number: "24+", label: "Projects Completed" },
   { icon: <Clock className="h-6 w-6" />, number: "3+", label: "Years Experience" },
   { icon: <Heart className="h-6 w-6" />, number: "99%", label: "Client Satisfaction" }
 ];
@@ -23,7 +23,7 @@ export default function AboutSection() {
               Crafting Digital Excellence Since 2021
             </h2>
             <p className="text-muted-foreground mb-6">
-              We are a passionate team of developers, designers, and creatives dedicated to bringing your digital vision to life. Our expertise spans across web development, UI/UX design, photography, and videography.
+             I work with a passionate team of developers, designers, and creatives dedicated to bringing your digital vision to life. Our expertise spans across web development, UI/UX design, photography, and videography.
             </p>
             <p className="text-muted-foreground mb-8">
               Every project we undertake is a journey of collaboration, innovation, and attention to detail. We believe in creating not just websites, but digital experiences that resonate with your audience and drive your business forward.

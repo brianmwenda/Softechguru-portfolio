@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Github, Linkedin, Mail, Code, Palette, Camera, Video } from "lucide-react";
+import { ArrowDown, Linkedin, Mail, Code, Palette, Camera, Video } from "lucide-react";
 
 export default function PortfolioHero() {
   const [currentTitle, setCurrentTitle] = useState(0);
@@ -67,15 +67,12 @@ export default function PortfolioHero() {
 
             {/* Social Links */}
             <div className="flex gap-4 animate-fade-in animate-stagger-4">
-              <Button variant="ghost" size="icon" className="rounded-full hover:scale-110 transition-transform">
-                <Github className="h-5 w-5" />
-              </Button>
-              <Button variant="ghost" size="icon" className="rounded-full hover:scale-110 transition-transform">
+              <Link to="https://www.linkedin.com/in/brian-mwenda-325524360"><Button variant="ghost" size="icon" className="rounded-full hover:scale-110 transition-transform">
                 <Linkedin className="h-5 w-5" />
-              </Button>
-              <Button variant="ghost" size="icon" className="rounded-full hover:scale-110 transition-transform">
+              </Button></Link>
+              <Link to="mailto:softechguruservices@gmail.com"><Button variant="ghost" size="icon" className="rounded-full hover:scale-110 transition-transform">
                 <Mail className="h-5 w-5" />
-              </Button>
+              </Button></Link>
             </div>
           </div>
 
@@ -114,7 +111,7 @@ export default function PortfolioHero() {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-8 left-50% transform -translate-x-1/2 animate-bounce">
         <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center">
           <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse"></div>
         </div>

@@ -19,17 +19,18 @@ export default function PrivacyPolicy() {
               <h1 className="text-4xl font-bold mb-8">Privacy Policy</h1>
               
               <p className="text-muted-foreground mb-8">
-                Last updated: {new Date().toLocaleDateString()}
+                Last updated: 06/16/2025
               </p>
 
-              <h2>Information We Collect</h2>
+              <h2>Information We Collect</h2><br />
               <p>
                 We collect information you provide directly to us, such as when you create an account, 
                 contact us, or use our services. This may include your name, email address, phone number, 
                 and project details.
+                
               </p>
-
-              <h2>How We Use Your Information</h2>
+<br />
+              <h2>How We Use Your Information</h2><br />
               <p>We use the information we collect to:</p>
               <ul>
                 <li>Provide and maintain our services</li>
@@ -38,8 +39,8 @@ export default function PrivacyPolicy() {
                 <li>Improve our website and services</li>
                 <li>Comply with legal obligations</li>
               </ul>
-
-              <h2>Information Sharing</h2>
+<br />
+              <h2>Information Sharing</h2><br />
               <p>
                 We do not sell, trade, or otherwise transfer your personal information to third parties 
                 without your consent, except as described in this policy. We may share your information:
@@ -49,8 +50,8 @@ export default function PrivacyPolicy() {
                 <li>When required by law or to protect our rights</li>
                 <li>In connection with a business transfer or merger</li>
               </ul>
-
-              <h2>Data Security</h2>
+<br />
+              <h2>Data Security</h2><br />
               <p>
                 We implement appropriate security measures to protect your personal information against 
                 unauthorized access, alteration, disclosure, or destruction.
@@ -61,8 +62,8 @@ export default function PrivacyPolicy() {
                 We use cookies and similar tracking technologies to enhance your experience on our website. 
                 You can control cookie settings through your browser preferences.
               </p>
-
-              <h2>Your Rights</h2>
+<br />
+              <h2>Your Rights</h2><br />
               <p>You have the right to:</p>
               <ul>
                 <li>Access your personal information</li>
@@ -70,14 +71,14 @@ export default function PrivacyPolicy() {
                 <li>Request deletion of your information</li>
                 <li>Opt-out of marketing communications</li>
               </ul>
-
-              <h2>Contact Us</h2>
+<br />
+              <h2>Contact Us</h2><br />
               <p>
                 If you have any questions about this Privacy Policy, please contact us at:
                 <br />
-                Email: privacy@webdevstudio.com
+                Email: info@softechguru.com
                 <br />
-                Phone: +1 (555) 123-4567
+                Phone: +(254) 701-443-181
               </p>
             </div>
           </div>

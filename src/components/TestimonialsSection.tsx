@@ -15,27 +15,35 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Sophia Martinez",
-    location: "New York, USA",
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=faces",
-    content: "My family and I had the most wonderful stay at MareSereno. The apartment was immaculate, with breathtaking sea views. The staff went above and beyond to make our vacation special.",
+    name: "EscrowPay Africa",
+    location: "Nairobi, Kenya",
+    avatar: "/assets/images/escrowpayafricalinkedin_logo.jpeg",
+    content: "Brian didn’t just build us a website, he created an online experience that perfectly reflects our brand. From smooth animations to mobile responsiveness, every detail was spot on. He listened carefully to what we needed, delivered ahead of schedule, and even offered valuable SEO advice. We've seen a 60% increase in traffic since launching!",
     rating: 5
   },
-  {
+    {
     id: 2,
-    name: "Marco Rossi",
-    location: "Rome, Italy",
-    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=faces",
-    content: "Absolutely perfect location, steps away from the beach. The apartment had everything we needed and more. The modern amenities combined with the traditional coastal charm created a truly magical experience.",
+    name: "Kenya Virtual Workers",
+    location: "Nairobi, Kenya",
+    avatar: "/assets/images/kvw.jpeg",
+    content: "Bringing Brian on as our senior web developer was one of the best decisions we've made. He not only overhauled our legacy codebase but also introduced scalable architecture and modern frameworks that drastically improved performance. His mentorship to junior devs and ability to translate complex needs into elegant solutions set a new standard for our team. Our entire backend runs smoother, faster, and more securely because of his expertise.",
     rating: 5
   },
   {
     id: 3,
-    name: "Emma Johnson",
-    location: "London, UK",
-    avatar: "https://images.unsplash.com/photo-1569913486515-b74bf7751574?w=150&h=150&fit=crop&crop=faces",
-    content: "We spent a wonderful week at this beachfront paradise. The sunrise views from our terrace were worth the trip alone. Exceptionally clean and beautifully designed spaces.",
-    rating: 4
+    name: "Robert",
+    location: "Nairobi, Kenya",
+    avatar: "/assets/images/profileholder.jpg",
+    content: "Brian captured our wedding like a dream. The footage was cinematic, the editing was flawless, and the final video brought everyone to tears — in the best way. He was professional, kind, and invisible in the best way during the event. We’ll treasure our wedding film for a lifetime!",
+    rating: 5
+  },
+  {
+    id: 4,
+    name: "Duratek ICT & Circuits LTD",
+    location: "Nairobi, Kenya",
+    avatar: "/assets/images/profileholder.jpg",
+    content: "Working with Brian on our rebranding campaign was a game changer. His design work was fresh, strategic, and deeply aligned with our message. From logos to social media kits, everything looked polished and professional. Our audience now recognizes us instantly, and engagement on our platforms has doubled!",
+    rating: 5
   },
 ];
 

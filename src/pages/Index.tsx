@@ -93,8 +93,8 @@ export default function Index() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-border/50">
                 {[
                   { number: "50+", label: "Projects Completed" },
-                  { number: "30+", label: "Happy Clients" },
-                  { number: "5", label: "Years Experience" },
+                  { number: "24+", label: "Happy Clients" },
+                  { number: "3+", label: "Years Experience" },
                   { number: "24/7", label: "Support Available" }
                 ].map((stat, index) => (
                   <div key={index} className={`text-center animate-scale-in animate-stagger-${index + 1}`}>

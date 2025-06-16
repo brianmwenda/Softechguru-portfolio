@@ -114,8 +114,8 @@ Please contact me to discuss this project further.`;
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">{t.contact.phone}</h3>
-                      <p className="text-muted-foreground">+1 (555) 123-4567</p>
-                      <p className="text-muted-foreground">+1 (555) 987-6543 (Support)</p>
+                      <p className="text-muted-foreground">+(254) 701-443-181</p>
+                     
                     </div>
                   </div>
                   
@@ -125,8 +125,8 @@ Please contact me to discuss this project further.`;
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">{t.contact.email}</h3>
-                      <p className="text-muted-foreground">info@webdevstudio.com</p>
-                      <p className="text-muted-foreground">projects@webdevstudio.com</p>
+                      <p className="text-muted-foreground">info@softechguru.com</p>
+                  
                     </div>
                   </div>
                   

@@ -12,8 +12,8 @@ const blogPosts = [
     id: "1",
     title: "The Future of Web Development: Trends to Watch in 2024",
     excerpt: "Explore the latest trends shaping the web development landscape, from AI integration to progressive web apps and serverless architecture.",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop",
-    date: "March 15, 2024",
+    image: "/assets/images/website.jpg",
+    date: "June 09, 2025",
     readTime: "5 min read",
     category: "Web Development"
   },
@@ -21,8 +21,8 @@ const blogPosts = [
     id: "2",
     title: "UI/UX Design Principles That Convert Visitors to Customers",
     excerpt: "Learn how strategic design decisions can significantly impact your conversion rates and user engagement through proven principles.",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop",
-    date: "March 10, 2024",
+    image: "/assets/images/principles.jpg",
+    date: "June 12, 2025",
     readTime: "4 min read",
     category: "Design"
   },
@@ -30,8 +30,8 @@ const blogPosts = [
     id: "3",
     title: "Professional Photography Tips for Your Business Brand",
     excerpt: "Discover essential photography techniques to elevate your brand's visual storytelling and create compelling market presence.",
-    image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=600&h=400&fit=crop",
-    date: "March 5, 2024",
+    image: "/assets/images/photo.jpg",
+    date: "June 14, 2025",
     readTime: "6 min read",
     category: "Photography"
   },
@@ -39,8 +39,8 @@ const blogPosts = [
     id: "4",
     title: "Video Marketing Strategies That Drive Engagement",
     excerpt: "Unlock the power of video marketing with proven strategies that capture attention and drive meaningful engagement with your audience.",
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=600&h=400&fit=crop",
-    date: "February 28, 2024",
+    image: "/assets/images/videomarket.jpg",
+    date: "June 15, 2025",
     readTime: "7 min read",
     category: "Videography"
   },
@@ -48,8 +48,8 @@ const blogPosts = [
     id: "5",
     title: "Building Responsive Websites: A Complete Guide",
     excerpt: "Master the art of responsive web design with practical tips and techniques for creating websites that work perfectly on all devices.",
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop",
-    date: "February 20, 2024",
+    image: "/assets/images/webdesign.jpg",
+    date:  "June 16, 2025",
     readTime: "8 min read",
     category: "Web Development"
   },
@@ -57,8 +57,8 @@ const blogPosts = [
     id: "6",
     title: "Color Psychology in Web Design",
     excerpt: "Understand how colors influence user behavior and learn to choose the perfect color palette for your brand and website.",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop",
-    date: "February 15, 2024",
+    image: "/assets/images/colortheory.jpg",
+    date: "June 17, 2025",
     readTime: "5 min read",
     category: "Design"
   }

@@ -43,7 +43,8 @@ export default function Navbar() {
       <nav className="container flex justify-between items-center">
         <div className="flex items-center space-x-2">
           <Link to="/" className="text-xl font-bold">
-            WebDev Studio
+            {/* <img src="/assets/images/logo.png" alt="" width="50px"/> */}
+            SoftechGuru
           </Link>
         </div>
 

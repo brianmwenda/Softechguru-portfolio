@@ -9,8 +9,8 @@ const blogPosts = [
     id: "1",
     title: "The Future of Web Development: Trends to Watch in 2024",
     excerpt: "Explore the latest trends shaping the web development landscape, from AI integration to progressive web apps.",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop",
-    date: "March 15, 2024",
+    image: "/assets/images/website.jpg",
+    date: "June 09, 2025",
     readTime: "5 min read",
     category: "Web Development"
   },
@@ -18,8 +18,8 @@ const blogPosts = [
     id: "2",
     title: "UI/UX Design Principles That Convert Visitors to Customers",
     excerpt: "Learn how strategic design decisions can significantly impact your conversion rates and user engagement.",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop",
-    date: "March 10, 2024",
+    image: "/assets/images/principles.jpg",
+    date: "June 12, 2025",
     readTime: "4 min read",
     category: "Design"
   },
@@ -27,8 +27,8 @@ const blogPosts = [
     id: "3",
     title: "Professional Photography Tips for Your Business Brand",
     excerpt: "Discover essential photography techniques to elevate your brand's visual storytelling and market presence.",
-    image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=600&h=400&fit=crop",
-    date: "March 5, 2024",
+    image: "/assets/images/photo.jpg",
+    date: "June 14, 2025",
     readTime: "6 min read",
     category: "Photography"
   }
