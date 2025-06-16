@@ -37,8 +37,8 @@ export default function Navbar() {
     <header className={cn(
       "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
       scrolled 
-        ? "bg-white/90 dark:bg-card/90 backdrop-blur-lg py-3 shadow-md" 
-        : "bg-white/90 dark:bg-card/90 backdrop-blur-lg py-5"
+        ? "bg-white dark:bg-card backdrop-blur-lg py-3 shadow-md" 
+        : "bg-white dark:bg-card backdrop-blur-lg py-5"
     )}>
       <nav className="container flex justify-between items-center">
         <div className="flex items-center space-x-2">
@@ -89,11 +89,11 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div className={cn(
-        "fixed inset-0 z-40 bg-background/95 backdrop-blur-sm md:hidden transition-opacity duration-300",
+        "fixed inset-0 z-40 bg-white dark:bg-background md:hidden transition-opacity duration-300",
         mobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
       )}>
         <div className={cn(
-          "fixed inset-y-0 right-0 w-3/4 max-w-sm bg-background shadow-xl p-6 transition-transform duration-300 ease-in-out border-l",
+          "fixed inset-y-0 right-0 w-3/4 max-w-sm bg-white dark:bg-background shadow-xl p-6 transition-transform duration-300 ease-in-out border-l",
           mobileMenuOpen ? "translate-x-0" : "translate-x-full"
         )}>
           <div className="flex flex-col h-full justify-between">
