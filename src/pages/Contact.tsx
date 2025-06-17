@@ -125,7 +125,7 @@ Please contact me to discuss this project further.`;
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">{t.contact.email}</h3>
-                      <p className="text-muted-foreground">info@softechguru.com</p>
+                      <p className="text-muted-foreground">softechguruservices@gmail.com</p>
                   
                     </div>
                   </div>

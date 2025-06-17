@@ -36,7 +36,7 @@ export default function Footer() {
           <div className="animate-fade-in [animation-delay:100ms]">
             <h4 className="text-lg font-bold mb-4">
               <img 
-                src={isDark ? "/assets/images/logo2.png" : "/assets/images/logo.png"} 
+                src={isDark ? "/assets/images/logo.png" : "/assets/images/logo2.png"} 
                 alt="Softech Guru Logo" 
                 width="150px"
               />
@@ -93,7 +93,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center">
                 <Mail className="w-4 h-4 mr-2 text-primary" />
-                <span className="text-muted-foreground">info@softechguru.com</span>
+                <span className="text-muted-foreground">softechguruservices@gmail.com</span>
               </li>
               <li className="flex items-center">
                 <MapPin className="w-4 h-4 mr-2 text-primary" />
@@ -101,7 +101,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center">
                 <Globe className="w-4 h-4 mr-2 text-primary" />
-                <span className="text-muted-foreground">www.softechguru.com</span>
+                <span className="text-muted-foreground">www.softechguru.co.ke</span>
               </li>
             </ul>
           </div>
@@ -130,7 +130,7 @@ export default function Footer() {
         
         {/* Bottom Bar */}
         <div className="border-t border-border pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground">
-          <p>&copy; {currentYear} Softechguru. {t.footer.allRights}</p>
+          <p>&copy; {currentYear} SoftechGuru. {t.footer.allRights}</p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             <Link to="/privacy-policy" className="hover:text-primary transition-colors">
               {t.footer.privacyPolicy}
