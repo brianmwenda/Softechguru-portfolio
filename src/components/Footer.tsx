@@ -2,10 +2,31 @@
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Twitter, Mail, Phone, MapPin, Clock, Globe } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useEffect, useState } from "react";
 
 export default function Footer() {
   const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    // Check initial theme
+    const checkTheme = () => {
+      const isDarkMode = document.documentElement.classList.contains("dark");
+      setIsDark(isDarkMode);
+    };
+
+    checkTheme();
+
+    // Listen for theme changes
+    const observer = new MutationObserver(checkTheme);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+
+    return () => observer.disconnect();
+  }, []);
   
   return (
     <footer className="bg-card text-card-foreground pt-12 pb-6 border-t">
@@ -13,7 +34,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div className="animate-fade-in [animation-delay:100ms]">
-            <h4 className="text-lg font-bold mb-4"><img src="/assets/images/logo2.png" alt="" width="150px"/></h4>
+            <h4 className="text-lg font-bold mb-4">
+              <img 
+                src={isDark ? "/assets/images/logo2.png" : "/assets/images/logo.png"} 
+                alt="Softech Guru Logo" 
+                width="150px"
+              />
+            </h4>
             <p className="text-muted-foreground text-sm mb-4">
               {t.footer.description}
             </p>
