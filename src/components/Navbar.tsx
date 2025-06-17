@@ -108,7 +108,7 @@ export default function Navbar() {
                   <X className="h-6 w-6" />
                 </Button>
               </div>
-              <ul className="space-y-6">
+              <ul className="space-y-6 ">
                 {navLinks.map(link => (
                   <li key={link.name}>
                     <Link 
