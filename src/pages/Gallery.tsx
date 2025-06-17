@@ -6,7 +6,7 @@ import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-// Sample gallery images
+// Sample gallery images with logos section
 const galleryImages = [
   {
     id: 1,
@@ -53,8 +53,8 @@ const galleryImages = [
   {
     id: 8,
     src: "/public/assets/images/portfolio/CLEM GFX LOGO-01.png",
-    alt: "Logo design",
-    category: "design"
+    alt: "Clem GFX Logo",
+    category: "logos"
   },
   {
     id: 9,
@@ -80,25 +80,25 @@ const galleryImages = [
     alt: "Event photography",
     category: "photography"
   },
-    {
+  {
     id: 13,
     src: "/public/assets/images/portfolio/wedding2.jpg",
     alt: "Wedding photography",
     category: "photography"
   },
-   {
+  {
     id: 14,
     src: "/public/assets/images/portfolio/wedding3.jpg",
     alt: "Wedding photography",
     category: "photography"
   },
-   {
+  {
     id: 15,
     src: "/public/assets/images/portfolio/wedding4.jpg",
     alt: "Wedding photography",
     category: "photography"
   },
-   {
+  {
     id: 16,
     src: "/public/assets/images/portfolio/uiux.jpg",
     alt: "UI/UX Design",
@@ -110,76 +110,76 @@ const galleryImages = [
     alt: "Mobile app design",
     category: "websites"
   },
-   {
+  {
     id: 18,
     src: "/public/assets/images/portfolio/mobile3.png",
     alt: "Mobile app design",
     category: "websites"
   }, 
-     {
+  {
     id: 19,
     src: "/public/assets/images/portfolio/country night poster.jpg",
-    alt: "Poster design",
+    alt: "Country Night Poster",
     category: "design"
   }, 
-     {
+  {
     id: 20,
     src: "/public/assets/images/portfolio/kavini poster-01.jpg",
-    alt: "Poster design",
+    alt: "Kavini Poster",
     category: "design"
   }, 
-     {
+  {
     id: 21,
     src: "/public/assets/images/portfolio/KHB MEAT UP.jpg",
-    alt: "Poster design",
+    alt: "KHB Meet Up Poster",
     category: "design"
   }, 
-     {
+  {
     id: 22,
     src: "/public/assets/images/portfolio/MAKUENI MBUZI RIDE.jpg",
-    alt: "Poster design",
+    alt: "Makueni Mbuzi Ride Poster",
     category: "design"
   }, 
-   {
+  {
     id: 23,
     src: "/public/assets/images/portfolio/MASHUJAA.jpg",
-    alt: "Poster design",
+    alt: "Mashujaa Poster",
     category: "design"
   },
-   {
+  {
     id: 24,
     src: "/public/assets/images/portfolio/tcr OPEN NOW.png",
-    alt: "Poster design",
+    alt: "TCR Open Now Poster",
     category: "design"
   },
-    {
+  {
     id: 25,
     src: "/public/assets/images/portfolio/CURRENT CRAFTERS LOGO-01.png",
-    alt: "Poster design",
-    category: "design"
+    alt: "Current Crafters Logo",
+    category: "logos"
   },
   {
     id: 26,
     src: "/public/assets/images/portfolio/GIGI PIXELS 2-01.png",
-    alt: "Poster design",
-    category: "design"
+    alt: "Gigi Pixels Logo",
+    category: "logos"
   },
   {
     id: 27,
     src: "/public/assets/images/portfolio/KAVINI KITCHEN LOGO FIN-01.png",
-    alt: "Poster design",
-    category: "design"
+    alt: "Kavini Kitchen Logo",
+    category: "logos"
   },
   {
     id: 28,
     src: "/public/assets/images/portfolio/mock u 2-01.png",
-    alt: "Poster design",
+    alt: "Mock Up Design",
     category: "design"
   },
   {
     id: 29,
     src: "/public/assets/images/portfolio/wireframe1.png",
-    alt: "Website Design",
+    alt: "Website Wireframe",
     category: "websites"
   }
 ];
@@ -249,6 +249,8 @@ export default function Gallery() {
         return t.gallery.webApps;
       case "design":
         return t.gallery.design;
+      case "logos":
+        return "Logos";
       case "photography":
         return "Photography";
       case "video":
@@ -287,7 +289,7 @@ export default function Gallery() {
         <section className="py-8">
           <div className="container">
             <div className="flex flex-wrap justify-center gap-2 mb-8 animate-fade-in">
-              {["all", "websites", "design", "photography", "video"].map((category) => (
+              {["all", "websites", "logos", "design", "photography", "video"].map((category) => (
                 <button
                   key={category}
                   onClick={() => filterGallery(category)}
@@ -308,14 +310,20 @@ export default function Gallery() {
               {filteredImages.map((image, index) => (
                 <div 
                   key={image.id} 
-                  className="relative overflow-hidden rounded-xl aspect-[4/3] cursor-pointer group animate-fade-in"
+                  className={cn(
+                    "relative overflow-hidden rounded-xl cursor-pointer group animate-fade-in",
+                    image.category === "logos" ? "aspect-square bg-white p-4" : "aspect-[4/3]"
+                  )}
                   style={{ animationDelay: `${index * 50}ms` }}
                   onClick={() => setSelectedImage(image.id)}
                 >
                   <img 
                     src={image.src} 
                     alt={image.alt}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className={cn(
+                      "w-full h-full transition-transform duration-700 group-hover:scale-110",
+                      image.category === "logos" ? "object-contain" : "object-cover"
+                    )}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                     <p className="text-white">{image.alt}</p>
