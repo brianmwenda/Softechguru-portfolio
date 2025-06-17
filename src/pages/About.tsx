@@ -21,7 +21,7 @@ const services = [
   },
   {
     icon: <Palette className="h-8 w-8 text-primary" />,
-    title: "UI/UX Design",
+    title: "Graphic Design",
     description: "Beautiful and intuitive interfaces that provide exceptional user experiences."
   },
   {

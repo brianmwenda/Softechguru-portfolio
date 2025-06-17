@@ -187,7 +187,7 @@ export default function Apartments() {
                         </div>
                       </div>
                       <Button asChild className="w-full">
-                        <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">
+                        <a href="https://wa.me/254701443181" target="_blank" rel="noopener noreferrer">
                           Get Quote
                         </a>
                       </Button>

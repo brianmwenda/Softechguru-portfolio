@@ -75,7 +75,7 @@ export default function ServiceCard({ service }: { service: ServiceProps }) {
             )}
           </div>
           <Button asChild className="btn-primary">
-            <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/254701443181" target="_blank" rel="noopener noreferrer">
               Get Quote
             </a>
           </Button>

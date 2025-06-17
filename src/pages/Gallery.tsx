@@ -10,31 +10,31 @@ import { useLanguage } from "@/contexts/LanguageContext";
 const galleryImages = [
   {
     id: 1,
-    src: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop",
+    src: "/public/assets/images/portfolio/student4.png",
     alt: "Website development",
     category: "websites"
   },
   {
     id: 2,
-    src: "https://images.unsplash.com/photo-1587440871875-191322ee64b0?w=800&h=600&fit=crop",
-    alt: "UI/UX Design",
-    category: "design"
+    src: "/public/assets/images/portfolio/wireframe.png",
+    alt: "Website Design",
+    category: "websites"
   },
   {
     id: 3,
-    src: "https://images.unsplash.com/photo-1606857521015-7f9fcf423740?w=800&h=600&fit=crop",
+    src: "/public/assets/images/portfolio/product.jpg",
     alt: "Product photography",
     category: "photography"
   },
   {
     id: 4,
-    src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+    src: "/public/assets/images/portfolio/web.png",
     alt: "E-commerce platform",
     category: "websites"
   },
   {
     id: 5,
-    src: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=800&h=600&fit=crop",
+    src: "/public/assets/images/portfolio/poster.jpg",
     alt: "Brand design",
     category: "design"
   },
@@ -46,19 +46,19 @@ const galleryImages = [
   },
   {
     id: 7,
-    src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop",
+    src: "/public/assets/images/portfolio/mobile.png",
     alt: "Mobile app design",
-    category: "design"
-  },
-  {
-    id: 8,
-    src: "https://images.unsplash.com/photo-1486312338219-ce68e2c6b81d?w=800&h=600&fit=crop",
-    alt: "Web application",
     category: "websites"
   },
   {
+    id: 8,
+    src: "/public/assets/images/portfolio/CLEM GFX LOGO-01.png",
+    alt: "Logo design",
+    category: "design"
+  },
+  {
     id: 9,
-    src: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&h=600&fit=crop",
+    src: "/public/assets/images/portfolio/wedding.jpg",
     alt: "Professional headshots",
     category: "photography"
   },
@@ -70,16 +70,118 @@ const galleryImages = [
   },
   {
     id: 11,
-    src: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop",
-    alt: "Dashboard design",
-    category: "design"
+    src: "/public/assets/images/portfolio/wedding5.jpg",
+    alt: "Wedding Photography",
+    category: "photography"
   },
   {
     id: 12,
-    src: "https://images.unsplash.com/photo-1504270997636-07ddfbd48945?w=800&h=600&fit=crop",
+    src: "/public/assets/images/portfolio/wedding1.jpg",
     alt: "Event photography",
     category: "photography"
   },
+    {
+    id: 13,
+    src: "/public/assets/images/portfolio/wedding2.jpg",
+    alt: "Wedding photography",
+    category: "photography"
+  },
+   {
+    id: 14,
+    src: "/public/assets/images/portfolio/wedding3.jpg",
+    alt: "Wedding photography",
+    category: "photography"
+  },
+   {
+    id: 15,
+    src: "/public/assets/images/portfolio/wedding4.jpg",
+    alt: "Wedding photography",
+    category: "photography"
+  },
+   {
+    id: 16,
+    src: "/public/assets/images/portfolio/uiux.jpg",
+    alt: "UI/UX Design",
+    category: "websites"
+  },
+  {
+    id: 17,
+    src: "/public/assets/images/portfolio/mobile1.png",
+    alt: "Mobile app design",
+    category: "websites"
+  },
+   {
+    id: 18,
+    src: "/public/assets/images/portfolio/mobile3.png",
+    alt: "Mobile app design",
+    category: "websites"
+  }, 
+     {
+    id: 19,
+    src: "/public/assets/images/portfolio/country night poster.jpg",
+    alt: "Poster design",
+    category: "design"
+  }, 
+     {
+    id: 20,
+    src: "/public/assets/images/portfolio/kavini poster-01.jpg",
+    alt: "Poster design",
+    category: "design"
+  }, 
+     {
+    id: 21,
+    src: "/public/assets/images/portfolio/KHB MEAT UP.jpg",
+    alt: "Poster design",
+    category: "design"
+  }, 
+     {
+    id: 22,
+    src: "/public/assets/images/portfolio/MAKUENI MBUZI RIDE.jpg",
+    alt: "Poster design",
+    category: "design"
+  }, 
+   {
+    id: 23,
+    src: "/public/assets/images/portfolio/MASHUJAA.jpg",
+    alt: "Poster design",
+    category: "design"
+  },
+   {
+    id: 24,
+    src: "/public/assets/images/portfolio/tcr OPEN NOW.png",
+    alt: "Poster design",
+    category: "design"
+  },
+    {
+    id: 25,
+    src: "/public/assets/images/portfolio/CURRENT CRAFTERS LOGO-01.png",
+    alt: "Poster design",
+    category: "design"
+  },
+  {
+    id: 26,
+    src: "/public/assets/images/portfolio/GIGI PIXELS 2-01.png",
+    alt: "Poster design",
+    category: "design"
+  },
+  {
+    id: 27,
+    src: "/public/assets/images/portfolio/KAVINI KITCHEN LOGO FIN-01.png",
+    alt: "Poster design",
+    category: "design"
+  },
+  {
+    id: 28,
+    src: "/public/assets/images/portfolio/mock u 2-01.png",
+    alt: "Poster design",
+    category: "design"
+  },
+  {
+    id: 29,
+    src: "/public/assets/images/portfolio/wireframe1.png",
+    alt: "Website Design",
+    category: "websites"
+  }
 ];
 
 export default function Gallery() {

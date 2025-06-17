@@ -18,7 +18,7 @@ import NotFound from "./pages/NotFound";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import { CartProvider } from "./contexts/CartContext";
 import WhatsAppButton from "./components/WhatsAppButton";
-
+import ScrollToTop from "@/components/ScrollToTop";
 // Create a react-query client
 const queryClient = new QueryClient();
 
@@ -30,6 +30,7 @@ const App = () => (
           <Toaster />
           <Sonner />
           <BrowserRouter>
+          <ScrollToTop />
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/services" element={<Apartments />} />

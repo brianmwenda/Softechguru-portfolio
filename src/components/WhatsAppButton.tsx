@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 export default function WhatsAppButton() {
   const handleWhatsAppClick = () => {
     const whatsappMessage = "Hello! I'm interested in your services. Can we discuss my project?";
-    const whatsappUrl = `https://wa.me/1234567890?text=${encodeURIComponent(whatsappMessage)}`;
+    const whatsappUrl = `https://wa.me/254701443181?text=${encodeURIComponent(whatsappMessage)}`;
     window.open(whatsappUrl, '_blank');
   };
 
