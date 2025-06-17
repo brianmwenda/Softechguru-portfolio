@@ -248,7 +248,7 @@ export default function Gallery() {
       case "websites":
         return t.gallery.webApps;
       case "design":
-        return t.gallery.design;
+        return "Graphic Design";
       case "logos":
         return "Logos";
       case "photography":
