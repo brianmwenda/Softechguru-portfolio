@@ -10,31 +10,31 @@ import { useLanguage } from "@/contexts/LanguageContext";
 const galleryImages = [
   {
     id: 1,
-    src: "/public/assets/images/portfolio/student4.png",
+    src: "/assets/images/student4.PNG",
     alt: "Website development",
     category: "websites"
   },
   {
     id: 2,
-    src: "/public/assets/images/portfolio/wireframe.png",
+    src: "/assets/images/wireframe.png",
     alt: "Website Design",
     category: "websites"
   },
   {
     id: 3,
-    src: "/public/assets/images/portfolio/product.jpg",
+    src: "/assets/images/product.jpg",
     alt: "Product photography",
     category: "photography"
   },
   {
     id: 4,
-    src: "/public/assets/images/portfolio/web.png",
+    src: "/assets/images/web.png",
     alt: "E-commerce platform",
     category: "websites"
   },
   {
     id: 5,
-    src: "/public/assets/images/portfolio/poster.jpg",
+    src: "/assets/images/poster.jpg",
     alt: "Brand design",
     category: "design"
   },
@@ -46,19 +46,19 @@ const galleryImages = [
   },
   {
     id: 7,
-    src: "/public/assets/images/portfolio/mobile.png",
+    src: "/assets/images/mobile.png",
     alt: "Mobile app design",
     category: "websites"
   },
   {
     id: 8,
-    src: "/public/assets/images/portfolio/CLEM GFX LOGO-01.png",
+    src: "/assets/images/CLEM-GFX LOGO-01.png",
     alt: "Clem GFX Logo",
     category: "logos"
   },
   {
     id: 9,
-    src: "/public/assets/images/portfolio/wedding.jpg",
+    src: "/assets/images/wedding.jpg",
     alt: "Professional headshots",
     category: "photography"
   },
@@ -70,115 +70,115 @@ const galleryImages = [
   },
   {
     id: 11,
-    src: "/public/assets/images/portfolio/wedding5.jpg",
+    src: "/assets/images/wedding5.jpg",
     alt: "Wedding Photography",
     category: "photography"
   },
   {
     id: 12,
-    src: "/public/assets/images/portfolio/wedding1.jpg",
+    src: "/assets/images/wedding1.jpg",
     alt: "Event photography",
     category: "photography"
   },
   {
     id: 13,
-    src: "/public/assets/images/portfolio/wedding2.jpg",
+    src: "/assets/images/wedding2.jpg",
     alt: "Wedding photography",
     category: "photography"
   },
   {
     id: 14,
-    src: "/public/assets/images/portfolio/wedding3.jpg",
+    src: "/assets/images/wedding3.jpg",
     alt: "Wedding photography",
     category: "photography"
   },
   {
     id: 15,
-    src: "/public/assets/images/portfolio/wedding4.jpg",
+    src: "/assets/images/wedding4.jpg",
     alt: "Wedding photography",
     category: "photography"
   },
   {
     id: 16,
-    src: "/public/assets/images/portfolio/uiux.jpg",
+    src: "/assets/images/uiux.jpg",
     alt: "UI/UX Design",
     category: "websites"
   },
   {
     id: 17,
-    src: "/public/assets/images/portfolio/mobile1.png",
+    src: "/assets/images/mobile1.png",
     alt: "Mobile app design",
     category: "websites"
   },
   {
     id: 18,
-    src: "/public/assets/images/portfolio/mobile3.png",
+    src: "/assets/images/mobile3.png",
     alt: "Mobile app design",
     category: "websites"
   }, 
   {
     id: 19,
-    src: "/public/assets/images/portfolio/country night poster.jpg",
+    src: "/assets/images/country-night-poster.jpg",
     alt: "Country Night Poster",
     category: "design"
   }, 
   {
     id: 20,
-    src: "/public/assets/images/portfolio/kavini poster-01.jpg",
+    src: "/assets/images/kavini-poster-01.jpg",
     alt: "Kavini Poster",
     category: "design"
   }, 
   {
     id: 21,
-    src: "/public/assets/images/portfolio/KHB MEAT UP.jpg",
+    src: "/assets/images/KHB-MEAT-UP.jpg",
     alt: "KHB Meet Up Poster",
     category: "design"
   }, 
   {
     id: 22,
-    src: "/public/assets/images/portfolio/MAKUENI MBUZI RIDE.jpg",
+    src: "/assets/images/MAKUENI-MBUZI-RIDE.jpg",
     alt: "Makueni Mbuzi Ride Poster",
     category: "design"
   }, 
   {
     id: 23,
-    src: "/public/assets/images/portfolio/MASHUJAA.jpg",
+    src: "/assets/images/MASHUJAA.jpg",
     alt: "Mashujaa Poster",
     category: "design"
   },
   {
     id: 24,
-    src: "/public/assets/images/portfolio/tcr OPEN NOW.png",
+    src: "/assets/images/tcr-OPEN-NOW.png",
     alt: "TCR Open Now Poster",
     category: "design"
   },
   {
     id: 25,
-    src: "/public/assets/images/portfolio/CURRENT CRAFTERS LOGO-01.png",
+    src: "/assets/images/CURRENT-CRAFTERS-LOGO-01.png",
     alt: "Current Crafters Logo",
     category: "logos"
   },
   {
     id: 26,
-    src: "/public/assets/images/portfolio/GIGI PIXELS 2-01.png",
+    src: "/assets/images/GIGI-PIXELS-2-01.png",
     alt: "Gigi Pixels Logo",
     category: "logos"
   },
   {
     id: 27,
-    src: "/public/assets/images/portfolio/KAVINI KITCHEN LOGO FIN-01.png",
+    src: "/assets/images/KAVINI-KITCHEN-LOGO-FIN-01.png",
     alt: "Kavini Kitchen Logo",
     category: "logos"
   },
   {
     id: 28,
-    src: "/public/assets/images/portfolio/mock u 2-01.png",
+    src: "/assets/images/mock-u-2-01.png",
     alt: "Mock Up Design",
     category: "logos"
   },
   {
     id: 29,
-    src: "/public/assets/images/portfolio/wireframe1.png",
+    src: "/assets/images/wireframe1.png",
     alt: "Website Wireframe",
     category: "websites"
   }

@@ -31,7 +31,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
         isLoading ? 'opacity-100' : 'opacity-0'
       }`}
     >
-      <div className="flex flex-col items-center space-y-8">
+      <div className="flex flex-col items-center space-y-4">
         {/* Loading Ring */}
         <div className="relative">
           <div className="w-20 h-20 rounded-full border-4 border-muted"></div>
@@ -54,4 +54,5 @@ export default function Preloader({ onComplete }: PreloaderProps) {
       </div>
     </div>
   );
+
 }

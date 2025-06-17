@@ -91,18 +91,18 @@ export default function TestimonialsSection() {
           </p>
         </div>
         
-        <div className="relative max-w-4xl mx-auto">
-          <div className="relative h-[400px] md:h-[300px]">
+        <div className="relative max-w-4xl mx-auto overflow-hidden">
+        <div className="relative h-auto min-h-[300px] md:min-h-[250px] overflow-hidden">
             {testimonials.map((testimonial, index) => (
               <div
                 key={testimonial.id}
                 className={cn(
-                  "absolute inset-0 glass-card p-8 md:p-10 transition-all duration-500",
-                  activeIndex === index 
-                    ? "opacity-100 translate-x-0 z-10"
-                    : index < activeIndex 
-                      ? "opacity-0 -translate-x-full z-0" 
-                      : "opacity-0 translate-x-full z-0"
+                  "absolute inset-0 glass-card p-6 md:p-10 transition-all duration-500 min-w-0",
+                    activeIndex === index 
+                      ? "opacity-100 translate-x-0 z-10"
+                      : index < activeIndex 
+                        ? "opacity-0 -translate-x-full z-0" 
+                        : "opacity-0 translate-x-full z-0"
                 )}
               >
                 <div className="flex flex-col md:flex-row gap-6 h-full">
