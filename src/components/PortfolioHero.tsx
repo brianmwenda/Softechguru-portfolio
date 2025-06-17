@@ -7,17 +7,16 @@ import { ArrowDown, Linkedin, Mail, Code, Palette, Camera, Video } from "lucide-
 export default function PortfolioHero() {
   const [currentTitle, setCurrentTitle] = useState(0);
   const titles = [
-    "Full-Stack Developer",
-    "UI/UX Designer", 
-    "Part-time Photographer",
+    "Web Designer",
     "Graphic Designer",
-    "Part-time Videographer"
+    "Event Photographer", 
+    "Event Videographer"
   ];
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTitle((prev) => (prev + 1) % titles.length);
-    }, 3000);
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
@@ -83,7 +82,7 @@ export default function PortfolioHero() {
               <div className="absolute inset-0 bg-gradient-to-r from-primary to-purple-500 rounded-full animate-pulse-glow"></div>
               <div className="absolute inset-2 bg-background rounded-full overflow-hidden">
                 <img 
-                  src="/assets/images/profile.png"
+                  src="/assets/images/logo.jpg"
                   alt="Brian"
                   className="w-full h-full object-cover"
                 />
