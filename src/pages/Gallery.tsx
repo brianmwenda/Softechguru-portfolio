@@ -181,6 +181,12 @@ const galleryImages = [
     src: "/assets/images/wireframe1.png",
     alt: "Website Wireframe",
     category: "websites"
+  },
+    {
+    id: 30,
+    src: "/assets/images/grd.jpg",
+    alt: "Graduation Photography",
+    category: "photography"
   }
 ];
 
