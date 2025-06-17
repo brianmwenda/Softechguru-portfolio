@@ -174,7 +174,7 @@ const galleryImages = [
     id: 28,
     src: "/public/assets/images/portfolio/mock u 2-01.png",
     alt: "Mock Up Design",
-    category: "design"
+    category: "logos"
   },
   {
     id: 29,
