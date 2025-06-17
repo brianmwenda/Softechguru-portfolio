@@ -13,7 +13,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div className="animate-fade-in [animation-delay:100ms]">
-            <h4 className="text-lg font-bold mb-4"><img src="/assets/images/logo.png" alt="" width="150px"/></h4>
+            <h4 className="text-lg font-bold mb-4"><img src="/assets/images/logo2.png" alt="" width="150px"/></h4>
             <p className="text-muted-foreground text-sm mb-4">
               {t.footer.description}
             </p>
