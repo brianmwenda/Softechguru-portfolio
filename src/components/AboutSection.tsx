@@ -48,7 +48,7 @@ export default function AboutSection() {
           </div>
           
           <div className="relative animate-fade-in [animation-delay:300ms]">
-             <div className="aspect-[4/3] rounded-2xl overflow-hidden">
+             {/* <div className="aspect-[4/3] rounded-2xl overflow-hidden">
                   <img 
                     src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&h=600&fit=crop"
                     alt="Seaside view" 
@@ -68,7 +68,8 @@ export default function AboutSection() {
                     alt="Pool view" 
                     className="w-full h-full object-cover"
                   />
-            </div>
+            </div> */}
+            <iframe width="650" height="390" src="https://www.youtube.com/embed/DA_GjFDdOZA?si=aGXhMtjvD33JGnW1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
         </div>
       </div>
