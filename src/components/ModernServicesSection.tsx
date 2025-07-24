@@ -25,7 +25,7 @@ const services = [
     title: "Web Development",
     description: "Full-stack applications with modern frameworks",
     features: ["HTML5/CSS3", "React/Node.js", "Database Design", "API Integration"],
-    price: 200,
+    // price: 200,
     popular: true
   },
   {
@@ -34,7 +34,7 @@ const services = [
     title: "UI/UX Design",
     description: "User-centered design that converts",
     features: ["User Research", "Wireframing", "Prototyping", "Design Systems"],
-    price: 100,
+    // price: 100,
     popular: false
   },
   {
@@ -43,7 +43,7 @@ const services = [
     title: "Graphic Design",
     description: "Native and cross-platform solutions",
     features: ["Photoshop", "Adobe Premiere pro", "Illustrator", "After Effects"],
-    price: 50,
+    // price: 50,
     popular: false
   },
   {
@@ -52,7 +52,7 @@ const services = [
     title: "Photography",
     description: "Professional product and lifestyle photography",
     features: ["Wedding Photos", "Event Photos", "lifestyle Photos", "Commercial Photos"],
-    price: 100,
+    // price: 100,
     popular: false
   },
   {
@@ -61,7 +61,7 @@ const services = [
     title: "Videography",
     description: "Engaging video content for your brand",
     features: ["Promotional Videos", "Wedding videos", "Event videos", "Post-Production"],
-    price: 300,
+    // price: 300,
     popular: false
   },
   {
@@ -70,7 +70,7 @@ const services = [
     title: "Domain & Hosting",
     description: "Complete hosting and domain management",
     features: ["Domain Registration", "Cloud Hosting", "SSL Certificates", "Performance Optimization"],
-    price: 40,
+    // price: 40,
     popular: false
   }
 ];
@@ -155,7 +155,7 @@ export default function ModernServicesSection() {
                 {/* Price & CTA */}
                 <div className="space-y-3 pt-4 border-t border-border">
                   <div className="flex items-center justify-between">
-                    <span className="text-2xl font-bold gradient-text">From ${service.price}</span>
+                    {/* <span className="text-2xl font-bold gradient-text">From ${service.price}</span> */}
                   </div>
                   
                  
