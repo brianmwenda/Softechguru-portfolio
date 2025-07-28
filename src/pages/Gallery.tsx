@@ -188,6 +188,62 @@ const galleryImages = [
     alt: "Graduation Photography",
     category: "photography"
   }
+  ,
+  {
+    id: 31,
+    src: "/assets/images/3d (1).jpg",
+    alt: "Interior Design floor plans",
+    category: "3D interior Design"
+  }
+  ,
+  {
+    id: 32,
+    src: "/assets/images/3d (2).jpg",
+    alt: "Interior Design floor plans",
+    category: "3D interior Design"
+  }
+  ,
+  {
+    id: 33,
+    src: "/assets/images/3d (3).jpg",
+    alt: "Interior Design floor plans",
+    category: "3D interior Design"
+  }
+  ,
+  {
+    id: 34,
+    src: "/assets/images/3d (4).jpg",
+    alt: "Interior Design floor plans",
+    category: "3D interior Design"
+  }
+  ,
+  {
+    id: 35,
+    src: "/assets/images/3d (5).jpg",
+    alt: "Interior Design floor plans",
+    category: "3D interior Design"
+  }
+  ,
+  {
+    id: 36,
+    src: "/assets/images/3d (6).png",
+    alt: "Interior Design floor plans",
+    category: "3D interior Design"
+  }
+  ,
+  {
+    id: 37,
+    src: "/assets/images/3d (7).jpg",
+    alt: "Interior Design floor plans",
+    category: "3D interior Design"
+  }
+  ,
+  {
+    id: 38,
+    src: "/assets/images/3d (8).jpg",
+    alt: "Interior Design floor plans",
+    category: "3D interior Design"
+  }
 ];
 
 export default function Gallery() {
@@ -255,6 +311,8 @@ export default function Gallery() {
         return t.gallery.webApps;
       case "design":
         return "Graphic Design";
+      case "3D interior Design":
+        return "3D interior Design";
       case "logos":
         return "Logos";
       case "photography":
@@ -295,7 +353,7 @@ export default function Gallery() {
         <section className="py-8">
           <div className="container">
             <div className="flex flex-wrap justify-center gap-2 mb-8 animate-fade-in">
-              {["all", "websites", "logos", "design", "photography", "video"].map((category) => (
+              {["all", "websites", "logos", "design", "3D interior Design", "photography", "video"].map((category) => (
                 <button
                   key={category}
                   onClick={() => filterGallery(category)}
