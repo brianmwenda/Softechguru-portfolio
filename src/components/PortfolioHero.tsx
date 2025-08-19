@@ -81,7 +81,7 @@ export default function PortfolioHero() {
               <div className="absolute inset-0 bg-gradient-to-r from-primary to-purple-500 rounded-full animate-pulse-glow"></div>
               <div className="absolute inset-2 bg-background rounded-full overflow-hidden">
                 <img 
-                  src="/assets/images/logo.jpg"
+                  src="/assets/images/profile.png"
                   alt="Brian"
                   className="w-full h-full object-cover"
                 />

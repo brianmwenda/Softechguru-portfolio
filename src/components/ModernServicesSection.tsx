@@ -24,7 +24,7 @@ const services = [
     icon: <Code2 className="h-8 w-8" />,
     title: "Software Development",
     description: "Full-stack applications with modern frameworks",
-    features: ["HTML5/CSS3", "React/Node.js", "Database Design", "API Integration"],
+    features: ["HTML5/CSS3/Golang", "React/Node.js", "Database Design", "API Integration"],
     // price: 200,
     popular: true
   },
