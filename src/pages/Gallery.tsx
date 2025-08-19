@@ -108,13 +108,13 @@ const galleryImages = [
     id: 17,
     src: "/assets/images/mobile1.png",
     alt: "Mobile app design",
-    category: "websites"
+    category: "Mobile Application"
   },
   {
     id: 18,
-    src: "/assets/images/mobile3.png",
-    alt: "Mobile app design",
-    category: "websites"
+    src: "/assets/images/coinlist.png",
+    alt: "Flutter app",
+    category: "Mobile Application"
   }, 
   {
     id: 19,
@@ -244,6 +244,27 @@ const galleryImages = [
     alt: "Interior Design floor plans",
     category: "3D interior Design"
   }
+  ,
+  {
+    id: 39,
+    src: "/assets/images/mobile3.png",
+    alt: "Flutter app",
+    category: "Mobile Application"
+  }
+   ,
+  {
+    id: 40,
+    src: "/assets/images/coinlist1.png",
+    alt: "Flutter app",
+    category: "Mobile Application"
+  }
+   ,
+  {
+    id: 41,
+    src: "/assets/images/notetaking app.webp",
+    alt: "Flutter app",
+    category: "Mobile Application"
+  }
 ];
 
 export default function Gallery() {
@@ -309,6 +330,8 @@ export default function Gallery() {
         return t.gallery.allProjects;
       case "websites":
         return t.gallery.webApps;
+      case "Mobile Application":
+        return "Mobile Application";
       case "design":
         return "Graphic Design";
       case "3D interior Design":
@@ -353,7 +376,7 @@ export default function Gallery() {
         <section className="py-8">
           <div className="container">
             <div className="flex flex-wrap justify-center gap-2 mb-8 animate-fade-in">
-              {["all", "websites", "logos", "design", "3D interior Design", "photography", "video"].map((category) => (
+              {["all", "websites", "Mobile Application", "logos", "design", "3D interior Design", "photography", "video"].map((category) => (
                 <button
                   key={category}
                   onClick={() => filterGallery(category)}

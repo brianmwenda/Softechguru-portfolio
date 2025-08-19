@@ -17,7 +17,7 @@ import { Code, Palette, Camera, Video, Globe, Smartphone, ShoppingCart, Zap } fr
 const allServices = [
   {
     id: "1",
-    name: "Custom Website Development",
+    name: "Full-Stack Development",
     description: "Professional websites built with modern technologies like React, TypeScript, and responsive design.",
     category: "Web Development",
     icon: <Code className="h-8 w-8" />,
@@ -44,7 +44,7 @@ const allServices = [
   },
   {
     id: "4",
-    name: "Mobile-First Development",
+    name: "Mobile Development",
     description: "Websites optimized for mobile devices with progressive web app capabilities.",
     category: "Web Development", 
     icon: <Smartphone className="h-8 w-8" />,

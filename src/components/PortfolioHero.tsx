@@ -7,10 +7,9 @@ import { ArrowDown, Linkedin, Mail, Code, Palette, Camera, Video } from "lucide-
 export default function PortfolioHero() {
   const [currentTitle, setCurrentTitle] = useState(0);
   const titles = [
-    "Web Designer",
+    "Full-Stack Developer",
     "Graphic Designer",
-    "Event Photographer", 
-    "Event Videographer"
+    
   ];
 
   useEffect(() => {
