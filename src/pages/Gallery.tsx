@@ -12,7 +12,8 @@ const galleryImages = [
     id: 1,
     src: "/assets/images/student4.PNG",
     alt: "Website development",
-    category: "websites"
+    category: "websites",
+    link: "https://netlify.schoolmanagement.com"
   },
   {
     id: 2,
@@ -20,12 +21,12 @@ const galleryImages = [
     alt: "Website Design",
     category: "websites"
   },
-  {
-    id: 3,
-    src: "/assets/images/product.jpg",
-    alt: "Product photography",
-    category: "photography"
-  },
+  // {
+  //   id: 3,
+  //   src: "/assets/images/product.jpg",
+  //   alt: "Product photography",
+  //   category: "photography"
+  // },
   {
     id: 4,
     src: "/assets/images/web.png",
@@ -38,12 +39,12 @@ const galleryImages = [
     alt: "Brand design",
     category: "design"
   },
-  {
-    id: 6,
-    src: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&h=600&fit=crop",
-    alt: "Corporate video",
-    category: "video"
-  },
+  // {
+  //   id: 6,
+  //   src: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&h=600&fit=crop",
+  //   alt: "Corporate video",
+  //   category: "video"
+  // },
   {
     id: 7,
     src: "/assets/images/mobile.png",
@@ -56,48 +57,48 @@ const galleryImages = [
     alt: "Clem GFX Logo",
     category: "logos"
   },
-  {
-    id: 9,
-    src: "/assets/images/wedding.jpg",
-    alt: "Professional headshots",
-    category: "photography"
-  },
-  {
-    id: 10,
-    src: "https://images.unsplash.com/photo-1559028006-448665bd7c7f?w=800&h=600&fit=crop",
-    alt: "Marketing video",
-    category: "video"
-  },
-  {
-    id: 11,
-    src: "/assets/images/wedding5.jpg",
-    alt: "Wedding Photography",
-    category: "photography"
-  },
-  {
-    id: 12,
-    src: "/assets/images/wedding1.jpg",
-    alt: "Event photography",
-    category: "photography"
-  },
-  {
-    id: 13,
-    src: "/assets/images/wedding2.jpg",
-    alt: "Wedding photography",
-    category: "photography"
-  },
-  {
-    id: 14,
-    src: "/assets/images/wedding3.jpg",
-    alt: "Wedding photography",
-    category: "photography"
-  },
-  {
-    id: 15,
-    src: "/assets/images/wedding4.jpg",
-    alt: "Wedding photography",
-    category: "photography"
-  },
+  // {
+  //   id: 9,
+  //   src: "/assets/images/wedding.jpg",
+  //   alt: "Professional headshots",
+  //   category: "photography"
+  // },
+  // {
+  //   id: 10,
+  //   src: "https://images.unsplash.com/photo-1559028006-448665bd7c7f?w=800&h=600&fit=crop",
+  //   alt: "Marketing video",
+  //   category: "video"
+  // },
+  // {
+  //   id: 11,
+  //   src: "/assets/images/wedding5.jpg",
+  //   alt: "Wedding Photography",
+  //   category: "photography"
+  // },
+  // {
+  //   id: 12,
+  //   src: "/assets/images/wedding1.jpg",
+  //   alt: "Event photography",
+  //   category: "photography"
+  // },
+  // {
+  //   id: 13,
+  //   src: "/assets/images/wedding2.jpg",
+  //   alt: "Wedding photography",
+  //   category: "photography"
+  // },
+  // {
+  //   id: 14,
+  //   src: "/assets/images/wedding3.jpg",
+  //   alt: "Wedding photography",
+  //   category: "photography"
+  // },
+  // {
+  //   id: 15,
+  //   src: "/assets/images/wedding4.jpg",
+  //   alt: "Wedding photography",
+  //   category: "photography"
+  // },
   {
     id: 16,
     src: "/assets/images/uiux.jpg",
@@ -182,13 +183,13 @@ const galleryImages = [
     alt: "Website Wireframe",
     category: "websites"
   },
-    {
-    id: 30,
-    src: "/assets/images/grd.jpg",
-    alt: "Graduation Photography",
-    category: "photography"
-  }
-  ,
+  //   {
+  //   id: 30,
+  //   src: "/assets/images/grd.jpg",
+  //   alt: "Graduation Photography",
+  //   category: "photography"
+  // }
+  // ,
   {
     id: 31,
     src: "/assets/images/3d (1).jpg",
@@ -245,13 +246,13 @@ const galleryImages = [
     category: "3D interior Design"
   }
   ,
-  {
-    id: 39,
-    src: "/assets/images/mobile3.png",
-    alt: "Flutter app",
-    category: "Mobile Application"
-  }
-   ,
+  // {
+  //   id: 39,
+  //   src: "/assets/images/mobile3.png",
+  //   alt: "Flutter app",
+  //   category: ""
+  // }
+  //  ,
   {
     id: 40,
     src: "/assets/images/coinlist1.png",
@@ -264,6 +265,13 @@ const galleryImages = [
     src: "/assets/images/notetaking app.webp",
     alt: "Flutter app",
     category: "Mobile Application"
+  }
+   ,
+  {
+    id: 42,
+    src: "/assets/images/Go-ticketing-system.png",
+    alt: "Golang app",
+    category: "websites"
   }
 ];
 
@@ -338,10 +346,10 @@ export default function Gallery() {
         return "3D interior Design";
       case "logos":
         return "Logos";
-      case "photography":
-        return "Photography";
-      case "video":
-        return "Video";
+      // case "photography":
+      //   return "Photography";
+      // case "video":
+      //   return "Video";
       default:
         return category;
     }
@@ -376,7 +384,7 @@ export default function Gallery() {
         <section className="py-8">
           <div className="container">
             <div className="flex flex-wrap justify-center gap-2 mb-8 animate-fade-in">
-              {["all", "websites", "Mobile Application", "logos", "design", "3D interior Design", "photography", "video"].map((category) => (
+              {["all", "websites", "Mobile Application", "logos", "design", "3D interior Design"].map((category) => (
                 <button
                   key={category}
                   onClick={() => filterGallery(category)}
@@ -414,6 +422,7 @@ export default function Gallery() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                     <p className="text-white">{image.alt}</p>
+                    
                   </div>
                 </div>
               ))}
