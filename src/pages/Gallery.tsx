@@ -273,6 +273,20 @@ const galleryImages = [
     alt: "Golang app",
     category: "websites"
   }
+  ,
+  {
+    id: 43,
+    src: "/assets/images/go book management system.png",
+    alt: "Golang app",
+    category: "websites"
+  }
+  ,
+  {
+    id: 44,
+    src: "/assets/images/blog-post-feature.png",
+    alt: "Golang blogpost app",
+    category: "websites"
+  }
 ];
 
 export default function Gallery() {
