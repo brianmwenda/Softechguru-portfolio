@@ -13,63 +13,52 @@ import {
   ArrowRight,
   Check,
   ShoppingCart,
-  MessageCircle
+  MessageCircle,
+  Store,
+  FileText
 } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { School } from "lucide-react";
 
 const services = [
   {
     id: "web-dev",
-    icon: <Code2 className="h-8 w-8" />,
-    title: "Software Development",
-    description: "Full-stack applications with modern frameworks",
-    features: ["HTML5/CSS3/Golang", "React/Node.js", "Database Design", "API Integration"],
+    icon: <School className="h-8 w-8" />,
+    title: "Business Websites",
+    description: "Clean, fast, mobile-first websites that make your brand stand out.",
+    image: "https://images.unsplash.com/photo-1647973035166-2abf410c68b0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  
     // price: 200,
     popular: true
   },
   {
-    id: "ui-ux",
-    icon: <Smartphone className="h-8 w-8" />,
-    title: "UI/UX Design",
-    description: "User-centered design that converts",
-    features: ["User Research", "Wireframing", "Prototyping", "Design Systems"],
-    // price: 100,
+    id: "ecommerce",
+    icon: <Store className="h-8 w-8" />,
+    title: "E-commerce Stores",
+    description: "Online shops with secure payments (M-Pesa & cards) so you can sell 24/7.",
+    image: "https://images.unsplash.com/photo-1657812159075-7f0abd98f7b8?q=80&w=1954&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+   
+    // price: 200,
     popular: false
   },
   {
-    id: "ui-ux",
-    icon: <Palette className="h-8 w-8" />,
-    title: "Graphic Design",
-    description: "Native and cross-platform solutions",
-    features: ["Photoshop", "Adobe Premiere pro", "Illustrator", "After Effects"],
-    // price: 50,
-    popular: false
-  },
-  {
-    id: "photography",
-    icon: <Camera className="h-8 w-8" />,
-    title: "Photography",
-    description: "Professional product and lifestyle photography",
-    features: ["Wedding Photos", "Event Photos", "lifestyle Photos", "Commercial Photos"],
-    // price: 100,
-    popular: false
-  },
-  {
-    id: "videography",
-    icon: <Video className="h-8 w-8" />,
-    title: "Videography",
-    description: "Engaging video content for your brand",
-    features: ["Promotional Videos", "Wedding videos", "Event videos", "Post-Production"],
-    // price: 300,
+    id: "custom-web-apps",
+    icon: <FileText className="h-8 w-8" />,
+    title: "Custom Web Apps",
+    description: "Tailored solutions for bookings, portals, and unique business workflows.",
+    image: "https://images.unsplash.com/photo-1642132652798-ae887edb9e9d?q=80&w=2060&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    
+    // price: 200,
     popular: false
   },
   {
     id: "hosting",
     icon: <Globe className="h-8 w-8" />,
-    title: "Domain & Hosting",
-    description: "Complete hosting and domain management",
-    features: ["Domain Registration", "Cloud Hosting", "SSL Certificates", "Performance Optimization"],
+    title: "Website Care & Support",
+    description: "Ongoing updates, security, and improvements after your project is launched.",
+    image: "https://images.unsplash.com/photo-1642132652860-471b4228023e?q=80&w=2060&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    
     // price: 40,
     popular: false
   }
@@ -101,74 +90,44 @@ export default function ModernServicesSection() {
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <Card 
-              key={service.id}
-              className={`relative overflow-hidden transition-all duration-700 hover:shadow-2xl hover:-translate-y-4 group cursor-pointer animate-scale-in animate-stagger-${index % 6 + 1} ${
-                service.popular ? 'ring-2 ring-primary' : ''
-              }`}
-              onMouseEnter={() => setHoveredService(service.id)}
-              onMouseLeave={() => setHoveredService(null)}
-            >
-              {service.popular && (
-                <div className="absolute top-4 right-4 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
-                  Popular
-                </div>
-              )}
-              
-              <CardContent className="p-8 space-y-6 relative z-10">
-                {/* Icon */}
-                <div className={`inline-flex p-4 rounded-2xl transition-all duration-500 ${
-                  hoveredService === service.id 
-                    ? 'bg-primary text-primary-foreground scale-110' 
-                    : 'bg-primary/10 text-primary'
-                }`}>
-                  {service.icon}
-                </div>
-
-                {/* Content */}
-                <div className="space-y-4">
-                  <h3 className="text-2xl font-semibold">{service.title}</h3>
-                  <p className="text-muted-foreground">{service.description}</p>
-                  
-                  {/* Features */}
-                  <div className="space-y-2">
-                    {service.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center gap-2 text-sm">
-                        <Check className="h-4 w-4 text-primary" />
-                        <span>{feature}</span>
+        <section className="section">
+          <div className="container">
+            {services.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {services.map((service, index) => (
+                  <div key={service.id} className="glass-card rounded-xl overflow-hidden animate-fade-in hover:shadow-xl transition-all duration-300" style={{ animationDelay: `${(index + 1) * 100}ms` }}>
+                    <div className="aspect-video rounded-t-xl overflow-hidden">
+                      <img 
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <div className="flex items-center mb-4">
+                        <div className="p-2 rounded-lg bg-primary/10 text-primary mr-3">
+                          {service.icon}
+                        </div>
+                        {/* <span className="text-sm text-muted-foreground">{service.category}</span> */}
                       </div>
-                    ))}
+                      <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
+                      <p className="text-muted-foreground mb-4">{service.description}</p>
+                      
+                   
+                    </div>
                   </div>
-                </div>
-
-                {/* Price & CTA */}
-                <div className="space-y-3 pt-4 border-t border-border">
-                  <div className="flex items-center justify-between">
-                    {/* <span className="text-2xl font-bold gradient-text">From ${service.price}</span> */}
-                  </div>
-                  
-                 
-                </div>
-              </CardContent>
-
-              {/* Hover Background Effect */}
-              <div className={`absolute inset-0 bg-gradient-to-br from-primary/5 to-purple-500/5 transition-opacity duration-700 ${
-                hoveredService === service.id ? 'opacity-100' : 'opacity-0'
-              }`} />
-            </Card>
-          ))}
-        </div>
+                ))}
+              </div>
+            ) : null }
+          </div>
+        </section>
 
         {/* CTA Section */}
         <div className="text-center mt-16 animate-fade-in animate-stagger-5">
           <div className="inline-flex flex-col sm:flex-row gap-4">
-            <Link to="/contact"><Button className="btn-primary">
-              Request Custom Quote
-            </Button></Link>
-            <Link to="/services"><Button variant="outline" className="btn-secondary">
-              View All Services
+            
+            <Link to="/pricing"><Button variant="outline" className="btn-secondary">
+              View Pricing
             </Button></Link>
           </div>
         </div>

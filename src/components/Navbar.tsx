@@ -15,9 +15,10 @@ export default function Navbar() {
   
   const navLinks = [
     { name: t.nav.home, path: "/" },
-    { name: t.nav.services, path: "/services" },
+    { name: t.nav.services, path: "/#services" },
     { name: "Why Us", path: "/#why-us" },
-    { name: t.nav.portfolio, path: "/gallery" },
+    { name: "Portfolio", path: "/Portfolio" },
+    { name: "Pricing", path: "/pricing" },
     { name: t.nav.blog, path: "/blog" },
     { name: t.nav.faq, path: "/faq" }
   ];
@@ -43,9 +44,7 @@ export default function Navbar() {
       )}>
         <nav className="container flex justify-between items-center">
           <div className="flex items-center space-x-2">
-            <Link to="/" className="flex items-center">
-              <img src="/assets/images/logo.png" alt="SoftechGuru Logo" className="h-8 w-auto" />
-            </Link>
+            <a className="text-xl font-bold" href="/">Softech Guru</a>
           </div>
 
           {/* Desktop Navigation */}

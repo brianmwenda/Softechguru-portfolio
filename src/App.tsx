@@ -5,8 +5,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
-import Apartments from "./pages/Apartments";
-import Gallery from "./pages/Gallery";
+import Apartments from "./pages/pricing";
+import Gallery from "./pages/Portfolio";
 
 import About from "./pages/About";
 import Blog from "./pages/Blog";
@@ -21,6 +21,8 @@ import WhatsAppButton from "./components/WhatsAppButton";
 import ScrollToTop from "@/components/ScrollToTop";
 import Preloader from "./components/Preloader";
 import { usePreloader } from "./hooks/usePreloader";
+import Pricing from "./pages/pricing";
+import Portfolio from "./pages/Portfolio";
 
 // Create a react-query client
 const queryClient = new QueryClient();
@@ -36,9 +38,9 @@ const AppContent = () => {
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/services" element={<Apartments />} />
-            <Route path="/gallery" element={<Gallery />} />
-            
+            <Route path="/pricing" element={<Apartments />} />
+            <Route path="/Portfolio" element={<Portfolio />} />
+            <Route path="/pricing" element={<Pricing />} />
             <Route path="/about" element={<About />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:id" element={<BlogPost />} />

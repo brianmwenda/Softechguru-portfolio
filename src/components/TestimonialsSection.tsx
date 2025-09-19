@@ -23,15 +23,15 @@ const testimonials: Testimonial[] = [
   },
     {
     id: 2,
-    name: "Kenya Virtual Workers",
+    name: "Cimak Trading Limited",
     location: "Nairobi, Kenya",
-    avatar: "/assets/images/kvw.jpeg",
+    avatar: "/assets/images/profileholder.jpg",
     content: "Bringing Brian on as our senior web developer was one of the best decisions we've made. He not only overhauled our legacy codebase but also introduced scalable architecture and modern frameworks that drastically improved performance. His mentorship to junior devs and ability to translate complex needs into elegant solutions set a new standard for our team. Our entire backend runs smoother, faster, and more securely because of his expertise.",
     rating: 5
   },
   {
     id: 3,
-    name: "Robert",
+    name: "Samson Gitonga",
     location: "Nairobi, Kenya",
     avatar: "/assets/images/profileholder.jpg",
     content: "Brian captured our wedding like a dream. The footage was cinematic, the editing was flawless, and the final video brought everyone to tears — in the best way. He was professional, kind, and invisible in the best way during the event. We’ll treasure our wedding film for a lifetime!",
@@ -92,7 +92,7 @@ export default function TestimonialsSection() {
         </div>
         
         <div className="relative max-w-4xl mx-auto overflow-hidden">
-        <div className="relative h-auto min-h-[300px] md:min-h-[250px] overflow-hidden">
+        <div className="relative h-auto min-h-[500px] md:min-h-[250px] overflow-hidden">
             {testimonials.map((testimonial, index) => (
               <div
                 key={testimonial.id}

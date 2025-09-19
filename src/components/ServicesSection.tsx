@@ -15,18 +15,6 @@ const services = [
     title: "UI/UX Design",
     description: "Beautiful and intuitive user interfaces that provide exceptional user experiences and drive conversions.",
     features: ["User Research", "Wireframing", "Prototyping", "Design Systems"]
-  },
-  {
-    icon: <Camera className="h-8 w-8 text-primary" />,
-    title: "Photography",
-    description: "Professional photography services for your business, products, events, and brand storytelling needs.",
-    features: ["Product Photography", "Event Coverage", "Brand Photography", "Photo Editing"]
-  },
-  {
-    icon: <Video className="h-8 w-8 text-primary" />,
-    title: "Videography",
-    description: "High-quality video production services including promotional videos, corporate content, and social media clips.",
-    features: ["Promotional Videos", "Corporate Content", "Social Media", "Video Editing"]
   }
 ];
 

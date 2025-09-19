@@ -23,16 +23,6 @@ const services = [
     icon: <Palette className="h-8 w-8 text-primary" />,
     title: "Graphic Design",
     description: "Beautiful and intuitive interfaces that provide exceptional user experiences."
-  },
-  {
-    icon: <Camera className="h-8 w-8 text-primary" />,
-    title: "Photography",
-    description: "Professional photography services for your business and brand storytelling."
-  },
-  {
-    icon: <Video className="h-8 w-8 text-primary" />,
-    title: "Videography",
-    description: "High-quality video production for promotional and corporate content."
   }
 ];
 
