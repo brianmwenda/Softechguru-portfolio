@@ -36,7 +36,7 @@ export default function Footer() {
           <div className="animate-fade-in [animation-delay:100ms]">
             <h4 className="text-lg font-bold mb-4">
               <img 
-                src={isDark ? "/assets/images/logo.png" : "/assets/images/logo2.png"} 
+                src="/assets/images/logo.png" 
                 alt="Softech Guru Logo" 
                 width="150px"
               />

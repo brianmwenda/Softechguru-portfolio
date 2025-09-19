@@ -41,10 +41,10 @@ export default function Index() {
   }, []);
   
   return (
-    <div className="min-h-screen flex flex-col page-transition-enter page-transition-enter-active">
+    <div className="min-h-screen flex flex-col page-transition-enter page-transition-enter-active bg-background">
       <Navbar />
       
-      <main className="flex-1">
+      <main className="flex-1 pt-16">
         {/* Hero Section */}
         <PortfolioHero />
         

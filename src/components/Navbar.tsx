@@ -35,17 +35,11 @@ export default function Navbar() {
   
   return (
     <>
-      <header className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled 
-          ? "bg-white dark:bg-card backdrop-blur-lg py-3 shadow-md" 
-          : "bg-white dark:bg-card backdrop-blur-lg py-5"
-      )}>
+      <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-xl border-b border-border/50 shadow-lg py-4">
         <nav className="container flex justify-between items-center">
           <div className="flex items-center space-x-2">
-            <Link to="/" className="text-xl font-bold">
-              {/* <img src="/assets/images/logo.png" alt="" width="50px"/> */}
-              SoftechGuru
+            <Link to="/" className="flex items-center">
+              <img src="/assets/images/logo.png" alt="SoftechGuru Logo" className="h-8 w-auto" />
             </Link>
           </div>
 
@@ -55,28 +49,23 @@ export default function Navbar() {
               <li key={link.name} className="relative">
                 <Link 
                   to={link.path} 
-                  className="font-medium transition-colors hover:text-primary after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full"
+                  className="text-sm font-medium transition-colors text-muted-foreground hover:text-primary relative group"
                 >
-                  {link.name}
+                  <span className="relative z-10">{link.name}</span>
+                  <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
                 </Link>
               </li>
             ))}
           </ul>
 
           <div className="hidden md:flex items-center space-x-2">
-            {/* <Cart /> */}
-            <ThemeToggle />
-            <Button asChild className="btn-primary">
-              <a href="https://wa.me/254701443181" target="_blank" rel="noopener noreferrer">
-                {t.hero.talkToDeveloper}
-              </a>
+            <Button asChild className="bg-primary hover:bg-primary/90 text-white px-6">
+              <Link to="/contact">Contact Us</Link>
             </Button>
           </div>
 
           {/* Mobile Navigation */}
           <div className="md:hidden flex items-center space-x-2">
-            {/* <Cart /> */}
-            <ThemeToggle />
             <Button 
               variant="ghost" 
               size="icon" 
@@ -91,7 +80,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Dropdown */}
       <div className={cn(
-        "fixed top-0 left-0 right-0 z-40 md:hidden transition-all duration-300 ease-in-out bg-white dark:bg-card border-b border-primary/20 shadow-lg",
+        "fixed top-0 left-0 right-0 z-40 md:hidden transition-all duration-300 ease-in-out bg-background border-b border-border shadow-lg",
         mobileMenuOpen 
           ? "translate-y-[100px] opacity-100" 
           : "-translate-y-full opacity-0"
@@ -102,7 +91,7 @@ export default function Navbar() {
               <li key={link.name}>
                 <Link 
                   to={link.path} 
-                  className="block text-lg font-medium transition-colors hover:text-primary py-2" 
+                  className="block text-lg font-medium transition-colors hover:text-primary py-2 text-muted-foreground" 
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.name}
@@ -112,15 +101,13 @@ export default function Navbar() {
           </ul>
           
           <div className="mt-6 pt-6 border-t border-border">
-            <Button asChild className="w-full btn-primary">
-              <a 
-                href="https://wa.me/254701443181" 
-                target="_blank" 
-                rel="noopener noreferrer"
+            <Button asChild className="w-full bg-primary hover:bg-primary/90 text-white">
+              <Link 
+                to="/contact"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                {t.hero.talkToDeveloper}
-              </a>
+                Contact Us
+              </Link>
             </Button>
           </div>
         </div>

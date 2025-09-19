@@ -31,7 +31,7 @@ const AppContent = () => {
   return (
     <>
       {isLoading && <Preloader onComplete={handlePreloaderComplete} />}
-      <div className={`transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
+      <div className={`transition-opacity duration-500 dark ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
         <BrowserRouter>
           <ScrollToTop />
           <Routes>

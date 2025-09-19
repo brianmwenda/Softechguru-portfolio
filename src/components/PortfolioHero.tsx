@@ -5,114 +5,79 @@ import { Button } from "@/components/ui/button";
 import { ArrowDown, Linkedin, Mail, Code, Palette, Camera, Video } from "lucide-react";
 
 export default function PortfolioHero() {
-  const [currentTitle, setCurrentTitle] = useState(0);
-  const titles = [
-    "Full-Stack Developer",
-    "Graphic Designer",
-    
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTitle((prev) => (prev + 1) % titles.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const skills = [
-    { icon: <Code className="h-6 w-6" />, name: "Development", count: "50+ Projects" },
-    { icon: <Palette className="h-6 w-6" />, name: "Design", count: "30+ Designs" },
-    { icon: <Camera className="h-6 w-6" />, name: "Photography", count: "100+ Shots" },
-    { icon: <Video className="h-6 w-6" />, name: "Videography", count: "25+ Videos" }
-  ];
-
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-primary/5">
-      
-      
-      <div className="container relative z-10 pt-20">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+      <div className="container relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div className="space-y-8 animate-slide-in-left">
-            <div className="space-y-4">
-              <div className="text-lg text-muted-foreground animate-fade-in">
-                👋 Hello, I'm
-              </div>
-              <h1 className="text-5xl md:text-7xl font-bold gradient-text animate-slide-up">
-                Brian M. Ndumba
+          {/* Content */}
+          <div className="text-center lg:text-left space-y-8 animate-fade-in">
+            <div className="space-y-6">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-white">
+                Smart, reliable websites for Kenyan businesses.
               </h1>
-              <div className="text-2xl md:text-3xl text-foreground h-12 animate-slide-up animate-stagger-1">
-                <span className="typewriter">
-                  {titles[currentTitle]}
-                </span>
-              </div>
-              <p className="text-lg text-muted-foreground max-w-lg leading-relaxed animate-fade-in animate-stagger-2">
-                Crafting digital experiences that blend beautiful design with powerful functionality. 
-                I turn ideas into reality through code, creativity, and collaboration.
+              
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0">
+                Struggling with an outdated site? Losing sales because customers can't order online? From simple landing pages to full e-commerce stores, we build affordable, easy-to-use websites that help your business grow.
               </p>
             </div>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4 animate-fade-in animate-stagger-3">
-              <Link to="/gallery"><Button className="btn-primary group">
-                View My Work
-                <ArrowDown className="ml-2 h-4 w-4 transition-transform group-hover:translate-y-1" />
-              </Button></Link>
-              <Link to="/contact"><Button variant="outline" className="btn-secondary">
-                Get In Touch 
-              </Button></Link>
-            </div>
-
-            {/* Social Links */}
-            <div className="flex gap-4 animate-fade-in animate-stagger-4">
-              <Link to="https://www.linkedin.com/in/brian-mwenda-325524360"><Button variant="ghost" size="icon" className="rounded-full hover:scale-110 transition-transform">
-                <Linkedin className="h-5 w-5" />
-              </Button></Link>
-              <Link to="mailto:softechguruservices@gmail.com"><Button variant="ghost" size="icon" className="rounded-full hover:scale-110 transition-transform">
-                <Mail className="h-5 w-5" />
-              </Button></Link>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-medium">
+                <a href="https://wa.me/254701443181" target="_blank" rel="noopener noreferrer">
+                  <Mail className="mr-2 h-5 w-5" />
+                  Chat on WhatsApp
+                </a>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10 px-8 py-3 rounded-lg">
+                <Link to="/contact">
+                  See Pricing
+                </Link>
+              </Button>
             </div>
           </div>
-
-          {/* Right Content - Profile & Stats */}
-          <div className="relative animate-slide-in-right">
-            {/* Profile Image */}
-            <div className="relative mx-auto w-80 h-80 mb-8">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary to-purple-500 rounded-full animate-pulse-glow"></div>
-              <div className="absolute inset-2 bg-background rounded-full overflow-hidden">
-                <img 
-                  src="/assets/images/profile.png"
-                  alt="Brian"
-                  className="w-full h-full object-cover"
-                />
+          
+          {/* Dashboard Mockup */}
+          <div className="relative animate-fade-in [animation-delay:300ms]">
+            <div className="bg-card rounded-2xl p-6 shadow-2xl border border-border">
+              <div className="flex items-center gap-2 mb-6">
+                <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
               </div>
-            </div>
-
-            {/* Skills Cards */}
-            <div className="grid grid-cols-2 gap-4">
-              {skills.map((skill, index) => (
-                <div 
-                  key={skill.name}
-                  className={`animated-card p-4 text-center animate-scale-in animate-stagger-${index + 1}`}
-                >
-                  <div className="text-primary mb-2 flex justify-center">
-                    {skill.icon}
-                  </div>
-                  <div className="font-semibold text-sm">{skill.name}</div>
-                  <div className="text-xs text-muted-foreground">{skill.count}</div>
+              <div className="space-y-6">
+                <div className="flex justify-between items-center">
+                  <h3 className="text-lg font-semibold text-white">Mini Dashboard</h3>
                 </div>
-              ))}
-              <br /><br /><br /><br />
+                <div className="grid grid-cols-3 gap-6">
+                  <div className="text-center">
+                    <div className="text-sm text-muted-foreground">Users</div>
+                    <div className="text-3xl font-bold text-white">1,302</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-sm text-muted-foreground">Sales (KES)</div>
+                    <div className="text-3xl font-bold text-white">1,185,018</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-sm text-muted-foreground">Growth</div>
+                    <div className="text-3xl font-bold text-primary">44%</div>
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <div className="text-sm text-muted-foreground">Quarterly Goal</div>
+                  <div className="w-full bg-muted rounded-full h-3">
+                    <div className="bg-primary h-3 rounded-full" style={{ width: '75%' }}></div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-50% transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse"></div>
-        </div>
+      
+      {/* Background Decorations */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
       </div>
     </section>
   );

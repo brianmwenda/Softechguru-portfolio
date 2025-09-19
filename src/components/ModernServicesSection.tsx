@@ -80,17 +80,8 @@ export default function ModernServicesSection() {
   const { addItem } = useCart();
   const [hoveredService, setHoveredService] = useState<string | null>(null);
 
-  const handleAddToCart = (service: typeof services[0]) => {
-    addItem({
-      name: service.title,
-      price: service.price,
-      category: "Service",
-      description: service.description
-    });
-  };
-
   const handleGetQuote = (service: typeof services[0]) => {
-    const whatsappMessage = `Hello! I'm interested in getting a quote for ${service.title}.\n\nService Details:\n- ${service.description}\n- Price: From $${service.price}\n\nPlease provide me with a detailed quote for this service.`;
+    const whatsappMessage = `Hello! I'm interested in getting a quote for ${service.title}.\n\nService Details:\n- ${service.description}\n\nPlease provide me with a detailed quote for this service.`;
     const whatsappUrl = `https://wa.me/254701443181?text=${encodeURIComponent(whatsappMessage)}`;
     window.open(whatsappUrl, '_blank');
   };

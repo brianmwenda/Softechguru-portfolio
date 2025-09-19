@@ -12,21 +12,18 @@ const stats = [
 
 export default function AboutSection() {
   return (
-    <section className="section bg-card">
+    <section className="section bg-background">
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-in">
             <span className="text-sm text-primary font-medium uppercase tracking-wider">
-              About Us
+              Why Us
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6">
-              Crafting Digital Excellence Since 2021
+            <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6 text-white">
+              Smart, reliable websites for Kenyan businesses.
             </h2>
             <p className="text-muted-foreground mb-6">
-             I work with a passionate team of developers, designers, and creatives dedicated to bringing your digital vision to life. Our expertise spans across web development, UI/UX design, photography, and videography.
-            </p>
-            <p className="text-muted-foreground mb-8">
-              Every project we undertake is a journey of collaboration, innovation, and attention to detail. We believe in creating not just websites, but digital experiences that resonate with your audience and drive your business forward.
+              Struggling with an outdated site? Losing sales because customers can't order online? From simple landing pages to full e-commerce stores, we build affordable, easy-to-use websites that help your business grow.
             </p>
             
             {/* Stats */}
@@ -36,40 +33,51 @@ export default function AboutSection() {
                   <div className="flex justify-center mb-2 text-primary">
                     {stat.icon}
                   </div>
-                  <div className="text-2xl font-bold mb-1">{stat.number}</div>
+                  <div className="text-2xl font-bold mb-1 text-white">{stat.number}</div>
                   <div className="text-sm text-muted-foreground">{stat.label}</div>
                 </div>
               ))}
             </div>
             
-            <Button asChild className="btn-primary">
+            <Button asChild className="bg-primary hover:bg-primary/90 text-white px-6">
               <Link to="/contact">Get In Touch</Link>
             </Button>
           </div>
           
           <div className="relative animate-fade-in [animation-delay:300ms]">
-             {/* <div className="aspect-[4/3] rounded-2xl overflow-hidden">
-                  <img 
-                    src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&h=600&fit=crop"
-                    alt="Seaside view" 
-                    className="w-full h-full object-cover"
-                  />
+            {/* Dashboard Mockup */}
+            <div className="bg-card rounded-2xl p-6 shadow-2xl">
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+              </div>
+              <div className="space-y-4">
+                <div className="flex justify-between items-center">
+                  <h3 className="text-lg font-semibold text-white">Mini Dashboard</h3>
                 </div>
-                <div className="absolute -bottom-6 -left-6 w-2/3 rounded-2xl overflow-hidden shadow-xl">
-                  <img 
-                    src="https://images.unsplash.com/photo-1545579133-99bb5ab189bd?w=400&h=300&fit=crop"
-                    alt="Luxury apartment interior" 
-                    className="w-full h-full object-cover"
-                  />
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="text-center">
+                    <div className="text-sm text-muted-foreground">Users</div>
+                    <div className="text-2xl font-bold text-white">1,302</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-sm text-muted-foreground">Sales (KES)</div>
+                    <div className="text-2xl font-bold text-white">1,185,018</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-sm text-muted-foreground">Growth</div>
+                    <div className="text-2xl font-bold text-primary">44%</div>
+                  </div>
                 </div>
-                <div className="absolute -top-6 -right-6 w-1/2 rounded-2xl overflow-hidden shadow-xl">
-                  <img 
-                    src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=400&h=300&fit=crop"
-                    alt="Pool view" 
-                    className="w-full h-full object-cover"
-                  />
-            </div> */}
-            <iframe width="100%" height="390" src="https://www.youtube.com/embed/DA_GjFDdOZA?si=aGXhMtjvD33JGnW1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div className="space-y-2">
+                  <div className="text-sm text-muted-foreground">Quarterly Goal</div>
+                  <div className="w-full bg-muted rounded-full h-2">
+                    <div className="bg-primary h-2 rounded-full" style={{ width: '75%' }}></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
