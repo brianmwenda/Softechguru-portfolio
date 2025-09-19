@@ -1,5 +1,5 @@
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PortfolioHero from "@/components/PortfolioHero";
@@ -7,6 +7,7 @@ import ModernServicesSection from "@/components/ModernServicesSection";
 import AboutSection from "@/components/AboutSection";
 import BlogSection from "@/components/BlogSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import ContactForm from "@/components/ContactForm";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -68,46 +69,70 @@ export default function Index() {
           <BlogSection />
         </div>
         
-        {/* CTA Section */}
-        <section className="relative section bg-gradient-to-r from-primary/10 via-purple-500/10 to-pink-500/10 scroll-animate">
+        {/* Contact Section */}
+        <section id="contact" className="relative section scroll-animate">
           <div className="container">
-            <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
-              <h2 className="text-4xl md:text-5xl font-bold gradient-text">
+            <div className="max-w-4xl mx-auto text-center space-y-8 mb-16 animate-fade-in">
+              <h2 className="text-4xl md:text-5xl font-bold text-white">
                 Ready to Start Your Project?
               </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 Let's collaborate to bring your vision to life. From initial concept 
-                to final deployment, I'll guide you through every step.
+                to final deployment, we'll guide you through every step.
               </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild className="btn-primary animate-pulse-glow">
-                  <Link to="/contact">Start Your Project</Link>
-                </Button>
-                <Button asChild variant="outline" className="btn-secondary">
-                  <Link to="/gallery">View Portfolio</Link>
-                </Button>
-              </div>
-              
-              {/* Stats */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-border/50">
-                {[
-                  { number: "50+", label: "Projects Completed" },
-                  { number: "24+", label: "Happy Clients" },
-                  { number: "3+", label: "Years Experience" },
-                  { number: "24/7", label: "Support Available" }
-                ].map((stat, index) => (
-                  <div key={index} className={`text-center animate-scale-in animate-stagger-${index + 1}`}>
-                    <div className="text-3xl font-bold gradient-text">{stat.number}</div>
-                    <div className="text-sm text-muted-foreground">{stat.label}</div>
+            </div>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              {/* Contact Information */}
+              <div className="animate-fade-in [animation-delay:100ms]">
+                <h3 className="text-2xl font-bold mb-6 text-white">Get In Touch</h3>
+                
+                <div className="glass-card p-6 space-y-6">
+                  <div className="flex items-start">
+                    <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+                      <svg className="h-5 w-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold mb-1 text-white">Phone</h4>
+                      <p className="text-muted-foreground">+(254) 701-443-181</p>
+                    </div>
                   </div>
-                ))}
+                  
+                  <div className="flex items-start">
+                    <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+                      <svg className="h-5 w-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold mb-1 text-white">Email</h4>
+                      <p className="text-muted-foreground">softechguruservices@gmail.com</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start">
+                    <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+                      <svg className="h-5 w-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold mb-1 text-white">Business Hours</h4>
+                      <p className="text-muted-foreground">
+                        Monday - Friday: 9AM - 6PM<br />
+                        Weekend: 10AM - 4PM
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
+              
+              {/* Contact Form */}
+              <ContactForm />
             </div>
           </div>
-          
-          {/* Background decorations */}
-          
         </section>
       </main>
       

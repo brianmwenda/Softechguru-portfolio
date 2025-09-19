@@ -1,7 +1,5 @@
 
-import { Users, Award, Clock, Heart } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Shield, Zap, Users, Award, Clock, Heart, Target, Code, Rocket } from "lucide-react";
 
 const stats = [
   { icon: <Users className="h-6 w-6" />, number: "50+", label: "Happy Clients" },
@@ -10,75 +8,85 @@ const stats = [
   { icon: <Heart className="h-6 w-6" />, number: "99%", label: "Client Satisfaction" }
 ];
 
+const whyUsCards = [
+  {
+    icon: <Shield className="h-8 w-8" />,
+    title: "Reliable & Secure",
+    description: "We build robust websites with top-notch security measures and reliable hosting solutions that keep your business running 24/7."
+  },
+  {
+    icon: <Zap className="h-8 w-8" />,
+    title: "Lightning Fast",
+    description: "Our optimized code and modern technologies ensure your website loads instantly, keeping your customers engaged and improving SEO rankings."
+  },
+  {
+    icon: <Target className="h-8 w-8" />,
+    title: "Business Focused",
+    description: "Every feature we build is designed to help grow your business, from e-commerce integration to lead generation systems."
+  },
+  {
+    icon: <Code className="h-8 w-8" />,
+    title: "Modern Technology",
+    description: "We use cutting-edge technologies and frameworks to ensure your website is future-proof and easily maintainable."
+  },
+  {
+    icon: <Rocket className="h-8 w-8" />,
+    title: "Fast Delivery",
+    description: "Our streamlined development process ensures quick turnaround times without compromising on quality or functionality."
+  },
+  {
+    icon: <Users className="h-8 w-8" />,
+    title: "Dedicated Support",
+    description: "Get ongoing support and maintenance to keep your website updated, secure, and performing at its best."
+  }
+];
+
 export default function AboutSection() {
   return (
-    <section className="section bg-background">
+    <section id="why-us" className="section bg-background">
       <div className="container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="animate-fade-in">
-            <span className="text-sm text-primary font-medium uppercase tracking-wider">
-              Why Us
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6 text-white">
-              Smart, reliable websites for Kenyan businesses.
-            </h2>
-            <p className="text-muted-foreground mb-6">
-              Struggling with an outdated site? Losing sales because customers can't order online? From simple landing pages to full e-commerce stores, we build affordable, easy-to-use websites that help your business grow.
-            </p>
-            
-            {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="flex justify-center mb-2 text-primary">
-                    {stat.icon}
-                  </div>
-                  <div className="text-2xl font-bold mb-1 text-white">{stat.number}</div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
-                </div>
-              ))}
-            </div>
-            
-            <Button asChild className="bg-primary hover:bg-primary/90 text-white px-6">
-              <Link to="/contact">Get In Touch</Link>
-            </Button>
-          </div>
-          
-          <div className="relative animate-fade-in [animation-delay:300ms]">
-            {/* Dashboard Mockup */}
-            <div className="bg-card rounded-2xl p-6 shadow-2xl">
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-              </div>
-              <div className="space-y-4">
-                <div className="flex justify-between items-center">
-                  <h3 className="text-lg font-semibold text-white">Mini Dashboard</h3>
-                </div>
-                <div className="grid grid-cols-3 gap-4">
-                  <div className="text-center">
-                    <div className="text-sm text-muted-foreground">Users</div>
-                    <div className="text-2xl font-bold text-white">1,302</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-sm text-muted-foreground">Sales (KES)</div>
-                    <div className="text-2xl font-bold text-white">1,185,018</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-sm text-muted-foreground">Growth</div>
-                    <div className="text-2xl font-bold text-primary">44%</div>
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <div className="text-sm text-muted-foreground">Quarterly Goal</div>
-                  <div className="w-full bg-muted rounded-full h-2">
-                    <div className="bg-primary h-2 rounded-full" style={{ width: '75%' }}></div>
-                  </div>
+        <div className="text-center mb-16 animate-fade-in">
+          <span className="text-sm text-primary font-medium uppercase tracking-wider">
+            Why Choose Us
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6 text-white">
+            Why Kenyan Businesses Trust Us
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            We don't just build websites - we create digital solutions that help your business thrive in the competitive online marketplace.
+          </p>
+        </div>
+        
+        {/* Why Us Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {whyUsCards.map((card, index) => (
+            <div 
+              key={index} 
+              className="glass-card p-6 text-center hover:scale-105 transition-transform duration-300 animate-fade-in"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="text-primary">
+                  {card.icon}
                 </div>
               </div>
+              <h3 className="text-xl font-semibold mb-3 text-white">{card.title}</h3>
+              <p className="text-muted-foreground">{card.description}</p>
             </div>
-          </div>
+          ))}
+        </div>
+        
+        {/* Stats */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 animate-fade-in">
+          {stats.map((stat, index) => (
+            <div key={index} className="text-center">
+              <div className="flex justify-center mb-2 text-primary">
+                {stat.icon}
+              </div>
+              <div className="text-2xl font-bold mb-1 text-white">{stat.number}</div>
+              <div className="text-sm text-muted-foreground">{stat.label}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

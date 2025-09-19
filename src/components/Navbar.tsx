@@ -16,10 +16,10 @@ export default function Navbar() {
   const navLinks = [
     { name: t.nav.home, path: "/" },
     { name: t.nav.services, path: "/services" },
+    { name: "Why Us", path: "/#why-us" },
     { name: t.nav.portfolio, path: "/gallery" },
     { name: t.nav.blog, path: "/blog" },
-    { name: t.nav.faq, path: "/faq" },
-    { name: t.nav.contact, path: "/contact" }
+    { name: t.nav.faq, path: "/faq" }
   ];
 
   useEffect(() => {
@@ -35,7 +35,12 @@ export default function Navbar() {
   
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-xl border-b border-border/50 shadow-lg py-4">
+      <header className={cn(
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        scrolled 
+          ? "bg-background/95 backdrop-blur-xl border-b border-border/50 shadow-lg py-2" 
+          : "bg-transparent py-4"
+      )}>
         <nav className="container flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <Link to="/" className="flex items-center">
@@ -60,7 +65,7 @@ export default function Navbar() {
 
           <div className="hidden md:flex items-center space-x-2">
             <Button asChild className="bg-primary hover:bg-primary/90 text-white px-6">
-              <Link to="/contact">Contact Us</Link>
+              <a href="/#contact">Contact Us</a>
             </Button>
           </div>
 
@@ -102,12 +107,12 @@ export default function Navbar() {
           
           <div className="mt-6 pt-6 border-t border-border">
             <Button asChild className="w-full bg-primary hover:bg-primary/90 text-white">
-              <Link 
-                to="/contact"
+              <a 
+                href="/#contact"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Contact Us
-              </Link>
+              </a>
             </Button>
           </div>
         </div>
