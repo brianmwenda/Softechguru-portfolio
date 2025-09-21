@@ -76,7 +76,7 @@ export default function ModernServicesSection() {
   };
 
   return (
-    <section className="section bg-gradient-to-b from-background to-muted/20">
+    <section className="section bg-gradient-to-b from-background to-muted/20" id="services">
       <div className="container">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in">

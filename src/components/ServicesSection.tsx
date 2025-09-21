@@ -20,7 +20,7 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="section">
+    <section className="section">
       <div className="container">
         <div className="text-center max-w-3xl mx-auto mb-12 animate-fade-in">
           <span className="text-sm text-primary font-medium uppercase tracking-wider">

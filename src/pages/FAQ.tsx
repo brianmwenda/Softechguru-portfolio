@@ -69,10 +69,10 @@ export default function FAQ() {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       
-      <main className="flex-1 pt-20">
+      <main className="flex-1">
         {/* Header Section */}
         <section className="relative py-16 bg-gradient-to-br from-background via-background to-primary/5 overflow-hidden">
-          <div className="container relative z-10">
+          <div className="container relative z-10 pt-20">
             <div className="max-w-4xl mx-auto text-center animate-fade-in">
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
                 <span className="text-primary text-sm font-medium">❓ FAQ</span>
