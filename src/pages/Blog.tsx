@@ -75,19 +75,25 @@ export default function Blog() {
       
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative py-20 bg-gradient-to-r from-sea-light to-white dark:from-sea-dark dark:to-background">
+        <section className="relative py-16 bg-gradient-to-br from-background via-background to-primary/5 overflow-hidden">
           <div className="container relative z-10 pt-20">
-            <div className="text-center max-w-3xl mx-auto">
-              <span className="text-sm text-primary font-medium uppercase tracking-wider">
-                Our Blog
-              </span>
-              <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6">
-                Latest Insights & Tips
+            <div className="max-w-4xl mx-auto text-center animate-fade-in">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
+                <span className="text-primary text-sm font-medium">📚 Blog</span>
+              </div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight">
+                Insights & <span className="text-primary">Resources</span>
               </h1>
-              <p className="text-muted-foreground">
-                Stay updated with the latest trends, tips, and insights from the world of web development, design, photography, and digital marketing.
+              <p className="text-muted-foreground text-xl mb-8 max-w-2xl mx-auto">
+                Stay updated with the latest trends, tips, and insights from the world of web development and design.
               </p>
             </div>
+          </div>
+          
+          {/* Decorative elements */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
           </div>
         </section>
         
