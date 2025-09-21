@@ -74,69 +74,89 @@ export default function Apartments() {
       
       <main className="flex-1 pt-20">
         {/* Header Section */}
-        <section className="relative py-20 bg-gradient-to-r from-sea-light to-white dark:from-sea-dark dark:to-background overflow-hidden">
+        <section className="relative py-16 bg-gradient-to-br from-background via-background to-primary/5 overflow-hidden">
           <div className="container relative z-10">
-            <div className="max-w-3xl mx-auto text-center animate-fade-in">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-                Simple, Transparent Pricing
+            <div className="max-w-4xl mx-auto text-center animate-fade-in">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
+                <span className="text-primary text-sm font-medium">💰 Pricing Plans</span>
+              </div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight">
+                Simple, Transparent <span className="text-primary">Pricing</span>
               </h1>
-              <p className="text-muted-foreground text-lg mb-6">
-                Choose a plan that works for you.
+              <p className="text-muted-foreground text-xl mb-8 max-w-2xl mx-auto">
+                Choose the perfect plan for your business needs. No hidden fees, no surprises.
               </p>
             </div>
           </div>
           
           {/* Decorative elements */}
-          <div className="absolute bottom-0 right-0 w-1/2 h-1/2 opacity-10">
-            <div className="absolute bottom-0 right-0 w-64 h-64 rounded-full bg-primary/50 blur-3xl" />
-            <div className="absolute top-10 right-40 w-48 h-48 rounded-full bg-sea-light blur-3xl" />
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
           </div>
         </section>
         
         
         
         {/* Services Grid */}
-        <section className="section">
-          <div className="container">
+        <section className="py-16 relative">
+          <div className="container relative z-10">
             {filteredServices.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
                 {filteredServices.map((service, index) => (
-                  <div key={service.id} className="glass-card rounded-xl overflow-hidden animate-fade-in hover:shadow-xl transition-all duration-300" style={{ animationDelay: `${(index + 1) * 100}ms` }}>
-                    
-                    <div className="p-6">
-                      
-                      <h3 className="text-xl font-semibold mb-3">{service.name}</h3>
-                      <p className="text-muted-foreground mb-4">{service.description}</p>
-                      <div className="flex justify-center items-center mb-4">
-                        <span className="align-super text-xs mr-2 text-muted-foreground font-medium">from</span>
-                        <span className="text-4xl font-bold text-white">{service.price.toLocaleString()}</span>
+                  <div key={service.id} className={`relative group animate-fade-in ${service.popular ? 'lg:scale-105 lg:-mt-4' : ''}`} style={{ animationDelay: `${(index + 1) * 100}ms` }}>
+                    {service.popular && (
+                      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
+                        <span className="bg-primary text-white px-4 py-1 rounded-full text-sm font-medium shadow-lg">
+                          Most Popular
+                        </span>
                       </div>
-                      <div className="mb-6">
-                        <ul className="list-none space-y-1">
+                    )}
+                    
+                    <div className={`relative bg-card/50 backdrop-blur-sm border rounded-2xl p-6 h-full transition-all duration-500 hover:shadow-2xl hover:shadow-primary/20 group-hover:-translate-y-2 ${service.popular ? 'border-primary/50 bg-primary/5' : 'border-border/50'}`}>
+                      {/* Gradient overlay for popular plan */}
+                      {service.popular && (
+                        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-2xl"></div>
+                      )}
+                      
+                      <div className="relative">
+                        <div className="text-center mb-6">
+                          <h3 className="text-2xl font-bold mb-2 text-white">{service.name}</h3>
+                          <p className="text-muted-foreground text-sm mb-4">{service.description}</p>
+                          
+                          <div className="flex items-baseline justify-center mb-1">
+                            <span className="text-sm text-muted-foreground mr-1">KES</span>
+                            <span className="text-5xl font-bold text-white">{(service.price / 1000).toFixed(0)}k</span>
+                          </div>
+                          <p className="text-xs text-muted-foreground">Starting from KES {service.price.toLocaleString()}</p>
+                        </div>
+
+                        <div className="space-y-3 mb-8">
                           {service.features.map((feature, featureIndex) => (
-                            <li key={featureIndex} className="flex items-center text-sm text-muted-foreground">
-                              <span className="mr-2 text-green-500">
-                                {/* Check mark icon */}
-                                <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
-                                  <path stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M4 8.5l3 3 5-5"/>
+                            <div key={featureIndex} className="flex items-center text-sm">
+                              <div className="w-5 h-5 rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center mr-3 flex-shrink-0">
+                                <svg width="12" height="12" fill="none" viewBox="0 0 12 12" className="text-primary">
+                                  <path stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M2.5 6.5l2 2 5-5"/>
                                 </svg>
-                              </span>
-                              {feature}
-                            </li>
+                              </div>
+                              <span className="text-muted-foreground">{feature}</span>
+                            </div>
                           ))}
-                        </ul>  </div>
-                      <Button asChild className="w-full">
-                        <a href="https://wa.me/254701443181" target="_blank" rel="noopener noreferrer">
-                          Get Quote
-                        </a>
-                      </Button>
+                        </div>
+                        
+                        <Button asChild className={`w-full rounded-xl font-medium transition-all duration-300 ${service.popular ? 'bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/30' : 'bg-card/80 hover:bg-card text-foreground border border-border hover:border-primary/50'}`}>
+                          <a href="https://wa.me/254701443181" target="_blank" rel="noopener noreferrer">
+                            Get Started
+                          </a>
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 ))}
               </div>
             ) : (
               <div className="text-center py-12 animate-fade-in">
-                <h3 className="text-xl font-semibold mb-2">No services match your filter</h3>
+                <h3 className="text-xl font-semibold mb-2 text-white">No services match your filter</h3>
                 <p className="text-muted-foreground mb-6">Try adjusting your filter criteria to see more options.</p>
                 <Button 
                   variant="outline" 
@@ -146,6 +166,17 @@ export default function Apartments() {
                 </Button>
               </div>
             )}
+            
+            {/* Trust indicators */}
+            <div className="mt-16 text-center">
+              <p className="text-muted-foreground mb-6">Trusted by businesses across Kenya</p>
+              <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
+                <div className="text-sm font-medium">🏆 50+ Happy Clients</div>
+                <div className="text-sm font-medium">⚡ 24h Response Time</div>
+                <div className="text-sm font-medium">🔒 100% Secure</div>
+                <div className="text-sm font-medium">💯 Quality Guaranteed</div>
+              </div>
+            </div>
           </div>
         </section>
       </main>

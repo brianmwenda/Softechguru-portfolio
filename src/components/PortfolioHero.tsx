@@ -5,24 +5,89 @@ import { Button } from "@/components/ui/button";
 import { ArrowDown, Linkedin, Mail, Code, Palette, Camera, Video } from "lucide-react";
 
 export default function PortfolioHero() {
+  const [users, setUsers] = useState(0);
+  const [sales, setSales] = useState(0);
+  const [growth, setGrowth] = useState(0);
+
+  useEffect(() => {
+    const animateNumbers = () => {
+      // Users counter
+      let userStart = 0;
+      const userTarget = 1302;
+      const userIncrement = userTarget / 50;
+      const userTimer = setInterval(() => {
+        userStart += userIncrement;
+        if (userStart >= userTarget) {
+          setUsers(userTarget);
+          clearInterval(userTimer);
+        } else {
+          setUsers(Math.floor(userStart));
+        }
+      }, 30);
+
+      // Sales counter
+      let salesStart = 0;
+      const salesTarget = 1185018;
+      const salesIncrement = salesTarget / 50;
+      const salesTimer = setInterval(() => {
+        salesStart += salesIncrement;
+        if (salesStart >= salesTarget) {
+          setSales(salesTarget);
+          clearInterval(salesTimer);
+        } else {
+          setSales(Math.floor(salesStart));
+        }
+      }, 30);
+
+      // Growth counter
+      let growthStart = 0;
+      const growthTarget = 44;
+      const growthIncrement = growthTarget / 50;
+      const growthTimer = setInterval(() => {
+        growthStart += growthIncrement;
+        if (growthStart >= growthTarget) {
+          setGrowth(growthTarget);
+          clearInterval(growthTimer);
+        } else {
+          setGrowth(Math.floor(growthStart));
+        }
+      }, 30);
+    };
+
+    // Start animation on mount
+    animateNumbers();
+
+    // Restart animation on scroll to top
+    const handleScroll = () => {
+      if (window.scrollY === 0) {
+        setUsers(0);
+        setSales(0);
+        setGrowth(0);
+        setTimeout(animateNumbers, 100);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
       <div className="container relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* Content */}
-          <div className="text-center lg:text-left space-y-8 animate-fade-in">
-            <div className="space-y-6">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-white">
+          <div className="text-center lg:text-left space-y-6 animate-fade-in px-4">
+            <div className="space-y-4">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
                 Smart, reliable websites for Kenyan businesses.
               </h1>
               
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0">
+              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0">
                 Struggling with an outdated site? Losing sales because customers can't order online? From simple landing pages to full e-commerce stores, we build affordable, easy-to-use websites that help your business grow.
               </p>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-medium">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg font-medium">
                 <a href="https://wa.me/254701443181" target="_blank" rel="noopener noreferrer">
                   <svg className="mr-2 h-5 w-5" viewBox="0 0 24 24" fill="none">
                     <path
@@ -37,7 +102,7 @@ export default function PortfolioHero() {
                   Chat on WhatsApp
                 </a>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10 px-8 py-3 rounded-lg">
+              <Button asChild variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10 px-6 py-3 rounded-lg">
                 <Link to="/Pricing">
                   See Pricing
                 </Link>
@@ -46,35 +111,35 @@ export default function PortfolioHero() {
           </div>
           
           {/* Dashboard Mockup */}
-          <div className="relative animate-fade-in [animation-delay:300ms]">
-            <div className="bg-card rounded-2xl p-6 shadow-2xl border border-border">
-              <div className="flex items-center gap-2 mb-6">
+          <div className="relative animate-fade-in [animation-delay:300ms] px-4">
+            <div className="bg-card rounded-2xl p-4 md:p-6 shadow-2xl border border-border">
+              <div className="flex items-center gap-2 mb-4">
                 <div className="w-3 h-3 bg-red-500 rounded-full"></div>
                 <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                 <div className="w-3 h-3 bg-green-500 rounded-full"></div>
               </div>
-              <div className="space-y-6">
+              <div className="space-y-4">
                 <div className="flex justify-between items-center">
                   <h3 className="text-lg font-semibold text-white">Mini Dashboard</h3>
                 </div>
-                <div className="grid grid-cols-3 gap-6">
-                  <div className="text-center">
-                    <div className="text-sm text-muted-foreground">Users</div>
-                    <div className="text-3xl font-bold text-white">1,302</div>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <div className="text-center p-2">
+                    <div className="text-xs md:text-sm text-muted-foreground">Users</div>
+                    <div className="text-xl md:text-2xl lg:text-3xl font-bold text-white">{users.toLocaleString()}</div>
                   </div>
-                  <div className="text-center">
-                    <div className="text-sm text-muted-foreground">Sales (KES)</div>
-                    <div className="text-3xl font-bold text-white">1,185,018</div>
+                  <div className="text-center p-2">
+                    <div className="text-xs md:text-sm text-muted-foreground">Sales (KES)</div>
+                    <div className="text-xl md:text-2xl lg:text-3xl font-bold text-white">{sales.toLocaleString()}</div>
                   </div>
-                  <div className="text-center">
-                    <div className="text-sm text-muted-foreground">Growth</div>
-                    <div className="text-3xl font-bold text-primary">44%</div>
+                  <div className="text-center p-2">
+                    <div className="text-xs md:text-sm text-muted-foreground">Growth</div>
+                    <div className="text-xl md:text-2xl lg:text-3xl font-bold text-primary">{growth}%</div>
                   </div>
                 </div>
-                <div className="space-y-3">
-                  <div className="text-sm text-muted-foreground">Quarterly Goal</div>
-                  <div className="w-full bg-muted rounded-full h-3">
-                    <div className="bg-primary h-3 rounded-full" style={{ width: '75%' }}></div>
+                <div className="space-y-2">
+                  <div className="text-xs md:text-sm text-muted-foreground">Quarterly Goal</div>
+                  <div className="w-full bg-muted rounded-full h-2 md:h-3">
+                    <div className="bg-primary h-2 md:h-3 rounded-full transition-all duration-1000" style={{ width: '75%' }}></div>
                   </div>
                 </div>
               </div>
