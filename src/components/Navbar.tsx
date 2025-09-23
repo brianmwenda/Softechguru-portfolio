@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import ThemeToggle from "./ThemeToggle";
@@ -10,6 +10,8 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Navbar() {
   const { t } = useLanguage();
+  const navigate = useNavigate();
+  const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   
@@ -26,9 +28,23 @@ export default function Navbar() {
   const handleNavClick = (path: string) => {
     if (path.startsWith('/#')) {
       const section = path.substring(2);
-      const element = document.getElementById(section);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+      
+      // If we're not on the home page, navigate there first
+      if (location.pathname !== '/') {
+        navigate('/');
+        // Wait for navigation and then scroll
+        setTimeout(() => {
+          const element = document.getElementById(section);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      } else {
+        // We're on the home page, scroll directly
+        const element = document.getElementById(section);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
       }
     }
     setMobileMenuOpen(false);
@@ -84,8 +100,11 @@ export default function Navbar() {
           </ul>
 
           <div className="hidden md:flex items-center space-x-2">
-            <Button asChild className="bg-primary hover:bg-primary/90 text-white px-6">
-              <a href="/#contact">Contact Us</a>
+            <Button 
+              onClick={() => handleNavClick('/#contact')}
+              className="bg-primary hover:bg-primary/90 text-white px-6"
+            >
+              Contact Us
             </Button>
           </div>
 
@@ -135,13 +154,11 @@ export default function Navbar() {
           </ul>
           
           <div className="mt-6 pt-6 border-t border-border">
-            <Button asChild className="w-full bg-primary hover:bg-primary/90 text-white">
-              <a 
-                href="/#contact"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Contact Us
-              </a>
+            <Button 
+              onClick={() => handleNavClick('/#contact')}
+              className="w-full bg-primary hover:bg-primary/90 text-white"
+            >
+              Contact Us
             </Button>
           </div>
         </div>
