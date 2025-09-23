@@ -45,7 +45,11 @@ export default function Index() {
     <div className="min-h-screen flex flex-col page-transition-enter page-transition-enter-active bg-background">
       <Navbar />
       
-      <main className="flex-1 pt-16">
+      <main className="flex-1">
+        {/* Add proper spacing for fixed navbar */}
+        <div className="pt-20">
+        </div>
+        
         {/* Hero Section */}
         <PortfolioHero />
         
