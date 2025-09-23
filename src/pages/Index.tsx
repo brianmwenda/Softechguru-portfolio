@@ -8,6 +8,7 @@ import AboutSection from "@/components/AboutSection";
 import BlogSection from "@/components/BlogSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactForm from "@/components/ContactForm";
+import Map from "@/components/Map";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -67,12 +68,6 @@ export default function Index() {
         <div className="scroll-animate">
           <TestimonialsSection />
         </div>
-        
-        {/* Blog Section */}
-        <div className="scroll-animate">
-          <BlogSection />
-        </div>
-        
         {/* Contact Section */}
         <section id="contact" className="relative section scroll-animate">
           <div className="container">
@@ -130,6 +125,12 @@ export default function Index() {
                       </p>
                     </div>
                   </div>
+                </div>
+                
+                {/* Map Section */}
+                <div className="animate-fade-in [animation-delay:200ms]">
+                  <h4 className="text-lg font-semibold mb-4 text-white">Find Us</h4>
+                  <Map />
                 </div>
               </div>
               

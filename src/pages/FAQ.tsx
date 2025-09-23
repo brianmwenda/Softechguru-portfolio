@@ -72,6 +72,9 @@ export default function FAQ() {
       <main className="flex-1">
         {/* Header Section */}
         <section className="relative py-16 bg-gradient-to-br from-background via-background to-primary/5 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background opacity-50"></div>
+          <div className="absolute top-10 right-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 left-10 w-24 h-24 bg-accent/10 rounded-full blur-2xl"></div>
           <div className="container relative z-10 pt-20">
             <div className="max-w-4xl mx-auto text-center animate-fade-in">
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
