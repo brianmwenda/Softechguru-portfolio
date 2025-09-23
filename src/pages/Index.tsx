@@ -42,9 +42,9 @@ export default function Index() {
   }, []);
   
   return (
-    <div className="min-h-screen flex flex-col page-transition-enter page-transition-enter-active bg-background">
+    <>
       <Navbar />
-      
+      <div className="min-h-screen flex flex-col page-transition-enter page-transition-enter-active bg-background">
       <main className="flex-1">
         {/* Add proper spacing for fixed navbar */}
         <div className="pt-20">
@@ -142,5 +142,6 @@ export default function Index() {
       
       <Footer />
     </div>
+    </>
   );
 }
