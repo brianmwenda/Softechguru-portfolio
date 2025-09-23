@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, Twitter, Mail, Phone, MapPin, Clock, Globe } from "lucide-react";
+import { Facebook, Instagram, Twitter, Mail, Phone, MapPin, Clock, Globe, Linkedin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect, useState } from "react";
 
@@ -45,18 +45,11 @@ export default function Footer() {
               {t.footer.description}
             </p>
             <div className="flex space-x-3">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors p-2 bg-muted/50 rounded-full">
-                <Facebook size={16} />
-                <span className="sr-only">Facebook</span>
+              <a href="www.linkedin.com/in/brian-mwenda-325524360" className="text-muted-foreground hover:text-primary transition-colors p-2 bg-muted/50 rounded-full">
+                <Linkedin size={16} />
+                <span className="sr-only">LinkedIn</span>
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors p-2 bg-muted/50 rounded-full">
-                <Instagram size={16} />
-                <span className="sr-only">Instagram</span>
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors p-2 bg-muted/50 rounded-full">
-                <Twitter size={16} />
-                <span className="sr-only">Twitter</span>
-              </a>
+              
             </div>
           </div>
           
@@ -65,8 +58,8 @@ export default function Footer() {
             <h4 className="text-lg font-bold mb-4">{t.footer.quickLinks}</h4>
             <ul className="space-y-2 text-sm">
               {[
-                { name: t.nav.services, path: "/services" },
-                { name: t.nav.portfolio, path: "/gallery" },
+                { name: "Home", path: "/" },
+                { name: "Portfolio", path: "/Portfolio" },
                 { name: t.nav.blog, path: "/blog" },
                 { name: t.nav.faq, path: "/faq" }
              

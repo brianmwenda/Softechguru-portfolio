@@ -128,10 +128,10 @@ export default function Index() {
                 </div>
                 
                 {/* Map Section */}
-                <div className="animate-fade-in [animation-delay:200ms]">
+                {/* <div className="animate-fade-in [animation-delay:200ms]">
                   <h4 className="text-lg font-semibold mb-4 text-white">Find Us</h4>
                   <Map />
-                </div>
+                </div> */}
               </div>
               
               {/* Contact Form */}
