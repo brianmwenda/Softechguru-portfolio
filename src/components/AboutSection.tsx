@@ -50,7 +50,7 @@ export default function AboutSection() {
             Why Choose Us
           </span>
           <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6 text-white">
-            Why Kenyan Businesses Trust Us
+            Why Businesses Trust Us
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             We don't just build websites - we create digital solutions that help your business thrive in the competitive online marketplace.

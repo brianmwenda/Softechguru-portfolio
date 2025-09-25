@@ -78,7 +78,7 @@ export default function PortfolioHero() {
           <div className="text-center lg:text-left space-y-6 animate-fade-in px-4">
             <div className="space-y-4">
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
-                Smart, reliable websites for Kenyan businesses.
+                Smart, reliable websites for all businesses.
               </h1>
               
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0">
