@@ -34,21 +34,21 @@ export default function Preloader({ onComplete }: PreloaderProps) {
       <div className="flex flex-col items-center space-y-4">
         {/* Loading Ring */}
         <div className="relative">
-          <div className="w-20 h-20 rounded-full border-4 border-muted"></div>
-          <div className="absolute top-0 left-0 w-20 h-20 rounded-full border-4 border-transparent border-t-primary animate-spin shadow-lg shadow-primary/50"></div>
-          <div className="absolute top-1 left-1 w-18 h-18 rounded-full border-2 border-transparent border-t-primary/70 animate-spin animation-delay-150 shadow-lg shadow-primary/30"></div>
-          <div className="absolute top-2 left-2 w-16 h-16 rounded-full border-2 border-transparent border-t-primary animate-spin animation-delay-300 shadow-lg shadow-primary/30"></div>
+          <div className="w-20 h-20 rounded-full border-4 border-gray-200"></div>
+          <div className="absolute top-0 left-0 w-20 h-20 rounded-full border-4 border-transparent border-t-black animate-spin shadow-lg shadow-black/50"></div>
+          <div className="absolute top-1 left-1 w-18 h-18 rounded-full border-2 border-transparent border-t-black/70 animate-spin animation-delay-150 shadow-lg shadow-black/30"></div>
+          <div className="absolute top-2 left-2 w-16 h-16 rounded-full border-2 border-transparent border-t-black animate-spin animation-delay-300 shadow-lg shadow-black/30"></div>
         </div>
         
         {/* Brand Name */}
         <div className="text-center">
-          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary via-primary/80 to-primary bg-clip-text text-transparent animate-pulse">
+          <h1 className="text-4xl md:text-5xl font-bold text-black animate-pulse">
             Softech Guru
           </h1>
           <div className="mt-4 flex items-center justify-center space-x-1">
-            <div className="w-2 h-2 bg-primary rounded-full animate-bounce"></div>
-            <div className="w-2 h-2 bg-primary/70 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-            <div className="w-2 h-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+            <div className="w-2 h-2 bg-black rounded-full animate-bounce"></div>
+            <div className="w-2 h-2 bg-black/70 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+            <div className="w-2 h-2 bg-black rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
           </div>
         </div>
       </div>
