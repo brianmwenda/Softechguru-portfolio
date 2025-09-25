@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Users, Award, Clock, Heart, Code, Palette, Camera, Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -31,11 +32,29 @@ export default function About() {
     window.scrollTo(0, 0);
   }, []);
 
+  const aboutStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Softech Guru",
+      "foundingDate": "2021",
+      "description": "Digital agency specializing in web development, graphic design, and creative solutions"
+    }
+  };
+
   return (
+    <>
+      <SEO
+        title="About Us - Softech Guru | Professional Web Development Team"
+        description="Learn about Softech Guru's journey since 2021. Professional web development, graphic design, and digital solutions team based in Kenya serving clients globally."
+        keywords="about Softech Guru, web development team Kenya, digital agency Nairobi, professional web designers, creative team"
+        structuredData={aboutStructuredData}
+      />
     <div className="min-h-screen flex flex-col">
       <Navbar />
       
-      <main className="flex-1">
+      <main className="flex-1" role="main">
         {/* Hero Section */}
         <section className="relative py-20 bg-gradient-to-r from-sea-light to-white dark:from-sea-dark dark:to-background">
           <div className="container relative z-10 pt-20">
@@ -76,8 +95,9 @@ export default function About() {
                 <div className="aspect-[4/3] rounded-2xl overflow-hidden">
                   <img 
                     src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop"
-                    alt="Team working together" 
+                    alt="Softech Guru team collaborating on web development projects in modern office environment" 
                     className="w-full h-full object-cover"
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -204,5 +224,6 @@ export default function About() {
       
       <Footer />
     </div>
+    </>
   );
 }

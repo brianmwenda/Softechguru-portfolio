@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import {
   Select,
@@ -68,7 +69,30 @@ export default function Apartments() {
   // Get unique categories for filter
   const categories = ["all", ...new Set(allServices.map(service => service.category))];
   
+  const pricingStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "provider": {
+      "@type": "Organization",
+      "name": "Softech Guru"
+    },
+    "offers": allServices.map(service => ({
+      "@type": "Offer",
+      "name": service.name,
+      "description": service.description,
+      "price": service.price,
+      "priceCurrency": "KES"
+    }))
+  };
+
   return (
+    <>
+      <SEO
+        title="Pricing Plans - Affordable Web Development Services | Softech Guru"
+        description="Transparent pricing for web development, website design, and digital services in Kenya. Starting from KES 25,000. No hidden fees, quality guaranteed."
+        keywords="web development pricing Kenya, website design cost, affordable web development, pricing plans Nairobi, custom website pricing"
+        structuredData={pricingStructuredData}
+      />
     <div className="min-h-screen flex flex-col">
       <Navbar />
       
@@ -183,5 +207,6 @@ export default function Apartments() {
       
       <Footer />
     </div>
+    </>
   );
 }

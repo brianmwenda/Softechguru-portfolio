@@ -9,6 +9,7 @@ import BlogSection from "@/components/BlogSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactForm from "@/components/ContactForm";
 import Map from "@/components/Map";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -42,11 +43,44 @@ export default function Index() {
     return () => observer.disconnect();
   }, []);
   
+  const homeStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Softech Guru",
+    "url": "https://softechguru.com",
+    "logo": "https://softechguru.com/assets/images/logo.png",
+    "description": "Professional web development, graphic design, and digital marketing services in Kenya",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "KE",
+      "addressLocality": "Nairobi"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+254701443181",
+      "contactType": "customer service",
+      "email": "softechguruservices@gmail.com"
+    },
+    "sameAs": [
+      "https://linkedin.com/in/brian-mwenda-325524360"
+    ],
+    "offers": {
+      "@type": "Service",
+      "serviceType": ["Web Development", "Graphic Design", "Logo Design", "Mobile App Development"]
+    }
+  };
+
   return (
     <>
+      <SEO
+        title="Softech Guru - Web Development & Creative Design Services in Kenya"
+        description="Professional web development, graphic design, and digital marketing services in Kenya. Custom websites, mobile apps, logo design, and creative solutions for businesses."
+        keywords="web development Kenya, website design Nairobi, graphic design services, logo design, mobile app development, digital marketing Kenya, custom websites, creative design"
+        structuredData={homeStructuredData}
+      />
       <Navbar />
       <div className="min-h-screen flex flex-col page-transition-enter page-transition-enter-active bg-background">
-      <main className="flex-1">
+      <main className="flex-1" role="main">
         {/* Add proper spacing for fixed navbar */}
         <div className="pt-20">
         </div>
@@ -69,10 +103,10 @@ export default function Index() {
           <TestimonialsSection />
         </div>
         {/* Contact Section */}
-        <section id="contact" className="relative section scroll-animate">
+        <section id="contact" className="relative section scroll-animate" role="region" aria-labelledby="contact-heading">
           <div className="container">
             <div className="max-w-4xl mx-auto text-center space-y-8 mb-16 animate-fade-in">
-              <h2 className="text-4xl md:text-5xl font-bold text-white">
+              <h2 id="contact-heading" className="text-4xl md:text-5xl font-bold text-white">
                 Ready to Start Your Project?
               </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">

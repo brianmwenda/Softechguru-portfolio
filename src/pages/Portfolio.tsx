@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -249,13 +250,32 @@ export default function Gallery() {
     }
   };
   
+  const portfolioStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "Softech Guru Portfolio",
+    "creator": {
+      "@type": "Organization",
+      "name": "Softech Guru"
+    },
+    "description": "Portfolio showcasing web development, graphic design, logo design, and 3D interior design projects by Softech Guru",
+    "url": "https://softechguru.com/Portfolio"
+  };
+
   return (
+    <>
+      <SEO
+        title="Portfolio - Softech Guru | Web Design & Creative Projects"
+        description="View our portfolio of stunning websites, mobile apps, logo designs, posters, and 3D interior designs. Professional creative work by Softech Guru Kenya."
+        keywords="portfolio Kenya, web design portfolio, logo design portfolio, graphic design portfolio, 3D interior design, creative portfolio Nairobi"
+        structuredData={portfolioStructuredData}
+      />
     <div className="min-h-screen flex flex-col">
       <Navbar />
       
       <main className="flex-1 pt-20">
         {/* Header Section */}
-        <section className="relative py-16 bg-gradient-to-br from-background via-background to-primary/5 overflow-hidden">
+        <header className="relative py-16 bg-gradient-to-br from-background via-background to-primary/5 overflow-hidden">
           <div className="container relative z-10">
             <div className="max-w-4xl mx-auto text-center animate-fade-in">
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
@@ -275,7 +295,7 @@ export default function Gallery() {
             <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
             <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
           </div>
-        </section>
+        </header>
         
         {/* Gallery Filters */}
         <section className="py-8">
@@ -311,11 +331,12 @@ export default function Gallery() {
                 >
                   <img 
                     src={image.src} 
-                    alt={image.alt}
+                    alt={`${image.alt} - Professional ${image.category} work by Softech Guru`}
                     className={cn(
                       "w-full h-full transition-transform duration-700 group-hover:scale-110",
                       image.category === "logo Design" ? "object-contain" : "object-cover"
                     )}
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                     <p className="text-white">{image.alt}</p>
@@ -373,5 +394,6 @@ export default function Gallery() {
       
       <Footer />
     </div>
+    </>
   );
 }

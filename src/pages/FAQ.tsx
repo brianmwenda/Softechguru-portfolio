@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Search, ChevronDown, ChevronUp } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -65,7 +66,27 @@ export default function FAQ() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const faqStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
   return (
+    <>
+      <SEO
+        title="FAQ - Frequently Asked Questions | Softech Guru"
+        description="Find answers to common questions about our web development, graphic design, and digital services. Learn about our process, pricing, and how we can help your business."
+        keywords="web development FAQ, website design questions, graphic design FAQ, digital services Kenya, Softech Guru FAQ"
+        structuredData={faqStructuredData}
+      />
     <div className="min-h-screen flex flex-col">
       <Navbar />
       
@@ -155,5 +176,6 @@ export default function FAQ() {
       
       <Footer />
     </div>
+    </>
   );
 }

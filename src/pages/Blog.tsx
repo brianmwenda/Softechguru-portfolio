@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Calendar, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -69,7 +70,22 @@ export default function Blog() {
     window.scrollTo(0, 0);
   }, []);
 
+  const blogStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Softech Guru Blog",
+    "description": "Insights and resources on web development, design, and digital marketing",
+    "url": "https://softechguru.com/blog"
+  };
+
   return (
+    <>
+      <SEO
+        title="Blog - Web Development & Design Insights | Softech Guru"
+        description="Latest insights, tips, and trends in web development, graphic design, photography, and video production. Expert advice from Softech Guru team."
+        keywords="web development blog, design insights, digital marketing tips, photography tips, video production, technology trends Kenya"
+        structuredData={blogStructuredData}
+      />
     <div className="min-h-screen flex flex-col">
       <Navbar />
       
@@ -146,5 +162,6 @@ export default function Blog() {
       
       <Footer />
     </div>
+    </>
   );
 }
