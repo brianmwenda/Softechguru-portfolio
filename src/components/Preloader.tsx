@@ -30,14 +30,15 @@ export default function Preloader({ onComplete }: PreloaderProps) {
       className={`fixed inset-0 z-50 flex items-center justify-center bg-white transition-opacity duration-500 ${
         isLoading ? 'opacity-100' : 'opacity-0'
       }`}
+      style={{ display: isVisible ? 'flex' : 'none' }}
     >
       <div className="flex flex-col items-center space-y-4">
         {/* Loading Ring */}
         <div className="relative">
           <div className="w-20 h-20 rounded-full border-4 border-gray-200"></div>
-          <div className="absolute top-0 left-0 w-20 h-20 rounded-full border-4 border-transparent border-t-black animate-spin shadow-lg shadow-black/50"></div>
-          <div className="absolute top-1 left-1 w-18 h-18 rounded-full border-2 border-transparent border-t-black/70 animate-spin animation-delay-150 shadow-lg shadow-black/30"></div>
-          <div className="absolute top-2 left-2 w-16 h-16 rounded-full border-2 border-transparent border-t-black animate-spin animation-delay-300 shadow-lg shadow-black/30"></div>
+          <div className="absolute top-0 left-0 w-20 h-20 rounded-full border-4 border-transparent border-t-black animate-spin shadow-lg shadow-black/50" style={{ animationDuration: '1s' }}></div>
+          <div className="absolute top-1 left-1 w-18 h-18 rounded-full border-2 border-transparent border-t-black/70 animate-spin shadow-lg shadow-black/30" style={{ animationDuration: '1.5s', animationDelay: '0ms' }}></div>
+          <div className="absolute top-2 left-2 w-16 h-16 rounded-full border-2 border-transparent border-t-black animate-spin shadow-lg shadow-black/30" style={{ animationDuration: '2s', animationDelay: '0ms' }}></div>
         </div>
         
         {/* Brand Name */}
