@@ -23,12 +23,7 @@ export default function Footer() {
             <p className="text-muted-foreground text-sm mb-4">
               Professional design services for website, graphic, and architectural projects. Bringing your creative vision to life.
             </p>
-            <div className="flex space-x-3">
-              <a href="https://www.linkedin.com/in/brian-mwenda-325524360" className="text-muted-foreground hover:text-primary transition-colors p-2 bg-muted/50 rounded-full">
-                <Linkedin size={16} />
-                <span className="sr-only">LinkedIn</span>
-              </a>
-            </div>
+            
           </div>
           
           {/* Quick Links */}
@@ -101,6 +96,12 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-border pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground">
           <p>&copy; {currentYear} SoftechGuru. {t.footer.allRights}</p>
+          <div className="flex space-x-3">
+              <a href="https://www.linkedin.com/in/brian-mwenda-325524360" className="text-muted-foreground hover:text-primary transition-colors p-2 bg-muted/50 rounded-full">
+                <Linkedin size={16} />
+                <span className="sr-only">LinkedIn</span>
+              </a>
+            </div>
           <div className="flex space-x-4 mt-4 md:mt-0">
             <Link to="/privacy-policy" className="hover:text-primary transition-colors">
               {t.footer.privacyPolicy}

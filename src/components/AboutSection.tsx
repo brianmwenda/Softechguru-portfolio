@@ -2,8 +2,8 @@
 import { Shield, Zap, Users, Award, Clock, Heart, Target, Code, Rocket } from "lucide-react";
 
 const stats = [
-  { icon: <Users className="h-6 w-6" />, number: "50+", label: "Happy Clients" },
-  { icon: <Award className="h-6 w-6" />, number: "24+", label: "Projects Completed" },
+  { icon: <Users className="h-6 w-6" />, number: "80+", label: "Happy Clients" },
+  { icon: <Award className="h-6 w-6" />, number: "150+", label: "Projects Completed" },
   { icon: <Clock className="h-6 w-6" />, number: "3+", label: "Years Experience" },
   { icon: <Heart className="h-6 w-6" />, number: "99%", label: "Client Satisfaction" }
 ];

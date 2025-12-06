@@ -101,9 +101,7 @@ export default function Apartments() {
         <section className="relative py-16 bg-gradient-to-br from-background via-background to-primary/5 overflow-hidden">
           <div className="container relative z-10">
             <div className="max-w-4xl mx-auto text-center animate-fade-in">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
-                <span className="text-primary text-sm font-medium">💰 Pricing Plans</span>
-              </div>
+              
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight">
                 Simple, Transparent <span className="text-primary">Pricing</span>
               </h1>
@@ -193,7 +191,7 @@ export default function Apartments() {
             
             {/* Trust indicators */}
             <div className="mt-16 text-center">
-              <p className="text-muted-foreground mb-6">Trusted by businesses across Kenya</p>
+              <p className="text-muted-foreground mb-6">Trusted by businesses across the world</p>
               <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
                 <div className="text-sm font-medium">🏆 50+ Happy Clients</div>
                 <div className="text-sm font-medium">⚡ 24h Response Time</div>

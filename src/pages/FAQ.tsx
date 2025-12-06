@@ -98,9 +98,7 @@ export default function FAQ() {
           <div className="absolute bottom-10 left-10 w-24 h-24 bg-accent/10 rounded-full blur-2xl"></div>
           <div className="container relative z-10 pt-20">
             <div className="max-w-4xl mx-auto text-center animate-fade-in">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
-                <span className="text-primary text-sm font-medium">❓ FAQ</span>
-              </div>
+             
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight">
                 Frequently Asked <span className="text-primary">Questions</span>
               </h1>
