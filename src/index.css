@@ -15,7 +15,7 @@
     --popover: 224 20% 5%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 270 95% 75%;
+    --primary: 25 96% 47%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 224 20% 10%;
@@ -24,7 +24,7 @@
     --muted: 224 20% 10%;
     --muted-foreground: 0 0% 60%;
 
-    --accent: 270 95% 75%;
+    --accent: 25 96% 47%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -32,7 +32,7 @@
 
     --border: 224 20% 15%;
     --input: 224 20% 15%;
-    --ring: 270 95% 75%;
+    --ring: 25 96% 47%;
 
     --radius: 0.75rem;
   }
@@ -80,7 +80,7 @@
   }
   
   .gradient-text {
-    @apply bg-gradient-to-r from-primary via-purple-500 to-pink-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary via-orange-400 to-amber-500 bg-clip-text text-transparent;
   }
   
   .page-transition-enter {

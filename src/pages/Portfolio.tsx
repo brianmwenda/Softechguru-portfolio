@@ -8,7 +8,35 @@ import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const galleryImages = [
-  // Website Design
+  // Website Design - New Projects First
+  {
+    id: 44,
+    src: "/assets/images/ajani-bakery.png",
+    alt: "Ajani House Bakery Website",
+    category: "website-design",
+    label: "Website Design"
+  },
+  {
+    id: 45,
+    src: "/assets/images/trading-journal.png",
+    alt: "XAU/USD Trading Journal Dashboard",
+    category: "website-design",
+    label: "Website Design"
+  },
+  {
+    id: 46,
+    src: "/assets/images/meruride.png",
+    alt: "MeruRide Transport App",
+    category: "website-design",
+    label: "Website Design"
+  },
+  {
+    id: 47,
+    src: "/assets/images/veriscan-ai.png",
+    alt: "VeriScan AI Plagiarism Detector",
+    category: "website-design",
+    label: "Website Design"
+  },
   {
     id: 1,
     src: "/assets/images/student4.PNG",
@@ -130,56 +158,56 @@ const galleryImages = [
   {
     id: 31,
     src: "/assets/images/3d (1).jpg",
-    alt: "3D Interior Visualization",
+    alt: "Isometric Living Room Interior Design",
     category: "architectural-design",
     label: "3D Render"
   },
   {
     id: 32,
     src: "/assets/images/3d (2).jpg",
-    alt: "Modern Interior Design Render",
+    alt: "Modern Multi-Story Villa Exterior",
     category: "architectural-design",
     label: "3D Render"
   },
   {
     id: 33,
     src: "/assets/images/3d (3).jpg",
-    alt: "Architectural Floor Plan Visualization",
+    alt: "Isometric Living Room with Fireplace",
     category: "architectural-design",
-    label: "Floor Plan"
+    label: "3D Render"
   },
   {
     id: 34,
     src: "/assets/images/3d (4).jpg",
-    alt: "Living Room 3D Design",
+    alt: "4-Bedroom Apartment Floor Plan",
     category: "architectural-design",
-    label: "3D Render"
+    label: "Floor Plan"
   },
   {
     id: 35,
     src: "/assets/images/3d (5).jpg",
-    alt: "Kitchen Interior Visualization",
+    alt: "Luxury Apartment Night View Floor Plan",
     category: "architectural-design",
-    label: "3D Render"
+    label: "Floor Plan"
   },
   {
     id: 36,
     src: "/assets/images/3d (6).png",
-    alt: "Bedroom Design Render",
+    alt: "Modern Two-Story House Exterior",
     category: "architectural-design",
     label: "3D Render"
   },
   {
     id: 37,
     src: "/assets/images/3d (7).jpg",
-    alt: "Office Space Visualization",
+    alt: "Brick House Exterior Design",
     category: "architectural-design",
     label: "3D Render"
   },
   {
     id: 38,
     src: "/assets/images/3d (8).jpg",
-    alt: "Exterior Architectural Render",
+    alt: "Modern Black Villa with Landscaping",
     category: "architectural-design",
     label: "3D Render"
   }

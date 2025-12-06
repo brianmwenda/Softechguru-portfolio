@@ -105,9 +105,14 @@ export default function Apartments() {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight">
                 Simple, Transparent <span className="text-primary">Pricing</span>
               </h1>
-              <p className="text-muted-foreground text-xl mb-8 max-w-2xl mx-auto">
+              <p className="text-muted-foreground text-xl mb-4 max-w-2xl mx-auto">
                 Choose the perfect plan for your business needs. No hidden fees, no surprises.
               </p>
+              <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 rounded-full px-4 py-2 text-sm">
+                <span className="text-primary font-medium">Website Design Pricing</span>
+                <span className="text-muted-foreground">•</span>
+                <span className="text-muted-foreground">For Graphic & Architectural Design, <a href="https://wa.me/254701443181" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">request our rate card</a></span>
+              </div>
             </div>
           </div>
           

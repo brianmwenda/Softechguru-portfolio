@@ -1,12 +1,12 @@
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PortfolioHero from "@/components/PortfolioHero";
-import ModernServicesSection from "@/components/ModernServicesSection";
 import AboutSection from "@/components/AboutSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import SEO from "@/components/SEO";
+import Preloader from "@/components/Preloader";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { 
@@ -42,6 +42,7 @@ const faqs = [
 
 export default function Index() {
   const { t } = useLanguage();
+  const [showPreloader, setShowPreloader] = useState(true);
   
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -100,6 +101,7 @@ export default function Index() {
 
   return (
     <>
+      {showPreloader && <Preloader onComplete={() => setShowPreloader(false)} />}
       <SEO
         title="Softech Guru - Creative Design Services | Website, Graphic & Architectural Design"
         description="Professional graphic design, website design, architectural visualization, and creative services. Custom logos, branding, 3D renders, and website care & support."
@@ -113,11 +115,6 @@ export default function Index() {
         
         {/* Hero Section */}
         <PortfolioHero />
-        
-        {/* Services Section */}
-        <div className="scroll-animate">
-          <ModernServicesSection />
-        </div>
         
         {/* About Section */}
         <div className="scroll-animate">

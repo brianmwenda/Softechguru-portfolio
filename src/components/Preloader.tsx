@@ -10,15 +10,13 @@ export default function Preloader({ onComplete }: PreloaderProps) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading time
     const timer = setTimeout(() => {
       setIsLoading(false);
-      // Add a small delay for the fade out animation
       setTimeout(() => {
         setIsVisible(false);
         onComplete?.();
       }, 500);
-    }, 2000);
+    }, 2500);
 
     return () => clearTimeout(timer);
   }, [onComplete]);
@@ -27,33 +25,26 @@ export default function Preloader({ onComplete }: PreloaderProps) {
 
   return (
     <div 
-      className={`fixed inset-0 z-50 flex items-center justify-center bg-white transition-opacity duration-500 ${
+      className={`fixed inset-0 z-[100] flex items-center justify-center bg-background transition-opacity duration-500 ${
         isLoading ? 'opacity-100' : 'opacity-0'
       }`}
       style={{ display: isVisible ? 'flex' : 'none' }}
     >
-      <div className="flex flex-col items-center space-y-4">
-        {/* Loading Ring */}
-        <div className="relative">
-          <div className="w-20 h-20 rounded-full border-4 border-gray-200"></div>
-          <div className="absolute top-0 left-0 w-20 h-20 rounded-full border-4 border-transparent border-t-black animate-spin shadow-lg shadow-black/50" style={{ animationDuration: '1s' }}></div>
-          <div className="absolute top-1 left-1 w-18 h-18 rounded-full border-2 border-transparent border-t-black/70 animate-spin shadow-lg shadow-black/30" style={{ animationDuration: '1.5s', animationDelay: '0ms' }}></div>
-          <div className="absolute top-2 left-2 w-16 h-16 rounded-full border-2 border-transparent border-t-black animate-spin shadow-lg shadow-black/30" style={{ animationDuration: '2s', animationDelay: '0ms' }}></div>
-        </div>
+      <div className="relative flex items-center justify-center">
+        {/* Outer pulsing ring */}
+        <div className="absolute w-24 h-24 rounded-full bg-primary/20 animate-ping" style={{ animationDuration: '1.5s' }}></div>
         
-        {/* Brand Name */}
-        <div className="text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-black animate-pulse">
-            Softech Guru
-          </h1>
-          <div className="mt-4 flex items-center justify-center space-x-1">
-            <div className="w-2 h-2 bg-black rounded-full animate-bounce"></div>
-            <div className="w-2 h-2 bg-black/70 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-            <div className="w-2 h-2 bg-black rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+        {/* Middle pulsing ring */}
+        <div className="absolute w-16 h-16 rounded-full bg-primary/40 animate-ping" style={{ animationDuration: '1.5s', animationDelay: '0.3s' }}></div>
+        
+        {/* Core solid circle */}
+        <div className="relative w-10 h-10 rounded-full bg-primary shadow-lg shadow-primary/50">
+          {/* Inner dot */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-2 h-2 rounded-full bg-primary-foreground animate-pulse"></div>
           </div>
         </div>
       </div>
     </div>
   );
-
 }

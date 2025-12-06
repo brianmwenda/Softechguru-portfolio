@@ -111,7 +111,7 @@ export default function PortfolioHero() {
                 <div className="flex justify-between items-center">
                   <h3 className="text-lg font-semibold text-white">Creative Stats</h3>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div className="grid grid-cols-3 gap-4">
                   <div className="text-center p-2">
                     <div className="text-xs md:text-sm text-muted-foreground">Projects</div>
                     <div className="text-xl md:text-2xl lg:text-3xl font-bold text-white">{projects}+</div>
@@ -141,7 +141,7 @@ export default function PortfolioHero() {
       {/* Background Decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl"></div>
       </div>
     </section>
   );
