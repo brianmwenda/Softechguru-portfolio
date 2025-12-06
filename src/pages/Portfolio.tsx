@@ -7,168 +7,190 @@ import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-// Sample gallery images with logo Design section
 const galleryImages = [
+  // Website Design
   {
     id: 1,
     src: "/assets/images/student4.PNG",
-    alt: "School Management System",
-    category: "websites",
-    link: "https://netlify.schoolmanagement.com"
+    alt: "School Management System Website",
+    category: "website-design",
+    label: "Website Design"
   },
-
-
   {
     id: 4,
     src: "/assets/images/web.png",
-    alt: "E-commerce platform",
-    category: "websites"
+    alt: "E-commerce Website Design",
+    category: "website-design",
+    label: "Website Design"
   },
+  {
+    id: 42,
+    src: "/assets/images/Go-ticketing-system.png",
+    alt: "Ticketing System Web Application",
+    category: "website-design",
+    label: "Website Design"
+  },
+  {
+    id: 43,
+    src: "/assets/images/go book management system.png",
+    alt: "Book Management System",
+    category: "website-design",
+    label: "Website Design"
+  },
+
+  // Graphic Design - Posters
   {
     id: 5,
     src: "/assets/images/poster.jpg",
-    alt: "Brand design",
-    category: "design"
+    alt: "Event Poster Design",
+    category: "graphic-design",
+    label: "Poster Design"
   },
-  
-  {
-    id: 8,
-    src: "/assets/images/CLEM-GFX LOGO-01.png",
-    alt: "Clem GFX Logo",
-    category: "logo Design"
-  }, 
   {
     id: 19,
     src: "/assets/images/country-night-poster.jpg",
-    alt: "Country Night Poster",
-    category: "design"
-  }, 
+    alt: "Country Night Event Poster",
+    category: "graphic-design",
+    label: "Poster Design"
+  },
   {
     id: 20,
     src: "/assets/images/kavini-poster-01.jpg",
-    alt: "Kavini Poster",
-    category: "design"
-  }, 
+    alt: "Kavini Event Poster",
+    category: "graphic-design",
+    label: "Poster Design"
+  },
   {
     id: 21,
     src: "/assets/images/KHB-MEAT-UP.jpg",
-    alt: "KHB Meet Up Poster",
-    category: "design"
-  }, 
+    alt: "KHB Meet Up Event Poster",
+    category: "graphic-design",
+    label: "Poster Design"
+  },
   {
     id: 22,
     src: "/assets/images/MAKUENI-MBUZI-RIDE.jpg",
     alt: "Makueni Mbuzi Ride Poster",
-    category: "design"
-  }, 
+    category: "graphic-design",
+    label: "Poster Design"
+  },
   {
     id: 23,
     src: "/assets/images/MASHUJAA.jpg",
-    alt: "Mashujaa Poster",
-    category: "design"
+    alt: "Mashujaa Day Poster",
+    category: "graphic-design",
+    label: "Poster Design"
   },
   {
     id: 24,
     src: "/assets/images/tcr-OPEN-NOW.png",
-    alt: "TCR Open Now Poster",
-    category: "design"
+    alt: "TCR Opening Poster",
+    category: "graphic-design",
+    label: "Poster Design"
+  },
+
+  // Logo Design
+  {
+    id: 8,
+    src: "/assets/images/CLEM-GFX LOGO-01.png",
+    alt: "Clem GFX Brand Logo",
+    category: "logo-design",
+    label: "Logo Design"
   },
   {
     id: 25,
     src: "/assets/images/CURRENT-CRAFTERS-LOGO-01.png",
     alt: "Current Crafters Logo",
-    category: "logo Design"
+    category: "logo-design",
+    label: "Logo Design"
   },
   {
     id: 26,
     src: "/assets/images/GIGI-PIXELS-2-01.png",
     alt: "Gigi Pixels Logo",
-    category: "logo Design"
+    category: "logo-design",
+    label: "Logo Design"
   },
   {
     id: 27,
     src: "/assets/images/KAVINI-KITCHEN-LOGO-FIN-01.png",
     alt: "Kavini Kitchen Logo",
-    category: "logo Design"
+    category: "logo-design",
+    label: "Logo Design"
   },
   {
     id: 28,
     src: "/assets/images/mock-u-2-01.png",
-    alt: "Mock Up Design",
-    category: "logo Design"
+    alt: "Brand Mockup Design",
+    category: "logo-design",
+    label: "Logo Design"
   },
 
-
+  // Architectural Design
   {
     id: 31,
     src: "/assets/images/3d (1).jpg",
-    alt: "Interior Design floor plans",
-    category: "3D interior Design"
-  }
-  ,
+    alt: "3D Interior Visualization",
+    category: "architectural-design",
+    label: "3D Render"
+  },
   {
     id: 32,
     src: "/assets/images/3d (2).jpg",
-    alt: "Interior Design floor plans",
-    category: "3D interior Design"
-  }
-  ,
+    alt: "Modern Interior Design Render",
+    category: "architectural-design",
+    label: "3D Render"
+  },
   {
     id: 33,
     src: "/assets/images/3d (3).jpg",
-    alt: "Interior Design floor plans",
-    category: "3D interior Design"
-  }
-  ,
+    alt: "Architectural Floor Plan Visualization",
+    category: "architectural-design",
+    label: "Floor Plan"
+  },
   {
     id: 34,
     src: "/assets/images/3d (4).jpg",
-    alt: "Interior Design floor plans",
-    category: "3D interior Design"
-  }
-  ,
+    alt: "Living Room 3D Design",
+    category: "architectural-design",
+    label: "3D Render"
+  },
   {
     id: 35,
     src: "/assets/images/3d (5).jpg",
-    alt: "Interior Design floor plans",
-    category: "3D interior Design"
-  }
-  ,
+    alt: "Kitchen Interior Visualization",
+    category: "architectural-design",
+    label: "3D Render"
+  },
   {
     id: 36,
     src: "/assets/images/3d (6).png",
-    alt: "Interior Design floor plans",
-    category: "3D interior Design"
-  }
-  ,
+    alt: "Bedroom Design Render",
+    category: "architectural-design",
+    label: "3D Render"
+  },
   {
     id: 37,
     src: "/assets/images/3d (7).jpg",
-    alt: "Interior Design floor plans",
-    category: "3D interior Design"
-  }
-  ,
+    alt: "Office Space Visualization",
+    category: "architectural-design",
+    label: "3D Render"
+  },
   {
     id: 38,
     src: "/assets/images/3d (8).jpg",
-    alt: "Interior Design floor plans",
-    category: "3D interior Design"
+    alt: "Exterior Architectural Render",
+    category: "architectural-design",
+    label: "3D Render"
   }
-   ,
-  {
-    id: 42,
-    src: "/assets/images/Go-ticketing-system.png",
-    alt: "Conference Booking System in Go",
-    category: "websites"
-  }
-  ,
-  {
-    id: 43,
-    src: "/assets/images/go book management system.png",
-    alt: "Book Management System in Go",
-    category: "websites"
-  }
- 
+];
+
+const categories = [
+  { id: "all", label: "All Work" },
+  { id: "website-design", label: "Website Design" },
+  { id: "graphic-design", label: "Graphic Design" },
+  { id: "logo-design", label: "Logo Design" },
+  { id: "architectural-design", label: "Architectural Design" }
 ];
 
 export default function Gallery() {
@@ -178,11 +200,9 @@ export default function Gallery() {
   const [activeFilter, setActiveFilter] = useState("all");
   
   useEffect(() => {
-    // Scroll to top when component mounts
     window.scrollTo(0, 0);
   }, []);
   
-  // Filter gallery images by category
   const filterGallery = (category: string) => {
     setActiveFilter(category);
     
@@ -193,7 +213,6 @@ export default function Gallery() {
     }
   };
   
-  // Handle lightbox navigation
   const navigateGallery = (direction: "prev" | "next") => {
     if (selectedImage === null) return;
     
@@ -209,7 +228,6 @@ export default function Gallery() {
     setSelectedImage(filteredImages[newIndex].id);
   };
   
-  // Handle keyboard navigation for lightbox
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (selectedImage === null) return;
@@ -226,48 +244,25 @@ export default function Gallery() {
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [selectedImage, filteredImages]);
-
-  // Map categories to their translations
-  const getFilterLabel = (category: string) => {
-    switch (category) {
-      case "all":
-        return t.gallery.allProjects;
-      case "websites":
-        return t.gallery.webApps;
-      
-      case "design":
-        return "Poster Design";
-      case "3D interior Design":
-        return "3D interior Design";
-      case "logo Design":
-        return "logo Design";
-      // case "photography":
-      //   return "Photography";
-      // case "video":
-      //   return "Video";
-      default:
-        return category;
-    }
-  };
   
   const portfolioStructuredData = {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
-    "name": "Softech Guru Portfolio",
+    "name": "Softech Guru Design Portfolio",
     "creator": {
       "@type": "Organization",
       "name": "Softech Guru"
     },
-    "description": "Portfolio showcasing web development, graphic design, logo design, and 3D interior design projects by Softech Guru",
+    "description": "Portfolio showcasing website design, graphic design, logo design, and architectural visualization projects by Softech Guru",
     "url": "https://softechguru.com/Portfolio"
   };
 
   return (
     <>
       <SEO
-        title="Portfolio - Softech Guru | Web Design & Creative Projects"
-        description="View our portfolio of stunning websites, mobile apps, logo designs, posters, and 3D interior designs. Professional creative work by Softech Guru Kenya."
-        keywords="portfolio Kenya, web design portfolio, logo design portfolio, graphic design portfolio, 3D interior design, creative portfolio Nairobi"
+        title="Design Portfolio - Softech Guru | Website, Graphic & Architectural Design"
+        description="Explore our portfolio of stunning website designs, logos, posters, and 3D architectural visualizations. Professional creative work by Softech Guru Kenya."
+        keywords="design portfolio Kenya, website design portfolio, logo design portfolio, graphic design portfolio, architectural visualization, 3D renders Nairobi"
         structuredData={portfolioStructuredData}
       />
     <div className="min-h-screen flex flex-col">
@@ -279,18 +274,17 @@ export default function Gallery() {
           <div className="container relative z-10">
             <div className="max-w-4xl mx-auto text-center animate-fade-in">
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
-                <span className="text-primary text-sm font-medium">🎨 Our Work</span>
+                <span className="text-primary text-sm font-medium">🎨 Our Creative Work</span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight">
-                Creative <span className="text-primary">Portfolio</span>
+                Design <span className="text-primary">Portfolio</span>
               </h1>
               <p className="text-muted-foreground text-xl mb-8 max-w-2xl mx-auto">
-                Showcasing our latest work and creative projects that drive results for our clients.
+                Showcasing our best work in website design, graphic design, logo creation, and architectural visualization.
               </p>
             </div>
           </div>
           
-          {/* Decorative elements */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
             <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
@@ -301,18 +295,18 @@ export default function Gallery() {
         <section className="py-8">
           <div className="container">
             <div className="flex flex-wrap justify-center gap-2 mb-8 animate-fade-in">
-              {["all", "websites", "logo Design", "design", "3D interior Design"].map((category) => (
+              {categories.map((category) => (
                 <button
-                  key={category}
-                  onClick={() => filterGallery(category)}
+                  key={category.id}
+                  onClick={() => filterGallery(category.id)}
                   className={cn(
                     "px-6 py-2 rounded-full transition-all",
-                    activeFilter === category
+                    activeFilter === category.id
                       ? "bg-primary text-white shadow-lg"
                       : "bg-card hover:bg-muted"
                   )}
                 >
-                  {getFilterLabel(category)}
+                  {category.label}
                 </button>
               ))}
             </div>
@@ -324,23 +318,23 @@ export default function Gallery() {
                   key={image.id} 
                   className={cn(
                     "relative overflow-hidden rounded-xl cursor-pointer group animate-fade-in",
-                    image.category === "logo Design" ? "aspect-square bg-white p-4" : "aspect-[4/3]"
+                    image.category === "logo-design" ? "aspect-square bg-white p-4" : "aspect-[4/3]"
                   )}
                   style={{ animationDelay: `${index * 50}ms` }}
                   onClick={() => setSelectedImage(image.id)}
                 >
                   <img 
                     src={image.src} 
-                    alt={`${image.alt} - Professional ${image.category} work by Softech Guru`}
+                    alt={`${image.alt} - Professional ${image.label} by Softech Guru`}
                     className={cn(
                       "w-full h-full transition-transform duration-700 group-hover:scale-110",
-                      image.category === "logo Design" ? "object-contain" : "object-cover"
+                      image.category === "logo-design" ? "object-contain" : "object-cover"
                     )}
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                    <p className="text-white">{image.alt}</p>
-                    
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                    <span className="text-xs text-primary font-medium mb-1">{image.label}</span>
+                    <p className="text-white font-medium">{image.alt}</p>
                   </div>
                 </div>
               ))}

@@ -1,27 +1,51 @@
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PortfolioHero from "@/components/PortfolioHero";
 import ModernServicesSection from "@/components/ModernServicesSection";
 import AboutSection from "@/components/AboutSection";
-import BlogSection from "@/components/BlogSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import ContactForm from "@/components/ContactForm";
-import Map from "@/components/Map";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { 
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Phone, Mail, Clock, MapPin, MessageCircle } from "lucide-react";
+
+const faqs = [
+  {
+    question: "What design services do you offer?",
+    answer: "We offer Website Design, Architectural Design (3D renders & floor plans), Graphic Design (logos, posters, branding), and ongoing Website Care & Support services."
+  },
+  {
+    question: "How long does a typical design project take?",
+    answer: "Timelines vary by project: Simple logos take 3-5 days, website designs 1-3 weeks, architectural renders 1-2 weeks, and complete branding packages 2-4 weeks."
+  },
+  {
+    question: "Do you provide revisions?",
+    answer: "Yes! All our design packages include revision rounds. We work closely with you until you're completely satisfied with the final result."
+  },
+  {
+    question: "What do I need to provide to get started?",
+    answer: "We'll need your brand guidelines (if any), reference examples you like, project brief, and any specific requirements. We'll guide you through everything during our initial consultation."
+  },
+  {
+    question: "Do you offer ongoing website maintenance?",
+    answer: "Absolutely! Our Website Care & Support service includes regular updates, security monitoring, content changes, and technical support to keep your site running smoothly."
+  }
+];
 
 export default function Index() {
   const { t } = useLanguage();
   
   useEffect(() => {
-    // Scroll to top when component mounts
     window.scrollTo(0, 0);
 
-    // Add scroll animation observer
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -35,7 +59,6 @@ export default function Index() {
       rootMargin: '0px 0px -50px 0px'
     });
 
-    // Observe all scroll-animate elements
     document.querySelectorAll('.scroll-animate').forEach((el) => {
       observer.observe(el);
     });
@@ -49,7 +72,7 @@ export default function Index() {
     "name": "Softech Guru",
     "url": "https://softechguru.com",
     "logo": "https://softechguru.com/assets/images/logo.png",
-    "description": "Professional web development, graphic design, and digital marketing services in Kenya",
+    "description": "Professional graphic design, website design, architectural design, and creative services",
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "KE",
@@ -66,24 +89,27 @@ export default function Index() {
     ],
     "offers": {
       "@type": "Service",
-      "serviceType": ["Web Development", "Graphic Design", "Logo Design", "Mobile App Development"]
+      "serviceType": ["Website Design", "Graphic Design", "Architectural Design", "Logo Design", "Website Maintenance"]
     }
+  };
+
+  const handleWhatsAppContact = () => {
+    const message = "Hello! I'd like to discuss a design project with you.";
+    window.open(`https://wa.me/254701443181?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   return (
     <>
       <SEO
-        title="Softech Guru - Web Development & Creative Design Services in Kenya"
-        description="Professional web development, graphic design, and digital marketing services in Kenya. Custom websites, mobile apps, logo design, and creative solutions for businesses."
-        keywords="web development Kenya, website design Nairobi, graphic design services, logo design, mobile app development, digital marketing Kenya, custom websites, creative design"
+        title="Softech Guru - Creative Design Services | Website, Graphic & Architectural Design"
+        description="Professional graphic design, website design, architectural visualization, and creative services. Custom logos, branding, 3D renders, and website care & support."
+        keywords="graphic design Kenya, website design Nairobi, architectural design, logo design, branding services, 3D visualization, website maintenance, creative agency"
         structuredData={homeStructuredData}
       />
       <Navbar />
       <div className="min-h-screen flex flex-col page-transition-enter page-transition-enter-active bg-background">
       <main className="flex-1" role="main">
-        {/* Add proper spacing for fixed navbar */}
-        <div className="pt-20">
-        </div>
+        <div className="pt-20"></div>
         
         {/* Hero Section */}
         <PortfolioHero />
@@ -102,16 +128,16 @@ export default function Index() {
         <div className="scroll-animate">
           <TestimonialsSection />
         </div>
-        {/* Contact Section */}
+
+        {/* Contact & FAQ Section */}
         <section id="contact" className="relative section scroll-animate" role="region" aria-labelledby="contact-heading">
           <div className="container">
             <div className="max-w-4xl mx-auto text-center space-y-8 mb-16 animate-fade-in">
               <h2 id="contact-heading" className="text-4xl md:text-5xl font-bold text-white">
-                Ready to Start Your Project?
+                Let's Create Something Amazing
               </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Let's collaborate to bring your vision to life. From initial concept 
-                to final deployment, we'll guide you through every step.
+                Ready to elevate your brand? Get in touch and let's discuss your creative project.
               </p>
             </div>
             
@@ -120,12 +146,10 @@ export default function Index() {
               <div className="animate-fade-in [animation-delay:100ms]">
                 <h3 className="text-2xl font-bold mb-6 text-white">Get In Touch</h3>
                 
-                <div className="glass-card p-6 space-y-6">
+                <div className="glass-card p-6 space-y-6 mb-8">
                   <div className="flex items-start">
                     <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
-                      <svg className="h-5 w-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                      </svg>
+                      <Phone className="h-5 w-5 text-primary" />
                     </div>
                     <div>
                       <h4 className="font-semibold mb-1 text-white">Phone</h4>
@@ -135,9 +159,7 @@ export default function Index() {
                   
                   <div className="flex items-start">
                     <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
-                      <svg className="h-5 w-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
+                      <Mail className="h-5 w-5 text-primary" />
                     </div>
                     <div>
                       <h4 className="font-semibold mb-1 text-white">Email</h4>
@@ -147,9 +169,17 @@ export default function Index() {
                   
                   <div className="flex items-start">
                     <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
-                      <svg className="h-5 w-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
+                      <MapPin className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold mb-1 text-white">Location</h4>
+                      <p className="text-muted-foreground">Nairobi, Kenya</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start">
+                    <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+                      <Clock className="h-5 w-5 text-primary" />
                     </div>
                     <div>
                       <h4 className="font-semibold mb-1 text-white">Business Hours</h4>
@@ -160,16 +190,37 @@ export default function Index() {
                     </div>
                   </div>
                 </div>
-                
-                {/* Map Section */}
-                {/* <div className="animate-fade-in [animation-delay:200ms]">
-                  <h4 className="text-lg font-semibold mb-4 text-white">Find Us</h4>
-                  <Map />
-                </div> */}
+
+                {/* WhatsApp CTA */}
+                <Button 
+                  onClick={handleWhatsAppContact}
+                  size="lg"
+                  className="w-full bg-green-600 hover:bg-green-700 text-white"
+                >
+                  <MessageCircle className="mr-2 h-5 w-5" />
+                  Chat on WhatsApp
+                </Button>
               </div>
               
-              {/* Contact Form */}
-              <ContactForm />
+              {/* FAQ Section */}
+              <div className="animate-fade-in [animation-delay:300ms]">
+                <h3 className="text-2xl font-bold mb-6 text-white">Frequently Asked Questions</h3>
+                
+                <div className="glass-card p-6">
+                  <Accordion type="single" collapsible className="w-full">
+                    {faqs.map((faq, index) => (
+                      <AccordionItem key={index} value={`item-${index}`}>
+                        <AccordionTrigger className="text-left text-white hover:text-primary">
+                          {faq.question}
+                        </AccordionTrigger>
+                        <AccordionContent className="text-muted-foreground">
+                          {faq.answer}
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
+                </div>
+              </div>
             </div>
           </div>
         </section>

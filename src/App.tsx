@@ -9,8 +9,6 @@ import Apartments from "./pages/pricing";
 import Gallery from "./pages/Portfolio";
 
 import About from "./pages/About";
-import Blog from "./pages/Blog";
-import BlogPost from "./pages/BlogPost";
 import FAQ from "./pages/FAQ";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
@@ -42,8 +40,6 @@ const AppContent = () => {
             <Route path="/Portfolio" element={<Portfolio />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/about" element={<About />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:id" element={<BlogPost />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />

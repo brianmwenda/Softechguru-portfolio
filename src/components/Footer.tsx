@@ -1,32 +1,11 @@
 
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, Twitter, Mail, Phone, MapPin, Clock, Globe, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Globe, Linkedin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { useEffect, useState } from "react";
 
 export default function Footer() {
   const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
-  const [isDark, setIsDark] = useState(false);
-
-  useEffect(() => {
-    // Check initial theme
-    const checkTheme = () => {
-      const isDarkMode = document.documentElement.classList.contains("dark");
-      setIsDark(isDarkMode);
-    };
-
-    checkTheme();
-
-    // Listen for theme changes
-    const observer = new MutationObserver(checkTheme);
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ['class']
-    });
-
-    return () => observer.disconnect();
-  }, []);
   
   return (
     <footer className="bg-card text-card-foreground pt-12 pb-6 border-t">
@@ -42,14 +21,13 @@ export default function Footer() {
               />
             </h4>
             <p className="text-muted-foreground text-sm mb-4">
-              {t.footer.description}
+              Professional design services for website, graphic, and architectural projects. Bringing your creative vision to life.
             </p>
             <div className="flex space-x-3">
-              <a href="www.linkedin.com/in/brian-mwenda-325524360" className="text-muted-foreground hover:text-primary transition-colors p-2 bg-muted/50 rounded-full">
+              <a href="https://www.linkedin.com/in/brian-mwenda-325524360" className="text-muted-foreground hover:text-primary transition-colors p-2 bg-muted/50 rounded-full">
                 <Linkedin size={16} />
                 <span className="sr-only">LinkedIn</span>
               </a>
-              
             </div>
           </div>
           
@@ -60,9 +38,8 @@ export default function Footer() {
               {[
                 { name: "Home", path: "/" },
                 { name: "Portfolio", path: "/Portfolio" },
-                { name: t.nav.blog, path: "/blog" },
+                { name: "Pricing", path: "/pricing" },
                 { name: t.nav.faq, path: "/faq" }
-             
               ].map((link) => (
                 <li key={link.name}>
                   <Link 
