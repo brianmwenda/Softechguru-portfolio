@@ -2,75 +2,56 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { 
-  Code2, 
+  Monitor, 
+  PenTool, 
   Palette, 
-  Camera, 
-  Video, 
-  Globe, 
-  Smartphone,
-  ArrowRight,
-  Check,
-  ShoppingCart,
-  MessageCircle,
-  Store,
-  FileText
+  Wrench,
+  ArrowRight
 } from "lucide-react";
-import { useCart } from "@/contexts/CartContext";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { School } from "lucide-react";
 
 const services = [
   {
-    id: "web-dev",
-    icon: <School className="h-8 w-8" />,
-    title: "Business Websites",
-    description: "Clean, fast, mobile-first websites that make your brand stand out.",
-    image: "https://images.unsplash.com/photo-1647973035166-2abf410c68b0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  
-    // price: 200,
+    id: "website-design",
+    icon: <Monitor className="h-8 w-8" />,
+    title: "Website Design",
+    description: "Beautiful, responsive websites that captivate visitors and convert them into customers. Modern UI/UX design principles.",
+    image: "https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=1964&auto=format&fit=crop",
     popular: true
   },
   {
-    id: "ecommerce",
-    icon: <Store className="h-8 w-8" />,
-    title: "E-commerce Stores",
-    description: "Online shops with secure payments (M-Pesa & cards) so you can sell 24/7.",
-    image: "https://images.unsplash.com/photo-1657812159075-7f0abd98f7b8?q=80&w=1954&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-   
-    // price: 200,
+    id: "architectural-design",
+    icon: <PenTool className="h-8 w-8" />,
+    title: "Architectural Design",
+    description: "3D visualizations, floor plans, and architectural renders that bring your building projects to life before construction.",
+    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1931&auto=format&fit=crop",
     popular: false
   },
   {
-    id: "custom-web-apps",
-    icon: <FileText className="h-8 w-8" />,
-    title: "Custom Web Apps",
-    description: "Tailored solutions for bookings, portals, and unique business workflows.",
-    image: "https://images.unsplash.com/photo-1642132652798-ae887edb9e9d?q=80&w=2060&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    
-    // price: 200,
-    popular: false
+    id: "graphic-design",
+    icon: <Palette className="h-8 w-8" />,
+    title: "Graphic Design",
+    description: "Logos, posters, branding materials, and visual content that tell your brand's story with impact and creativity.",
+    image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=2071&auto=format&fit=crop",
+    popular: true
   },
   {
-    id: "hosting",
-    icon: <Globe className="h-8 w-8" />,
+    id: "website-care",
+    icon: <Wrench className="h-8 w-8" />,
     title: "Website Care & Support",
-    description: "Ongoing updates, security, and improvements after your project is launched.",
-    image: "https://images.unsplash.com/photo-1642132652860-471b4228023e?q=80&w=2060&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    
-    // price: 40,
+    description: "Ongoing maintenance, security updates, content changes, and technical support to keep your website running smoothly.",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
     popular: false
   }
 ];
 
 export default function ModernServicesSection() {
   const { t } = useLanguage();
-  const { addItem } = useCart();
   const [hoveredService, setHoveredService] = useState<string | null>(null);
 
   const handleGetQuote = (service: typeof services[0]) => {
-    const whatsappMessage = `Hello! I'm interested in getting a quote for ${service.title}.\n\nService Details:\n- ${service.description}\n\nPlease provide me with a detailed quote for this service.`;
+    const whatsappMessage = `Hello! I'm interested in your ${service.title} service.\n\nService Details:\n- ${service.description}\n\nPlease provide me with more information and a quote.`;
     const whatsappUrl = `https://wa.me/254701443181?text=${encodeURIComponent(whatsappMessage)}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -81,11 +62,11 @@ export default function ModernServicesSection() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">
-            Services & Solutions
+            Design Services
           </h2>
           <p className="text-lg text-muted-foreground">
-            From concept to deployment, I provide end-to-end digital solutions 
-            that help your business thrive in the digital landscape.
+            Professional creative solutions to elevate your brand and bring your vision to life. 
+            From digital to architectural, we've got you covered.
           </p>
         </div>
 
@@ -95,25 +76,38 @@ export default function ModernServicesSection() {
             {services.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {services.map((service, index) => (
-                  <div key={service.id} className="glass-card rounded-xl overflow-hidden animate-fade-in hover:shadow-xl transition-all duration-300" style={{ animationDelay: `${(index + 1) * 100}ms` }}>
-                    <div className="aspect-video rounded-t-xl overflow-hidden">
+                  <div 
+                    key={service.id} 
+                    className="glass-card rounded-xl overflow-hidden animate-fade-in hover:shadow-xl transition-all duration-300 group cursor-pointer" 
+                    style={{ animationDelay: `${(index + 1) * 100}ms` }}
+                    onMouseEnter={() => setHoveredService(service.id)}
+                    onMouseLeave={() => setHoveredService(null)}
+                    onClick={() => handleGetQuote(service)}
+                  >
+                    <div className="aspect-video rounded-t-xl overflow-hidden relative">
                       <img 
                         src={service.image}
                         alt={service.title}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       />
+                      {service.popular && (
+                        <div className="absolute top-3 right-3 bg-primary text-white text-xs px-3 py-1 rounded-full font-medium">
+                          Popular
+                        </div>
+                      )}
                     </div>
                     <div className="p-6">
                       <div className="flex items-center mb-4">
                         <div className="p-2 rounded-lg bg-primary/10 text-primary mr-3">
                           {service.icon}
                         </div>
-                        {/* <span className="text-sm text-muted-foreground">{service.category}</span> */}
                       </div>
                       <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
                       <p className="text-muted-foreground mb-4">{service.description}</p>
                       
-                   
+                      <div className="flex items-center text-primary font-medium text-sm group-hover:translate-x-2 transition-transform">
+                        Get Quote <ArrowRight className="ml-2 h-4 w-4" />
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -125,10 +119,16 @@ export default function ModernServicesSection() {
         {/* CTA Section */}
         <div className="text-center mt-16 animate-fade-in animate-stagger-5">
           <div className="inline-flex flex-col sm:flex-row gap-4">
-            
-            <Link to="/pricing"><Button variant="outline" className="btn-secondary">
-              View Pricing
-            </Button></Link>
+            <Link to="/Portfolio">
+              <Button className="btn-primary">
+                View Portfolio
+              </Button>
+            </Link>
+            <Link to="/pricing">
+              <Button variant="outline" className="btn-secondary">
+                View Pricing
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

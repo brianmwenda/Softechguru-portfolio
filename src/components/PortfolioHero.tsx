@@ -2,67 +2,65 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Linkedin, Mail, Code, Palette, Camera, Video } from "lucide-react";
+import { Palette, PenTool, Monitor, Wrench } from "lucide-react";
 
 export default function PortfolioHero() {
-  const [users, setUsers] = useState(0);
-  const [sales, setSales] = useState(0);
-  const [growth, setGrowth] = useState(0);
+  const [projects, setProjects] = useState(0);
+  const [clients, setClients] = useState(0);
+  const [years, setYears] = useState(0);
 
   useEffect(() => {
     const animateNumbers = () => {
-      // Users counter
-      let userStart = 0;
-      const userTarget = 1302;
-      const userIncrement = userTarget / 50;
-      const userTimer = setInterval(() => {
-        userStart += userIncrement;
-        if (userStart >= userTarget) {
-          setUsers(userTarget);
-          clearInterval(userTimer);
+      // Projects counter
+      let projectStart = 0;
+      const projectTarget = 150;
+      const projectIncrement = projectTarget / 50;
+      const projectTimer = setInterval(() => {
+        projectStart += projectIncrement;
+        if (projectStart >= projectTarget) {
+          setProjects(projectTarget);
+          clearInterval(projectTimer);
         } else {
-          setUsers(Math.floor(userStart));
+          setProjects(Math.floor(projectStart));
         }
       }, 30);
 
-      // Sales counter
-      let salesStart = 0;
-      const salesTarget = 1185018;
-      const salesIncrement = salesTarget / 50;
-      const salesTimer = setInterval(() => {
-        salesStart += salesIncrement;
-        if (salesStart >= salesTarget) {
-          setSales(salesTarget);
-          clearInterval(salesTimer);
+      // Clients counter
+      let clientStart = 0;
+      const clientTarget = 80;
+      const clientIncrement = clientTarget / 50;
+      const clientTimer = setInterval(() => {
+        clientStart += clientIncrement;
+        if (clientStart >= clientTarget) {
+          setClients(clientTarget);
+          clearInterval(clientTimer);
         } else {
-          setSales(Math.floor(salesStart));
+          setClients(Math.floor(clientStart));
         }
       }, 30);
 
-      // Growth counter
-      let growthStart = 0;
-      const growthTarget = 44;
-      const growthIncrement = growthTarget / 50;
-      const growthTimer = setInterval(() => {
-        growthStart += growthIncrement;
-        if (growthStart >= growthTarget) {
-          setGrowth(growthTarget);
-          clearInterval(growthTimer);
+      // Years counter
+      let yearsStart = 0;
+      const yearsTarget = 5;
+      const yearsIncrement = yearsTarget / 50;
+      const yearsTimer = setInterval(() => {
+        yearsStart += yearsIncrement;
+        if (yearsStart >= yearsTarget) {
+          setYears(yearsTarget);
+          clearInterval(yearsTimer);
         } else {
-          setGrowth(Math.floor(growthStart));
+          setYears(Math.floor(yearsStart));
         }
       }, 30);
     };
 
-    // Start animation on mount
     animateNumbers();
 
-    // Restart animation on scroll to top
     const handleScroll = () => {
       if (window.scrollY === 0) {
-        setUsers(0);
-        setSales(0);
-        setGrowth(0);
+        setProjects(0);
+        setClients(0);
+        setYears(0);
         setTimeout(animateNumbers, 100);
       }
     };
@@ -70,6 +68,14 @@ export default function PortfolioHero() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const serviceIcons = [
+    { icon: <Monitor className="h-6 w-6" />, label: "Website Design" },
+    { icon: <PenTool className="h-6 w-6" />, label: "Architectural Design" },
+    { icon: <Palette className="h-6 w-6" />, label: "Graphic Design" },
+    { icon: <Wrench className="h-6 w-6" />, label: "Website Care" },
+  ];
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
       <div className="container relative z-10">
@@ -78,12 +84,22 @@ export default function PortfolioHero() {
           <div className="text-center lg:text-left space-y-6 animate-fade-in px-4">
             <div className="space-y-4">
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
-                Smart, reliable websites for all businesses.
+                Creative Design Solutions That Make an Impact
               </h1>
               
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0">
-                Struggling with an outdated site? Losing sales because customers can't order online? From simple landing pages to full e-commerce stores, we build affordable, easy-to-use websites that help your business grow.
+                From stunning website designs to architectural visualizations and brand identity, we bring your creative vision to life with precision and artistry.
               </p>
+            </div>
+
+            {/* Service Icons */}
+            <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+              {serviceIcons.map((service, index) => (
+                <div key={index} className="flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full border border-primary/20">
+                  <span className="text-primary">{service.icon}</span>
+                  <span className="text-sm text-muted-foreground">{service.label}</span>
+                </div>
+              ))}
             </div>
             
             <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
@@ -99,18 +115,18 @@ export default function PortfolioHero() {
                       fill="white"
                     />
                   </svg>
-                  Chat on WhatsApp
+                  Get a Free Quote
                 </a>
               </Button>
               <Button asChild variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10 px-6 py-3 rounded-lg">
-                <Link to="/Pricing">
-                  See Pricing
+                <Link to="/Portfolio">
+                  View Portfolio
                 </Link>
               </Button>
             </div>
           </div>
           
-          {/* Dashboard Mockup */}
+          {/* Stats Card */}
           <div className="relative animate-fade-in [animation-delay:300ms] px-4">
             <div className="bg-card rounded-2xl p-4 md:p-6 shadow-2xl border border-border">
               <div className="flex items-center gap-2 mb-4">
@@ -120,27 +136,28 @@ export default function PortfolioHero() {
               </div>
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
-                  <h3 className="text-lg font-semibold text-white">Mini Dashboard</h3>
+                  <h3 className="text-lg font-semibold text-white">Creative Stats</h3>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <div className="text-center p-2">
-                    <div className="text-xs md:text-sm text-muted-foreground">Users</div>
-                    <div className="text-xl md:text-2xl lg:text-3xl font-bold text-white">{users.toLocaleString()}</div>
+                    <div className="text-xs md:text-sm text-muted-foreground">Projects</div>
+                    <div className="text-xl md:text-2xl lg:text-3xl font-bold text-white">{projects}+</div>
                   </div>
                   <div className="text-center p-2">
-                    <div className="text-xs md:text-sm text-muted-foreground">Sales (KES)</div>
-                    <div className="text-xl md:text-2xl lg:text-3xl font-bold text-white">{sales.toLocaleString()}</div>
+                    <div className="text-xs md:text-sm text-muted-foreground">Happy Clients</div>
+                    <div className="text-xl md:text-2xl lg:text-3xl font-bold text-white">{clients}+</div>
                   </div>
                   <div className="text-center p-2">
-                    <div className="text-xs md:text-sm text-muted-foreground">Growth</div>
-                    <div className="text-xl md:text-2xl lg:text-3xl font-bold text-primary">{growth}%</div>
+                    <div className="text-xs md:text-sm text-muted-foreground">Years</div>
+                    <div className="text-xl md:text-2xl lg:text-3xl font-bold text-primary">{years}+</div>
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <div className="text-xs md:text-sm text-muted-foreground">Quarterly Goal</div>
+                  <div className="text-xs md:text-sm text-muted-foreground">Client Satisfaction</div>
                   <div className="w-full bg-muted rounded-full h-2 md:h-3">
-                    <div className="bg-primary h-2 md:h-3 rounded-full transition-all duration-1000" style={{ width: '75%' }}></div>
+                    <div className="bg-primary h-2 md:h-3 rounded-full transition-all duration-1000" style={{ width: '98%' }}></div>
                   </div>
+                  <div className="text-right text-sm text-primary font-medium">98%</div>
                 </div>
               </div>
             </div>

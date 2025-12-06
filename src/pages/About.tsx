@@ -3,27 +3,37 @@ import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
-import { Users, Award, Clock, Heart, Code, Palette, Camera, Video } from "lucide-react";
+import { Users, Award, Clock, Heart, Monitor, Palette, PenTool, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const stats = [
-  { icon: <Users className="h-8 w-8" />, number: "50+", label: "Happy Clients" },
-  { icon: <Award className="h-8 w-8" />, number: "100+", label: "Projects Completed" },
-  { icon: <Clock className="h-8 w-8" />, number: "3+", label: "Years Experience" },
-  { icon: <Heart className="h-8 w-8" />, number: "99%", label: "Client Satisfaction" }
+  { icon: <Users className="h-8 w-8" />, number: "80+", label: "Happy Clients" },
+  { icon: <Award className="h-8 w-8" />, number: "150+", label: "Projects Completed" },
+  { icon: <Clock className="h-8 w-8" />, number: "5+", label: "Years Experience" },
+  { icon: <Heart className="h-8 w-8" />, number: "98%", label: "Client Satisfaction" }
 ];
 
 const services = [
   {
-    icon: <Code className="h-8 w-8 text-primary" />,
-    title: "Web Development",
-    description: "Custom websites and web applications built with cutting-edge technologies."
+    icon: <Monitor className="h-8 w-8 text-primary" />,
+    title: "Website Design",
+    description: "Beautiful, responsive websites that captivate visitors and drive conversions."
+  },
+  {
+    icon: <PenTool className="h-8 w-8 text-primary" />,
+    title: "Architectural Design",
+    description: "3D visualizations and floor plans that bring your building projects to life."
   },
   {
     icon: <Palette className="h-8 w-8 text-primary" />,
     title: "Graphic Design",
-    description: "Beautiful and intuitive interfaces that provide exceptional user experiences."
+    description: "Logos, posters, and branding materials that tell your brand's story with impact."
+  },
+  {
+    icon: <Wrench className="h-8 w-8 text-primary" />,
+    title: "Website Care & Support",
+    description: "Ongoing maintenance and support to keep your website running smoothly."
   }
 ];
 
@@ -38,17 +48,17 @@ export default function About() {
     "mainEntity": {
       "@type": "Organization",
       "name": "Softech Guru",
-      "foundingDate": "2021",
-      "description": "Digital agency specializing in web development, graphic design, and creative solutions"
+      "foundingDate": "2020",
+      "description": "Creative design agency specializing in website design, graphic design, architectural visualization, and ongoing website support"
     }
   };
 
   return (
     <>
       <SEO
-        title="About Us - Softech Guru | Professional Web Development Team"
-        description="Learn about Softech Guru's journey since 2021. Professional web development, graphic design, and digital solutions team based in Kenya serving clients globally."
-        keywords="about Softech Guru, web development team Kenya, digital agency Nairobi, professional web designers, creative team"
+        title="About Us - Softech Guru | Professional Design Team"
+        description="Learn about Softech Guru's journey in creative design. Professional website design, graphic design, architectural visualization, and branding services."
+        keywords="about Softech Guru, design agency Kenya, creative team Nairobi, professional designers, branding experts"
         structuredData={aboutStructuredData}
       />
     <div className="min-h-screen flex flex-col">
@@ -63,10 +73,10 @@ export default function About() {
                 About Us
               </span>
               <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6">
-                Crafting Digital Excellence Since 2021
+                Crafting Creative Excellence Since 2020
               </h1>
               <p className="text-muted-foreground">
-                We are a passionate team of developers, designers, and creatives dedicated to bringing your digital vision to life.
+                We are a passionate team of designers and creatives dedicated to bringing your visual ideas to life with precision and artistry.
               </p>
             </div>
           </div>
@@ -81,21 +91,21 @@ export default function About() {
                   Our Story
                 </h2>
                 <p className="text-muted-foreground mb-6">
-                  Founded in 2021, our company emerged from a simple belief: that great digital experiences should be accessible to businesses of all sizes. What started as a small team of passionate developers has grown into a full-service digital agency.
+                  Founded in 2020, Softech Guru emerged from a passion for exceptional design. What started as a one-person creative studio has grown into a full-service design agency serving clients across Kenya and beyond.
                 </p>
                 <p className="text-muted-foreground mb-6">
-                  We specialize in creating custom web solutions, stunning visual designs, and compelling multimedia content that helps our clients stand out in the digital landscape. Our approach combines technical expertise with creative vision to deliver results that exceed expectations.
+                  We specialize in creating stunning website designs, powerful brand identities, eye-catching graphic designs, and immersive architectural visualizations. Our approach combines technical expertise with creative vision to deliver results that exceed expectations.
                 </p>
                 <p className="text-muted-foreground mb-8">
-                  Every project we undertake is a journey of collaboration, innovation, and attention to detail. We believe in building long-term partnerships with our clients, supporting their growth through exceptional digital solutions.
+                  Every project we undertake is a journey of collaboration, innovation, and attention to detail. We believe in building long-term partnerships with our clients, supporting their growth through exceptional design solutions.
                 </p>
               </div>
               
               <div className="relative animate-fade-in [animation-delay:300ms]">
                 <div className="aspect-[4/3] rounded-2xl overflow-hidden">
                   <img 
-                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop"
-                    alt="Softech Guru team collaborating on web development projects in modern office environment" 
+                    src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=600&fit=crop"
+                    alt="Softech Guru creative design workspace with design tools and projects" 
                     className="w-full h-full object-cover"
                     loading="lazy"
                   />
@@ -134,7 +144,7 @@ export default function About() {
                 What We Do
               </h2>
               <p className="text-muted-foreground">
-                Our comprehensive suite of services covers every aspect of your digital presence.
+                Our comprehensive suite of design services covers every aspect of your creative needs.
               </p>
             </div>
             
@@ -166,7 +176,7 @@ export default function About() {
                 Our Values
               </h2>
               <p className="text-muted-foreground">
-                The principles that guide everything we do.
+                The principles that guide everything we create.
               </p>
             </div>
             
@@ -177,7 +187,7 @@ export default function About() {
                 </div>
                 <h3 className="text-xl font-semibold mb-3">Passion</h3>
                 <p className="text-muted-foreground">
-                  We love what we do and it shows in every project we deliver.
+                  We love what we do and it shows in every design we deliver.
                 </p>
               </div>
               
@@ -212,10 +222,10 @@ export default function About() {
                 Ready to Work Together?
               </h2>
               <p className="text-muted-foreground mb-8">
-                Let's discuss your project and see how we can help bring your vision to life.
+                Let's discuss your design project and see how we can bring your creative vision to life.
               </p>
               <Button asChild size="lg" className="btn-primary">
-                <Link to="/contact">Get In Touch</Link>
+                <a href="https://wa.me/254701443181" target="_blank" rel="noopener noreferrer">Get In Touch</a>
               </Button>
             </div>
           </div>

@@ -3,8 +3,6 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import ThemeToggle from "./ThemeToggle";
-import Cart from "./Cart";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -21,7 +19,6 @@ export default function Navbar() {
     { name: "Why Us", path: "/#why-us" },
     { name: "Portfolio", path: "/Portfolio" },
     { name: "Pricing", path: "/pricing" },
-    { name: t.nav.blog, path: "/blog" },
     { name: t.nav.faq, path: "/faq" }
   ];
 
@@ -29,10 +26,8 @@ export default function Navbar() {
     if (path.startsWith('/#')) {
       const section = path.substring(2);
       
-      // If we're not on the home page, navigate there first
       if (location.pathname !== '/') {
         navigate('/');
-        // Wait for navigation and then scroll
         setTimeout(() => {
           const element = document.getElementById(section);
           if (element) {
@@ -40,7 +35,6 @@ export default function Navbar() {
           }
         }, 100);
       } else {
-        // We're on the home page, scroll directly
         const element = document.getElementById(section);
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
