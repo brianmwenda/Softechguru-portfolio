@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import PortfolioHero from "@/components/PortfolioHero";
 import AboutSection from "@/components/AboutSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import ModernServicesSection from "@/components/ModernServicesSection";
 import SEO from "@/components/SEO";
 import Preloader from "@/components/Preloader";
 import { Button } from "@/components/ui/button";
@@ -115,6 +116,11 @@ export default function Index() {
         
         {/* Hero Section */}
         <PortfolioHero />
+        
+        {/* Services Section */}
+        <div className="scroll-animate">
+          <ModernServicesSection />
+        </div>
         
         {/* About Section */}
         <div className="scroll-animate">
