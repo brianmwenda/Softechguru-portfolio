@@ -17,9 +17,8 @@ export default function Navbar() {
     { name: t.nav.home, path: "/" },
     { name: "Services", path: "/#services" },
     { name: "Why Us", path: "/#why-us" },
-    { name: "Portfolio", path: "/Portfolio" },
-    { name: "Pricing", path: "/pricing" },
-    { name: t.nav.faq, path: "/faq" }
+    { name: "Portfolio", path: "/portfolio" },
+    { name: "Pricing", path: "/pricing" }
   ];
 
   const handleNavClick = (path: string) => {
