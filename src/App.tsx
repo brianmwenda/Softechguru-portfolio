@@ -17,6 +17,7 @@ import { LanguageProvider } from "./contexts/LanguageContext";
 import { CartProvider } from "./contexts/CartContext";
 import WhatsAppButton from "./components/WhatsAppButton";
 import ScrollToTop from "@/components/ScrollToTop";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 import Preloader from "./components/Preloader";
 import { usePreloader } from "./hooks/usePreloader";
 import Pricing from "./pages/pricing";
@@ -47,6 +48,7 @@ const AppContent = () => {
             <Route path="*" element={<NotFound />} />
           </Routes>
           <WhatsAppButton />
+          <ScrollToTopButton />
         </BrowserRouter>
       </div>
     </>
