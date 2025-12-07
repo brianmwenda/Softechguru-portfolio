@@ -43,6 +43,10 @@
     @apply border-border;
   }
   
+  html {
+    scroll-behavior: smooth;
+  }
+  
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Jost', sans-serif;
