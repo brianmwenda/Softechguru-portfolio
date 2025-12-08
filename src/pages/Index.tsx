@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PortfolioHero from "@/components/PortfolioHero";
 import AboutSection from "@/components/AboutSection";
+import AboutUsStory from "@/components/AboutUsStory";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import ModernServicesSection from "@/components/ModernServicesSection";
 import SEO from "@/components/SEO";
@@ -116,6 +117,11 @@ export default function Index() {
         
         {/* Hero Section */}
         <PortfolioHero />
+        
+        {/* About Us Story Section */}
+        <div className="scroll-animate">
+          <AboutUsStory />
+        </div>
         
         {/* Services Section */}
         <div className="scroll-animate">
