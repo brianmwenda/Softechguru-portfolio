@@ -1,6 +1,12 @@
-import { Rocket, Users, Target, Calendar } from "lucide-react";
+import { Rocket, Users, Target, Calendar, MapPin } from "lucide-react";
 
 const AboutUsStory = () => {
+  const milestones = [
+    { year: "2023", title: "Founded", description: "Started with a vision to deliver exceptional design services", isActive: true },
+    { year: "2024", title: "Growing", description: "Expanded services and built lasting client relationships", isActive: true },
+    { year: "2025+", title: "The Future", description: "Multiple collaborations and becoming a big business", isActive: false },
+  ];
+
   return (
     <section id="about-us" className="py-20 bg-background relative overflow-hidden">
       {/* Background decorations */}
@@ -16,7 +22,7 @@ const AboutUsStory = () => {
               Our Story
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Building Dreams Since 2022
+              Building Dreams Since 2023
             </h2>
             <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
           </div>
@@ -28,9 +34,9 @@ const AboutUsStory = () => {
               <div className="glass-card p-6 border-l-4 border-primary">
                 <h3 className="text-xl font-semibold text-foreground mb-3">How It All Began</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Three years ago, Softech Guru started as a small creative studio with a big dream. 
-                  What began as a one-person passion project has grown into a dedicated team of 
-                  designers and developers committed to transforming ideas into stunning digital experiences.
+                  In 2023, Softech Guru started as a small creative studio with a big dream. 
+                  What began as a one-person passion project has grown into a dedicated business 
+                  committed to transforming ideas into stunning digital experiences.
                 </p>
               </div>
               
@@ -82,24 +88,38 @@ const AboutUsStory = () => {
             </div>
           </div>
 
-          {/* Timeline/Milestones */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="glass-card p-6 text-center group hover:border-primary/50 transition-colors">
-              <div className="text-4xl font-bold text-primary mb-2">2022</div>
-              <h4 className="font-semibold text-foreground mb-2">Founded</h4>
-              <p className="text-sm text-muted-foreground">Started with a vision to deliver exceptional design services</p>
+          {/* Roadmap Timeline */}
+          <div className="relative">
+            {/* Connecting Line */}
+            <div className="absolute top-8 left-0 right-0 h-1 bg-border hidden md:block">
+              <div className="h-full bg-primary" style={{ width: '66%' }} />
             </div>
             
-            <div className="glass-card p-6 text-center group hover:border-primary/50 transition-colors">
-              <div className="text-4xl font-bold text-primary mb-2">2024</div>
-              <h4 className="font-semibold text-foreground mb-2">Growing</h4>
-              <p className="text-sm text-muted-foreground">Expanded services and built lasting client relationships</p>
-            </div>
-            
-            <div className="glass-card p-6 text-center group hover:border-primary/50 transition-colors">
-              <div className="text-4xl font-bold text-primary mb-2">2025+</div>
-              <h4 className="font-semibold text-foreground mb-2">The Future</h4>
-              <p className="text-sm text-muted-foreground">Multiple collaborations and becoming a big business</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
+              {milestones.map((milestone, index) => (
+                <div key={milestone.year} className="relative flex flex-col items-center">
+                  {/* Destination Pin */}
+                  <div className={`relative z-10 mb-4 p-3 rounded-full ${milestone.isActive ? 'bg-primary text-primary-foreground' : 'bg-muted text-muted-foreground'} shadow-lg transition-transform hover:scale-110`}>
+                    <MapPin className="h-6 w-6" />
+                  </div>
+                  
+                  {/* Mobile connecting line */}
+                  {index < milestones.length - 1 && (
+                    <div className="md:hidden absolute top-16 left-1/2 w-0.5 h-8 -translate-x-1/2 bg-border">
+                      {milestone.isActive && <div className="w-full h-full bg-primary" />}
+                    </div>
+                  )}
+                  
+                  {/* Content Card */}
+                  <div className="glass-card p-6 text-center w-full group hover:border-primary/50 transition-all hover:shadow-lg">
+                    <div className={`text-3xl font-bold mb-2 ${milestone.isActive ? 'text-primary' : 'text-muted-foreground'}`}>
+                      {milestone.year}
+                    </div>
+                    <h4 className="font-semibold text-foreground mb-2">{milestone.title}</h4>
+                    <p className="text-sm text-muted-foreground">{milestone.description}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
