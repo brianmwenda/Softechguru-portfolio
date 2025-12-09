@@ -1,209 +1,317 @@
-import { MapPin } from "lucide-react";
+import { useState } from "react";
+import { MapPin, ChevronRight, ChevronLeft, Sparkles, CheckCircle2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const steps = [
   {
     number: 1,
     title: "Discovery & Consultation",
     description: "We begin by understanding your brand, goals, audience, and project vision.",
-    details: ["Initial meeting or briefing", "Reviewing references or inspirations", "Clarifying scope, timelines, and deliverables"]
+    details: ["Initial meeting or briefing", "Reviewing references or inspirations", "Clarifying scope, timelines, and deliverables"],
+    icon: "🎯"
   },
   {
     number: 2,
     title: "Research & Strategy",
     description: "We explore creative directions that align with your brand identity.",
-    details: ["Market and competitor analysis", "Style and trend research", "Brand positioning review"]
+    details: ["Market and competitor analysis", "Style and trend research", "Brand positioning review"],
+    icon: "🔍"
   },
   {
     number: 3,
     title: "Creative Concept Development",
     description: "We sketch and design multiple concepts based on your requirements.",
-    details: ["Mood boards, style guides, or creative directions", "Draft layouts or logo concepts", "Visual storytelling approach"]
+    details: ["Mood boards, style guides, or creative directions", "Draft layouts or logo concepts", "Visual storytelling approach"],
+    icon: "✨"
   },
   {
     number: 4,
     title: "Client Review & Feedback",
     description: "We share the initial concepts for your feedback.",
-    details: ["Refinements", "Revisions", "Changes in style, colors, or typography"]
+    details: ["Refinements", "Revisions", "Changes in style, colors, or typography"],
+    icon: "💬"
   },
   {
     number: 5,
     title: "Refinement & Final Design",
     description: "After incorporating your feedback, we perfect the final design.",
-    details: ["Accuracy", "Visual consistency", "Brand alignment"]
+    details: ["Accuracy", "Visual consistency", "Brand alignment"],
+    icon: "🎨"
   },
   {
     number: 6,
     title: "Final Approval",
     description: "You review the polished final version and confirm everything meets your expectations.",
-    details: ["Design files", "Formats for print and digital", "Brand guidelines (if included)"]
+    details: ["Design files", "Formats for print and digital", "Brand guidelines (if included)"],
+    icon: "✅"
   },
   {
     number: 7,
     title: "Project Hand-Over",
     description: "We deliver all final assets securely in your preferred formats.",
-    details: ["High-resolution images", "Vector files (AI, EPS, SVG)", "Web-optimized versions (PNG, JPG)"]
+    details: ["High-resolution images", "Vector files (AI, EPS, SVG)", "Web-optimized versions (PNG, JPG)"],
+    icon: "📦"
   },
   {
     number: 8,
     title: "Support & After-Service",
     description: "We stay available for ongoing support.",
-    details: ["Minor post-delivery adjustments", "File reformatting", "Long-term design support"]
+    details: ["Minor post-delivery adjustments", "File reformatting", "Long-term design support"],
+    icon: "🤝"
   }
 ];
 
 const HowWeWorkRoadmap = () => {
+  const [currentStep, setCurrentStep] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const handleNext = () => {
+    if (currentStep < steps.length - 1 && !isAnimating) {
+      setIsAnimating(true);
+      setTimeout(() => {
+        setCurrentStep(prev => prev + 1);
+        setIsAnimating(false);
+      }, 300);
+    }
+  };
+
+  const handlePrev = () => {
+    if (currentStep > 0 && !isAnimating) {
+      setIsAnimating(true);
+      setTimeout(() => {
+        setCurrentStep(prev => prev - 1);
+        setIsAnimating(false);
+      }, 300);
+    }
+  };
+
+  const handleStepClick = (index: number) => {
+    if (index !== currentStep && !isAnimating) {
+      setIsAnimating(true);
+      setTimeout(() => {
+        setCurrentStep(index);
+        setIsAnimating(false);
+      }, 300);
+    }
+  };
+
+  const step = steps[currentStep];
+  const progress = ((currentStep + 1) / steps.length) * 100;
+
   return (
-    <section className="py-20 bg-muted/30 relative overflow-hidden">
-      {/* Background decorations */}
-      <div className="absolute top-20 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+    <section className="py-20 bg-gradient-to-b from-background via-muted/20 to-background relative overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl" />
+      </div>
       
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-            <MapPin className="h-4 w-4" />
-            Our Process
+        <div className="text-center mb-12">
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4 backdrop-blur-sm">
+            <Sparkles className="h-4 w-4" />
+            Interactive Journey
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            How We Work: From Idea to Final Delivery
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
+            How We Work
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            A transparent, collaborative journey that ensures your vision becomes reality
+          <p className="text-muted-foreground max-w-xl mx-auto">
+            Click through our creative process journey
           </p>
-          <div className="w-20 h-1 bg-primary mx-auto rounded-full mt-4" />
         </div>
 
-        {/* Roadmap Container */}
-        <div className="relative max-w-5xl mx-auto">
-          {/* The main path/road line - desktop */}
-          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-primary rounded-full transform -translate-y-1/2" />
-          
-          {/* The main path/road line - mobile/tablet (vertical) */}
-          <div className="lg:hidden absolute top-0 bottom-0 left-6 w-1 bg-gradient-to-b from-primary via-accent to-primary rounded-full" />
-
-          {/* Steps Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-4">
-            {/* First row - steps 1-4 */}
-            {steps.slice(0, 4).map((step, index) => (
-              <div key={step.number} className="relative pl-16 lg:pl-0">
-                {/* Map Marker - Mobile */}
-                <div className="lg:hidden absolute left-0 top-0 z-20">
-                  <div className="relative">
-                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-lg shadow-primary/30 border-4 border-background">
-                      <MapPin className="h-5 w-5 text-primary-foreground" />
-                    </div>
-                    <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-t-[10px] border-t-primary" />
-                  </div>
-                </div>
-
-                {/* Card */}
-                <div 
-                  className="glass-card p-5 h-full relative lg:mt-24"
-                  style={{ animationDelay: `${index * 100}ms` }}
+        {/* Progress Road */}
+        <div className="max-w-4xl mx-auto mb-8">
+          <div className="relative">
+            {/* Road/Path Background */}
+            <div className="h-3 bg-muted rounded-full overflow-hidden shadow-inner">
+              <div 
+                className="h-full bg-gradient-to-r from-primary via-accent to-primary rounded-full transition-all duration-500 ease-out relative"
+                style={{ width: `${progress}%` }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer" />
+              </div>
+            </div>
+            
+            {/* Step Markers on Road */}
+            <div className="absolute top-1/2 -translate-y-1/2 left-0 right-0 flex justify-between px-0">
+              {steps.map((s, index) => (
+                <button
+                  key={s.number}
+                  onClick={() => handleStepClick(index)}
+                  className={`
+                    relative group transition-all duration-300 focus:outline-none
+                    ${index <= currentStep ? 'scale-100' : 'scale-90 opacity-60'}
+                  `}
                 >
-                  {/* Map Marker - Desktop */}
-                  <div className="hidden lg:block absolute -top-16 left-1/2 transform -translate-x-1/2 z-20">
-                    <div className="relative">
-                      <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-lg shadow-primary/30 border-4 border-background animate-pulse">
-                        <MapPin className="h-5 w-5 text-primary-foreground" />
-                      </div>
-                      <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-t-[10px] border-t-primary" />
+                  {/* Map Pin */}
+                  <div className={`
+                    relative transition-all duration-300
+                    ${index === currentStep ? 'scale-125 -translate-y-2' : 'hover:scale-110 hover:-translate-y-1'}
+                  `}>
+                    <div className={`
+                      w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center 
+                      shadow-lg transition-all duration-300 border-2
+                      ${index < currentStep 
+                        ? 'bg-primary border-primary text-primary-foreground' 
+                        : index === currentStep 
+                          ? 'bg-accent border-accent text-accent-foreground animate-bounce' 
+                          : 'bg-muted border-border text-muted-foreground'}
+                    `}>
+                      {index < currentStep ? (
+                        <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5" />
+                      ) : (
+                        <MapPin className="h-4 w-4 md:h-5 md:w-5" />
+                      )}
+                    </div>
+                    
+                    {/* Pin pointer */}
+                    <div className={`
+                      absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-0 
+                      border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px]
+                      transition-colors duration-300
+                      ${index < currentStep 
+                        ? 'border-t-primary' 
+                        : index === currentStep 
+                          ? 'border-t-accent' 
+                          : 'border-t-muted'}
+                    `} />
+                    
+                    {/* Step number tooltip */}
+                    <div className={`
+                      absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 
+                      bg-foreground text-background text-xs font-bold rounded
+                      opacity-0 group-hover:opacity-100 transition-opacity duration-200
+                      whitespace-nowrap
+                    `}>
+                      Step {s.number}
                     </div>
                   </div>
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
 
-                  {/* Step Number Badge */}
-                  <div className="absolute -top-3 lg:top-2 right-3 w-8 h-8 bg-accent text-accent-foreground rounded-full flex items-center justify-center text-sm font-bold shadow-md">
-                    {step.number}
-                  </div>
-
-                  <h3 className="text-lg font-semibold text-foreground mb-2 pr-8 lg:pr-0 lg:mt-2">
-                    {step.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm mb-3">
-                    {step.description}
-                  </p>
-                  <ul className="space-y-1">
-                    {step.details.map((detail, i) => (
-                      <li key={i} className="text-xs text-muted-foreground flex items-start gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
-                        {detail}
-                      </li>
-                    ))}
-                  </ul>
+        {/* Main Content Card */}
+        <div className="max-w-3xl mx-auto">
+          <div className={`
+            relative bg-gradient-to-br from-card via-card to-muted/50 
+            rounded-3xl p-8 md:p-12 shadow-2xl border border-border/50
+            backdrop-blur-xl transition-all duration-300
+            ${isAnimating ? 'opacity-0 scale-95 translate-y-4' : 'opacity-100 scale-100 translate-y-0'}
+          `}>
+            {/* Decorative corner elements */}
+            <div className="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-primary/20 to-transparent rounded-tl-3xl" />
+            <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-accent/20 to-transparent rounded-br-3xl" />
+            
+            {/* Step indicator */}
+            <div className="flex items-center justify-between mb-8">
+              <div className="flex items-center gap-4">
+                <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-3xl md:text-4xl shadow-lg shadow-primary/30 animate-pulse">
+                  {step.icon}
+                </div>
+                <div>
+                  <span className="text-sm text-muted-foreground font-medium">Step {step.number} of {steps.length}</span>
+                  <h3 className="text-2xl md:text-3xl font-bold text-foreground">{step.title}</h3>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
 
-          {/* Second row - steps 5-8 (reversed on desktop for zigzag effect) */}
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-4 mt-8 lg:mt-12">
-            {steps.slice(4, 8).map((step, index) => (
-              <div key={step.number} className="relative pl-16 lg:pl-0">
-                {/* Map Marker - Mobile */}
-                <div className="lg:hidden absolute left-0 top-0 z-20">
-                  <div className="relative">
-                    <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center shadow-lg shadow-accent/30 border-4 border-background">
-                      <MapPin className="h-5 w-5 text-accent-foreground" />
-                    </div>
-                    <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-t-[10px] border-t-accent" />
+            {/* Description */}
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              {step.description}
+            </p>
+
+            {/* Details with animated reveal */}
+            <div className="space-y-4 mb-10">
+              <h4 className="text-sm font-semibold text-foreground uppercase tracking-wider flex items-center gap-2">
+                <span className="w-8 h-px bg-primary" />
+                What's Included
+              </h4>
+              <div className="grid gap-3">
+                {step.details.map((detail, i) => (
+                  <div 
+                    key={i}
+                    className="flex items-center gap-3 p-4 rounded-xl bg-muted/50 border border-border/50 
+                      hover:bg-muted hover:border-primary/30 transition-all duration-300 group"
+                    style={{ 
+                      animationDelay: `${i * 100}ms`,
+                      animation: !isAnimating ? 'fade-in 0.4s ease-out forwards' : 'none',
+                      opacity: 0
+                    }}
+                  >
+                    <div className="w-2 h-2 rounded-full bg-primary group-hover:scale-150 transition-transform" />
+                    <span className="text-foreground">{detail}</span>
                   </div>
-                </div>
-
-                {/* Card */}
-                <div 
-                  className="glass-card p-5 h-full relative lg:mb-24"
-                  style={{ animationDelay: `${(index + 4) * 100}ms` }}
-                >
-                  {/* Map Marker - Desktop (bottom position) */}
-                  <div className="hidden lg:block absolute -bottom-16 left-1/2 transform -translate-x-1/2 z-20">
-                    <div className="relative">
-                      <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[10px] border-b-accent" />
-                      <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center shadow-lg shadow-accent/30 border-4 border-background animate-pulse mt-2">
-                        <MapPin className="h-5 w-5 text-accent-foreground" />
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Step Number Badge */}
-                  <div className="absolute -top-3 lg:top-2 right-3 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold shadow-md">
-                    {step.number}
-                  </div>
-
-                  <h3 className="text-lg font-semibold text-foreground mb-2 pr-8 lg:pr-0">
-                    {step.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm mb-3">
-                    {step.description}
-                  </p>
-                  <ul className="space-y-1">
-                    {step.details.map((detail, i) => (
-                      <li key={i} className="text-xs text-muted-foreground flex items-start gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 flex-shrink-0" />
-                        {detail}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Navigation */}
+            <div className="flex items-center justify-between pt-6 border-t border-border/50">
+              <Button
+                variant="outline"
+                onClick={handlePrev}
+                disabled={currentStep === 0}
+                className="gap-2 px-6 disabled:opacity-30"
+              >
+                <ChevronLeft className="h-4 w-4" />
+                Previous
+              </Button>
+
+              <div className="flex gap-1.5">
+                {steps.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => handleStepClick(i)}
+                    className={`
+                      w-2.5 h-2.5 rounded-full transition-all duration-300
+                      ${i === currentStep 
+                        ? 'bg-primary w-8' 
+                        : i < currentStep 
+                          ? 'bg-primary/50' 
+                          : 'bg-muted-foreground/30'}
+                    `}
+                  />
+                ))}
+              </div>
+
+              <Button
+                onClick={handleNext}
+                disabled={currentStep === steps.length - 1}
+                className="gap-2 px-6 bg-gradient-to-r from-primary to-accent hover:opacity-90 disabled:opacity-30"
+              >
+                Next Step
+                <ChevronRight className="h-4 w-4" />
+              </Button>
+            </div>
           </div>
 
-          {/* Connecting curved lines for desktop */}
-          <div className="hidden lg:block absolute top-1/2 left-0 right-0 transform -translate-y-1/2 pointer-events-none">
-            <svg className="w-full h-32" viewBox="0 0 1000 100" preserveAspectRatio="none">
-              <path 
-                d="M0,50 Q250,20 500,50 T1000,50" 
-                fill="none" 
-                stroke="hsl(var(--primary))" 
-                strokeWidth="3"
-                strokeDasharray="8,4"
-                className="opacity-40"
-              />
-            </svg>
-          </div>
+          {/* Completion message */}
+          {currentStep === steps.length - 1 && (
+            <div className="mt-8 text-center animate-fade-in">
+              <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary/10 text-primary font-medium">
+                <CheckCircle2 className="h-5 w-5" />
+                You've completed the journey! Ready to start your project?
+              </div>
+            </div>
+          )}
         </div>
       </div>
+
+      {/* Custom shimmer animation */}
+      <style>{`
+        @keyframes shimmer {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(100%); }
+        }
+        .animate-shimmer {
+          animation: shimmer 2s infinite;
+        }
+      `}</style>
     </section>
   );
 };
