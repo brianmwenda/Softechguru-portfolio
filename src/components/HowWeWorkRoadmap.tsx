@@ -135,7 +135,7 @@ const HowWeWorkRoadmap = () => {
             How We Work
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Click through our creative process journey
+            Swipe or click through our creative process journey
           </p>
         </div>
 
