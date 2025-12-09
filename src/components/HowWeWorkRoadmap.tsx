@@ -63,35 +63,22 @@ const steps = [
 
 const HowWeWorkRoadmap = () => {
   const [currentStep, setCurrentStep] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
 
   const handleNext = () => {
-    if (currentStep < steps.length - 1 && !isAnimating) {
-      setIsAnimating(true);
-      setTimeout(() => {
-        setCurrentStep(prev => prev + 1);
-        setIsAnimating(false);
-      }, 300);
+    if (currentStep < steps.length - 1) {
+      setCurrentStep(prev => prev + 1);
     }
   };
 
   const handlePrev = () => {
-    if (currentStep > 0 && !isAnimating) {
-      setIsAnimating(true);
-      setTimeout(() => {
-        setCurrentStep(prev => prev - 1);
-        setIsAnimating(false);
-      }, 300);
+    if (currentStep > 0) {
+      setCurrentStep(prev => prev - 1);
     }
   };
 
   const handleStepClick = (index: number) => {
-    if (index !== currentStep && !isAnimating) {
-      setIsAnimating(true);
-      setTimeout(() => {
-        setCurrentStep(index);
-        setIsAnimating(false);
-      }, 300);
+    if (index !== currentStep) {
+      setCurrentStep(index);
     }
   };
 
@@ -211,12 +198,9 @@ const HowWeWorkRoadmap = () => {
 
         {/* Main Content Card */}
         <div className="max-w-3xl mx-auto px-2 sm:px-0">
-          <div className={`
-            relative bg-gradient-to-br from-card via-card to-muted/50 
+          <div className="relative bg-gradient-to-br from-card via-card to-muted/50 
             rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-12 shadow-2xl border border-border/50
-            backdrop-blur-xl transition-all duration-300
-            ${isAnimating ? 'opacity-0 scale-95 translate-y-4' : 'opacity-100 scale-100 translate-y-0'}
-          `}>
+            backdrop-blur-xl transition-all duration-300">
             {/* Decorative corner elements */}
             <div className="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-primary/20 to-transparent rounded-tl-3xl" />
             <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-accent/20 to-transparent rounded-br-3xl" />
@@ -248,12 +232,8 @@ const HowWeWorkRoadmap = () => {
                   <div 
                     key={i}
                     className="flex items-center gap-3 p-4 rounded-xl bg-muted/50 border border-border/50 
-                      hover:bg-muted hover:border-primary/30 transition-all duration-300 group"
-                    style={{ 
-                      animationDelay: `${i * 100}ms`,
-                      animation: !isAnimating ? 'fade-in 0.4s ease-out forwards' : 'none',
-                      opacity: 0
-                    }}
+                      hover:bg-muted hover:border-primary/30 transition-all duration-300 group animate-fade-in"
+                    style={{ animationDelay: `${i * 100}ms` }}
                   >
                     <div className="w-2 h-2 rounded-full bg-primary group-hover:scale-150 transition-transform" />
                     <span className="text-foreground">{detail}</span>
