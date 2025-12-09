@@ -119,9 +119,9 @@ export default function ModernServicesSection() {
         {/* CTA Section */}
         <div className="text-center mt-16 animate-fade-in animate-stagger-5">
           <div className="inline-flex flex-col sm:flex-row gap-4">
-            <Link to="/Portfolio">
-              <Button className="btn-primary">
-                View Portfolio
+            <Link to="/terms-of-service">
+              <Button variant="outline" className="btn-secondary">
+                Terms of Service
               </Button>
             </Link>
             <Link to="/pricing">
