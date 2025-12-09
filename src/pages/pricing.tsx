@@ -156,6 +156,7 @@ export default function Apartments() {
                             <span className="text-5xl font-bold text-white">{(service.price / 1000).toFixed(0)}k</span>
                           </div>
                           <p className="text-xs text-muted-foreground">Starting from KES {service.price.toLocaleString()}</p>
+                          <p className="text-xs text-muted-foreground/70 mt-2 italic">*Exclusive of hosting fees. Hosting fees vary by provider.</p>
                         </div>
 
                         <div className="space-y-3 mb-8">

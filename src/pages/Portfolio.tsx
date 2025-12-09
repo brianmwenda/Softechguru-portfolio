@@ -54,7 +54,7 @@ const galleryImages = [
   {
     id: 42,
     src: "/assets/images/Go-ticketing-system.png",
-    alt: "Ticketing System Web Application",
+    alt: "E-commerce Web Application",
     category: "website-design",
     label: "Website Design"
   },
@@ -164,6 +164,41 @@ const galleryImages = [
     alt: "KCIC Welcome Team Member",
     category: "graphic-design",
     label: "Social Media"
+  },
+  {
+    id: 59,
+    src: "/assets/images/kcic-customer-service-week.jpg",
+    alt: "KCIC Customer Service Week",
+    category: "graphic-design",
+    label: "Social Media"
+  },
+  {
+    id: 60,
+    src: "/assets/images/kcic-water-starters.jpg",
+    alt: "KCIC WaterStarters Program",
+    category: "graphic-design",
+    label: "Social Media"
+  },
+  {
+    id: 61,
+    src: "/assets/images/kcic-hiring-bd-manager.jpg",
+    alt: "KCIC Business Development Manager Hiring",
+    category: "graphic-design",
+    label: "Social Media"
+  },
+  {
+    id: 62,
+    src: "/assets/images/youth-adapt-challenge.jpg",
+    alt: "YouthADAPT Challenge 2023",
+    category: "graphic-design",
+    label: "Social Media"
+  },
+  {
+    id: 63,
+    src: "/assets/images/escrowpayafricalinkedin_logo.jpeg",
+    alt: "EscrowPay Africa Logo",
+    category: "logo-design",
+    label: "Logo Design"
   },
 
   // Logo Design
