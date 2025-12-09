@@ -122,8 +122,8 @@ const HowWeWorkRoadmap = () => {
           </p>
         </div>
 
-        {/* Progress Road */}
-        <div className="max-w-4xl mx-auto mb-8">
+        {/* Progress Road - Desktop */}
+        <div className="hidden md:block max-w-4xl mx-auto mb-8">
           <div className="relative">
             {/* Road/Path Background */}
             <div className="h-3 bg-muted rounded-full overflow-hidden shadow-inner">
@@ -152,7 +152,7 @@ const HowWeWorkRoadmap = () => {
                     ${index === currentStep ? 'scale-125 -translate-y-2' : 'hover:scale-110 hover:-translate-y-1'}
                   `}>
                     <div className={`
-                      w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center 
+                      w-10 h-10 rounded-full flex items-center justify-center 
                       shadow-lg transition-all duration-300 border-2
                       ${index < currentStep 
                         ? 'bg-primary border-primary text-primary-foreground' 
@@ -161,9 +161,9 @@ const HowWeWorkRoadmap = () => {
                           : 'bg-muted border-border text-muted-foreground'}
                     `}>
                       {index < currentStep ? (
-                        <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5" />
+                        <CheckCircle2 className="h-5 w-5" />
                       ) : (
-                        <MapPin className="h-4 w-4 md:h-5 md:w-5" />
+                        <MapPin className="h-5 w-5" />
                       )}
                     </div>
                     
@@ -195,11 +195,25 @@ const HowWeWorkRoadmap = () => {
           </div>
         </div>
 
+        {/* Progress Road - Mobile (simplified) */}
+        <div className="md:hidden max-w-sm mx-auto mb-6">
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-sm text-muted-foreground">Step {currentStep + 1} of {steps.length}</span>
+            <span className="text-sm font-medium text-primary">{Math.round(progress)}%</span>
+          </div>
+          <div className="h-2 bg-muted rounded-full overflow-hidden">
+            <div 
+              className="h-full bg-primary rounded-full transition-all duration-500 ease-out"
+              style={{ width: `${progress}%` }}
+            />
+          </div>
+        </div>
+
         {/* Main Content Card */}
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-3xl mx-auto px-2 sm:px-0">
           <div className={`
             relative bg-gradient-to-br from-card via-card to-muted/50 
-            rounded-3xl p-8 md:p-12 shadow-2xl border border-border/50
+            rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-12 shadow-2xl border border-border/50
             backdrop-blur-xl transition-all duration-300
             ${isAnimating ? 'opacity-0 scale-95 translate-y-4' : 'opacity-100 scale-100 translate-y-0'}
           `}>
@@ -208,30 +222,28 @@ const HowWeWorkRoadmap = () => {
             <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-accent/20 to-transparent rounded-br-3xl" />
             
             {/* Step indicator */}
-            <div className="flex items-center justify-between mb-8">
-              <div className="flex items-center gap-4">
-                <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-3xl md:text-4xl shadow-lg shadow-primary/30 animate-pulse">
-                  {step.icon}
-                </div>
-                <div>
-                  <span className="text-sm text-muted-foreground font-medium">Step {step.number} of {steps.length}</span>
-                  <h3 className="text-2xl md:text-3xl font-bold text-foreground">{step.title}</h3>
-                </div>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-6 sm:mb-8">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-2xl sm:text-3xl md:text-4xl shadow-lg shadow-primary/30 animate-pulse flex-shrink-0">
+                {step.icon}
+              </div>
+              <div>
+                <span className="text-xs sm:text-sm text-muted-foreground font-medium hidden md:block">Step {step.number} of {steps.length}</span>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground">{step.title}</h3>
               </div>
             </div>
 
             {/* Description */}
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-base sm:text-lg text-muted-foreground mb-6 sm:mb-8 leading-relaxed">
               {step.description}
             </p>
 
             {/* Details with animated reveal */}
-            <div className="space-y-4 mb-10">
-              <h4 className="text-sm font-semibold text-foreground uppercase tracking-wider flex items-center gap-2">
-                <span className="w-8 h-px bg-primary" />
+            <div className="space-y-3 sm:space-y-4 mb-8 sm:mb-10">
+              <h4 className="text-xs sm:text-sm font-semibold text-foreground uppercase tracking-wider flex items-center gap-2">
+                <span className="w-6 sm:w-8 h-px bg-primary" />
                 What's Included
               </h4>
-              <div className="grid gap-3">
+              <div className="grid gap-2 sm:gap-3">
                 {step.details.map((detail, i) => (
                   <div 
                     key={i}
@@ -251,26 +263,27 @@ const HowWeWorkRoadmap = () => {
             </div>
 
             {/* Navigation */}
-            <div className="flex items-center justify-between pt-6 border-t border-border/50">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-border/50">
               <Button
                 variant="outline"
                 onClick={handlePrev}
                 disabled={currentStep === 0}
-                className="gap-2 px-6 disabled:opacity-30"
+                className="gap-2 px-4 sm:px-6 disabled:opacity-30 w-full sm:w-auto order-2 sm:order-1"
               >
                 <ChevronLeft className="h-4 w-4" />
-                Previous
+                <span className="hidden sm:inline">Previous</span>
+                <span className="sm:hidden">Prev</span>
               </Button>
 
-              <div className="flex gap-1.5">
+              <div className="flex gap-1.5 order-1 sm:order-2">
                 {steps.map((_, i) => (
                   <button
                     key={i}
                     onClick={() => handleStepClick(i)}
                     className={`
-                      w-2.5 h-2.5 rounded-full transition-all duration-300
+                      w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full transition-all duration-300
                       ${i === currentStep 
-                        ? 'bg-primary w-8' 
+                        ? 'bg-primary w-6 sm:w-8' 
                         : i < currentStep 
                           ? 'bg-primary/50' 
                           : 'bg-muted-foreground/30'}
@@ -282,9 +295,10 @@ const HowWeWorkRoadmap = () => {
               <Button
                 onClick={handleNext}
                 disabled={currentStep === steps.length - 1}
-                className="gap-2 px-6 bg-gradient-to-r from-primary to-accent hover:opacity-90 disabled:opacity-30"
+                className="gap-2 px-4 sm:px-6 bg-primary hover:bg-primary/90 text-primary-foreground disabled:opacity-30 w-full sm:w-auto order-3"
               >
-                Next Step
+                <span className="hidden sm:inline">Next Step</span>
+                <span className="sm:hidden">Next</span>
                 <ChevronRight className="h-4 w-4" />
               </Button>
             </div>
@@ -293,9 +307,10 @@ const HowWeWorkRoadmap = () => {
           {/* Completion message */}
           {currentStep === steps.length - 1 && (
             <div className="mt-8 text-center animate-fade-in">
-              <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary/10 text-primary font-medium">
+              <div className="inline-flex items-center gap-2 px-4 sm:px-6 py-3 rounded-full bg-primary/10 text-primary font-medium text-sm sm:text-base">
                 <CheckCircle2 className="h-5 w-5" />
-                You've completed the journey! Ready to start your project?
+                <span className="hidden sm:inline">You've completed the journey! Ready to start your project?</span>
+                <span className="sm:hidden">Journey complete! Ready to start?</span>
               </div>
             </div>
           )}
