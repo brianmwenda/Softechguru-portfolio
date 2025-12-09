@@ -202,8 +202,8 @@ const HowWeWorkRoadmap = () => {
             rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-12 shadow-2xl border border-border/50
             backdrop-blur-xl transition-all duration-300">
             {/* Decorative corner elements */}
-            <div className="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-primary/20 to-transparent rounded-tl-3xl" />
-            <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-accent/20 to-transparent rounded-br-3xl" />
+            <div className="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-primary/20 to-transparent rounded-tl-3xl pointer-events-none" />
+            <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-accent/20 to-transparent rounded-br-3xl pointer-events-none" />
             
             {/* Step indicator */}
             <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-6 sm:mb-8">
@@ -243,13 +243,13 @@ const HowWeWorkRoadmap = () => {
             </div>
 
             {/* Navigation */}
-            <div className="flex items-center justify-between gap-4 pt-6 border-t border-border/50">
+            <div className="flex items-center justify-between gap-4 pt-6 border-t border-border/50 relative z-10">
               <Button
                 variant="outline"
                 onClick={handlePrev}
                 disabled={currentStep === 0}
                 size="icon"
-                className="sm:hidden h-10 w-10 disabled:opacity-30"
+                className="sm:hidden h-10 w-10 disabled:opacity-30 relative z-20"
               >
                 <ChevronLeft className="h-5 w-5" />
               </Button>
@@ -284,14 +284,14 @@ const HowWeWorkRoadmap = () => {
                 onClick={handleNext}
                 disabled={currentStep === steps.length - 1}
                 size="icon"
-                className="sm:hidden h-10 w-10 bg-primary hover:bg-primary/90 text-primary-foreground disabled:opacity-30"
+                className="sm:hidden h-10 w-10 bg-primary hover:bg-primary/90 text-primary-foreground disabled:opacity-30 relative z-20"
               >
                 <ChevronRight className="h-5 w-5" />
               </Button>
               <Button
                 onClick={handleNext}
                 disabled={currentStep === steps.length - 1}
-                className="hidden sm:inline-flex gap-2 px-6 bg-primary hover:bg-primary/90 text-primary-foreground disabled:opacity-30"
+                className="hidden sm:inline-flex gap-2 px-6 bg-primary hover:bg-primary/90 text-primary-foreground disabled:opacity-30 relative z-20"
               >
                 Next Step
                 <ChevronRight className="h-4 w-4" />
