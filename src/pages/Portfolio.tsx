@@ -116,6 +116,55 @@ const galleryImages = [
     category: "graphic-design",
     label: "Poster Design"
   },
+  {
+    id: 52,
+    src: "/assets/images/beer-room-poster.png",
+    alt: "The Beer Room Opening Poster",
+    category: "graphic-design",
+    label: "Poster Design"
+  },
+  {
+    id: 53,
+    src: "/assets/images/gri-zimbabwe-flyer.jpg",
+    alt: "GRI Zimbabwe Training Flyer",
+    category: "graphic-design",
+    label: "Social Media"
+  },
+  {
+    id: 54,
+    src: "/assets/images/icr-empower-women.jpg",
+    alt: "ICR Empower Women Infographic",
+    category: "graphic-design",
+    label: "Social Media"
+  },
+  {
+    id: 55,
+    src: "/assets/images/kavini-biryani-poster.jpg",
+    alt: "Kavini Kitchen Biryani Promo",
+    category: "graphic-design",
+    label: "Social Media"
+  },
+  {
+    id: 56,
+    src: "/assets/images/kcic-hiring-poster.jpg",
+    alt: "KCIC Consulting Hiring Poster",
+    category: "graphic-design",
+    label: "Social Media"
+  },
+  {
+    id: 57,
+    src: "/assets/images/kcic-decision-making.jpg",
+    alt: "KCIC Decision-Making Content",
+    category: "graphic-design",
+    label: "Social Media"
+  },
+  {
+    id: 58,
+    src: "/assets/images/kcic-welcome-grace.jpg",
+    alt: "KCIC Welcome Team Member",
+    category: "graphic-design",
+    label: "Social Media"
+  },
 
   // Logo Design
   {
@@ -150,6 +199,27 @@ const galleryImages = [
     id: 28,
     src: "/assets/images/mock-u-2-01.png",
     alt: "Brand Mockup Design",
+    category: "logo-design",
+    label: "Logo Design"
+  },
+  {
+    id: 49,
+    src: "/assets/images/mwendafx-capital-logo.png",
+    alt: "MwendaFX Capital Trading Logo",
+    category: "logo-design",
+    label: "Logo Design"
+  },
+  {
+    id: 50,
+    src: "/assets/images/softech-guru-sg-logo.png",
+    alt: "Softech Guru SG Logo",
+    category: "logo-design",
+    label: "Logo Design"
+  },
+  {
+    id: 51,
+    src: "/assets/images/amazing-life-publishing-logo.png",
+    alt: "Amazing Life Publishing House Logo",
     category: "logo-design",
     label: "Logo Design"
   },
