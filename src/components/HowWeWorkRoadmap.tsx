@@ -263,19 +263,27 @@ const HowWeWorkRoadmap = () => {
             </div>
 
             {/* Navigation */}
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-border/50">
+            <div className="flex items-center justify-between gap-4 pt-6 border-t border-border/50">
               <Button
                 variant="outline"
                 onClick={handlePrev}
                 disabled={currentStep === 0}
-                className="gap-2 px-4 sm:px-6 disabled:opacity-30 w-full sm:w-auto order-2 sm:order-1"
+                size="icon"
+                className="sm:hidden h-10 w-10 disabled:opacity-30"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </Button>
+              <Button
+                variant="outline"
+                onClick={handlePrev}
+                disabled={currentStep === 0}
+                className="hidden sm:inline-flex gap-2 px-6 disabled:opacity-30"
               >
                 <ChevronLeft className="h-4 w-4" />
-                <span className="hidden sm:inline">Previous</span>
-                <span className="sm:hidden">Prev</span>
+                Previous
               </Button>
 
-              <div className="flex gap-1.5 order-1 sm:order-2">
+              <div className="flex gap-1.5">
                 {steps.map((_, i) => (
                   <button
                     key={i}
@@ -295,10 +303,17 @@ const HowWeWorkRoadmap = () => {
               <Button
                 onClick={handleNext}
                 disabled={currentStep === steps.length - 1}
-                className="gap-2 px-4 sm:px-6 bg-primary hover:bg-primary/90 text-primary-foreground disabled:opacity-30 w-full sm:w-auto order-3"
+                size="icon"
+                className="sm:hidden h-10 w-10 bg-primary hover:bg-primary/90 text-primary-foreground disabled:opacity-30"
               >
-                <span className="hidden sm:inline">Next Step</span>
-                <span className="sm:hidden">Next</span>
+                <ChevronRight className="h-5 w-5" />
+              </Button>
+              <Button
+                onClick={handleNext}
+                disabled={currentStep === steps.length - 1}
+                className="hidden sm:inline-flex gap-2 px-6 bg-primary hover:bg-primary/90 text-primary-foreground disabled:opacity-30"
+              >
+                Next Step
                 <ChevronRight className="h-4 w-4" />
               </Button>
             </div>
