@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { MapPin, ChevronRight, ChevronLeft, Sparkles, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -63,6 +63,10 @@ const steps = [
 
 const HowWeWorkRoadmap = () => {
   const [currentStep, setCurrentStep] = useState(0);
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
+
+  const minSwipeDistance = 50;
 
   const handleNext = () => {
     if (currentStep < steps.length - 1) {
@@ -80,6 +84,32 @@ const HowWeWorkRoadmap = () => {
     if (index !== currentStep) {
       setCurrentStep(index);
     }
+  };
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchEndX.current = null;
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return;
+    
+    const distance = touchStartX.current - touchEndX.current;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      handleNext();
+    } else if (isRightSwipe) {
+      handlePrev();
+    }
+
+    touchStartX.current = null;
+    touchEndX.current = null;
   };
 
   const step = steps[currentStep];
@@ -197,7 +227,12 @@ const HowWeWorkRoadmap = () => {
         </div>
 
         {/* Main Content Card */}
-        <div className="max-w-3xl mx-auto px-2 sm:px-0">
+        <div 
+          className="max-w-3xl mx-auto px-2 sm:px-0"
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
+        >
           <div className="relative bg-gradient-to-br from-card via-card to-muted/50 
             rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-12 shadow-2xl border border-border/50
             backdrop-blur-xl transition-all duration-300">
