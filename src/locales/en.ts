@@ -33,8 +33,8 @@ export const en = {
     description: "I specialize in creating modern, responsive web applications using cutting-edge technologies."
   },
   testimonials: {
-    title: "What Clients Say",
-    subtitle: "Hear from some of our satisfied clients",
+    title: "Founder's Talk",
+    subtitle: "What Clients Say About Us",
     description: "Real feedback from clients who have worked with us on their projects."
   },
   blog: {

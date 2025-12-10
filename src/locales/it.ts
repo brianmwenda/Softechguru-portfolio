@@ -33,8 +33,8 @@ export const it = {
     description: "Mi specializzo nella creazione di applicazioni web moderne e responsive utilizzando tecnologie all'avanguardia."
   },
   testimonials: {
-    title: "Cosa Dicono i Clienti",
-    subtitle: "Ascolta alcuni dei nostri clienti soddisfatti",
+    title: "Parole del Fondatore",
+    subtitle: "Cosa Dicono i Clienti di Noi",
     description: "Feedback reale da clienti che hanno lavorato con noi sui loro progetti."
   },
   blog: {

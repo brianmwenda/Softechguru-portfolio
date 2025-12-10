@@ -236,9 +236,6 @@ const HowWeWorkRoadmap = () => {
           <div className="relative bg-gradient-to-br from-card via-card to-muted/50 
             rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-12 shadow-2xl border border-border/50
             backdrop-blur-xl transition-all duration-300">
-            {/* Decorative corner elements */}
-            <div className="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-primary/20 to-transparent rounded-tl-3xl pointer-events-none" />
-            <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-accent/20 to-transparent rounded-br-3xl pointer-events-none" />
             
             {/* Step indicator */}
             <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-6 sm:mb-8">
