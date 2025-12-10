@@ -97,7 +97,7 @@ export default function Footer() {
         <div className="border-t border-border pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground">
           <p>&copy; {currentYear} SoftechGuru. {t.footer.allRights}</p>
           <div className="flex space-x-3">
-              <a href="https://www.linkedin.com/in/brian-mwenda-325524360" className="text-muted-foreground hover:text-primary transition-colors p-2 bg-muted/50 rounded-full">
+              <a href="https://linkedin.com/company/softech-guru/" className="text-muted-foreground hover:text-primary transition-colors p-2 bg-muted/50 rounded-full">
                 <Linkedin size={16} />
                 <span className="sr-only">LinkedIn</span>
               </a>
