@@ -76,9 +76,7 @@ export default function TestimonialsSection() {
       <div className="container">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 animate-fade-in">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-            {t.testimonials.title}
-          </span>
+         
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             {t.testimonials.subtitle}
           </h2>
@@ -137,7 +135,7 @@ export default function TestimonialsSection() {
           
           {/* Testimonials Carousel */}
           <div className="lg:col-span-3 relative">
-            <div className="relative min-h-[520px] md:min-h-[400px]">
+            <div className="relative min-h-[370px] md:min-h-[350px]">
               {testimonials.map((testimonial, index) => (
                 <div
                   key={testimonial.id}
