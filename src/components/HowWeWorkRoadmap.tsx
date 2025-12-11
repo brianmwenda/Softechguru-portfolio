@@ -116,7 +116,7 @@ const HowWeWorkRoadmap = () => {
   const progress = ((currentStep + 1) / steps.length) * 100;
 
   return (
-    <section className="py-20 bg-gradient-to-b from-background via-muted/20 to-background relative overflow-hidden">
+    <section className="py-16 bg-gradient-to-b from-background via-muted/20 to-background relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse" />

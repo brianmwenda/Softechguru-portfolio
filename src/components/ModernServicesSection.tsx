@@ -1,8 +1,6 @@
 
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { 
+import {
   Monitor, 
   PenTool, 
   Palette, 
@@ -116,21 +114,6 @@ export default function ModernServicesSection() {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <div className="text-center mt-16 animate-fade-in animate-stagger-5">
-          <div className="inline-flex flex-col sm:flex-row gap-4">
-            <Link to="/terms-of-service">
-              <Button variant="outline" className="btn-secondary">
-                Terms of Service
-              </Button>
-            </Link>
-            <Link to="/pricing">
-              <Button variant="outline" className="btn-secondary">
-                View Pricing
-              </Button>
-            </Link>
-          </div>
-        </div>
       </div>
     </section>
   );

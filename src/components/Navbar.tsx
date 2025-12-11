@@ -116,15 +116,28 @@ export default function Navbar() {
         </nav>
       </header>
 
-      {/* Mobile Menu Dropdown */}
+      {/* Mobile Menu Full Screen */}
       <div className={cn(
-        "fixed top-0 left-0 right-0 z-40 md:hidden transition-all duration-300 ease-in-out bg-background border-b border-border shadow-lg",
+        "fixed inset-0 z-40 md:hidden transition-all duration-300 ease-in-out bg-background",
         mobileMenuOpen 
-          ? "translate-y-[100px] opacity-100" 
-          : "-translate-y-full opacity-0"
+          ? "opacity-100 pointer-events-auto" 
+          : "opacity-0 pointer-events-none"
       )}>
-        <div className="container py-6">
-          <ul className="space-y-4">
+        {/* Mobile Header */}
+        <div className="flex justify-between items-center px-4 py-4 border-b border-border">
+          <a className="text-xl font-bold" href="/">Softech Guru</a>
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            onClick={() => setMobileMenuOpen(false)} 
+            className="rounded-full"
+          >
+            <X className="h-6 w-6" />
+          </Button>
+        </div>
+        
+        <div className="container py-8">
+          <ul className="space-y-6">
             {navLinks.map(link => (
               <li key={link.name}>
                 {link.path.startsWith('/#') ? (
@@ -147,7 +160,7 @@ export default function Navbar() {
             ))}
           </ul>
           
-          <div className="mt-6 pt-6 border-t border-border">
+          <div className="mt-8 pt-6 border-t border-border">
             <Button 
               onClick={() => handleNavClick('/#contact')}
               className="w-full bg-primary hover:bg-primary/90 text-white"
@@ -157,12 +170,6 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-
-      {/* Push down spacer for mobile menu */}
-      <div className={cn(
-        "md:hidden transition-all duration-300 ease-in-out",
-        mobileMenuOpen ? "h-64" : "h-0"
-      )} />
     </>
   );
 }

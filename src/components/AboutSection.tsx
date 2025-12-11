@@ -1,12 +1,5 @@
 
-import { Shield, Zap, Users, Award, Clock, Heart, Target, Code, Rocket } from "lucide-react";
-
-const stats = [
-  { icon: <Users className="h-6 w-6" />, number: "80+", label: "Happy Clients" },
-  { icon: <Award className="h-6 w-6" />, number: "150+", label: "Projects Completed" },
-  { icon: <Clock className="h-6 w-6" />, number: "3+", label: "Years Experience" },
-  { icon: <Heart className="h-6 w-6" />, number: "99%", label: "Client Satisfaction" }
-];
+import { Shield, Zap, Users, Target, Code, Rocket } from "lucide-react";
 
 const whyUsCards = [
   {
@@ -43,9 +36,9 @@ const whyUsCards = [
 
 export default function AboutSection() {
   return (
-    <section id="why-us" className="section bg-background">
+    <section id="why-us" className="py-16 bg-background">
       <div className="container">
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-10 animate-fade-in">
           <span className="text-sm text-primary font-medium uppercase tracking-wider">
             Why Choose Us
           </span>
@@ -58,7 +51,7 @@ export default function AboutSection() {
         </div>
         
         {/* Why Us Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {whyUsCards.map((card, index) => (
             <div 
               key={index} 
@@ -76,18 +69,6 @@ export default function AboutSection() {
           ))}
         </div>
         
-        {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 animate-fade-in">
-          {stats.map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="flex justify-center mb-2 text-primary">
-                {stat.icon}
-              </div>
-              <div className="text-2xl font-bold mb-1 text-white">{stat.number}</div>
-              <div className="text-sm text-muted-foreground">{stat.label}</div>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
