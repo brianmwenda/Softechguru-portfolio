@@ -145,7 +145,18 @@ export default function Index() {
         </div>
 
         {/* Contact & FAQ Section */}
-        <section id="contact" className="relative section scroll-animate" role="region" aria-labelledby="contact-heading">
+        <section id="contact" className="relative section scroll-animate overflow-hidden" role="region" aria-labelledby="contact-heading">
+          {/* Floating geometric shapes */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-10 right-[10%] w-32 h-32 border-2 border-primary/10 rounded-full animate-spin-slow" />
+            <div className="absolute bottom-20 left-[5%] w-24 h-24 border border-accent/20 rotate-45 animate-float" />
+            <div className="absolute top-1/3 left-[8%] w-16 h-16 bg-gradient-to-br from-primary/10 to-transparent rounded-2xl rotate-12 animate-float" style={{ animationDelay: '1.5s' }} />
+            <div className="absolute bottom-1/3 right-[12%] w-20 h-20 border border-primary/15 rounded-lg -rotate-12 animate-float" style={{ animationDelay: '0.8s' }} />
+            
+            {/* Gradient mesh */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-gradient-radial from-primary/5 via-transparent to-transparent" />
+            <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+          </div>
           <div className="container">
             <div className="max-w-4xl mx-auto text-center space-y-8 mb-16 animate-fade-in">
               <h2 id="contact-heading" className="text-4xl md:text-5xl font-bold text-white">

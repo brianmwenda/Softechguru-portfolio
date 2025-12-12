@@ -55,8 +55,27 @@ export default function ModernServicesSection() {
   };
 
   return (
-    <section className="section bg-gradient-to-b from-background to-muted/20" id="services">
-      <div className="container">
+    <section className="section bg-gradient-to-b from-background to-muted/20 relative overflow-hidden" id="services">
+      {/* Floating visual elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Gradient mesh background */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-primary/5 via-transparent to-transparent" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-accent/5 via-transparent to-transparent" />
+        
+        {/* Floating shapes */}
+        <div className="absolute top-20 right-[15%] w-24 h-24 border border-primary/15 rounded-2xl rotate-12 animate-float" />
+        <div className="absolute bottom-32 left-[10%] w-16 h-16 border border-accent/20 rounded-full animate-float" style={{ animationDelay: '1.5s' }} />
+        <div className="absolute top-1/2 right-[5%] w-20 h-20 bg-gradient-to-br from-primary/10 to-transparent rounded-lg -rotate-12 animate-float" style={{ animationDelay: '2.5s' }} />
+        
+        {/* Pulsing circles */}
+        <div className="absolute top-1/3 left-[8%] w-8 h-8 rounded-full bg-primary/20 animate-pulse" />
+        <div className="absolute bottom-1/4 right-[12%] w-6 h-6 rounded-full bg-accent/20 animate-pulse" style={{ animationDelay: '0.5s' }} />
+        
+        {/* Grid overlay */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:80px_80px]" />
+      </div>
+      
+      <div className="container relative z-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">

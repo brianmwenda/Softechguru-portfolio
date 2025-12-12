@@ -72,8 +72,20 @@ export default function TestimonialsSection() {
   }, []);
   
   return (
-    <section className="py-16 bg-gradient-to-b from-background to-muted overflow-hidden">
-      <div className="container">
+    <section className="py-16 bg-gradient-to-b from-background to-muted overflow-hidden relative">
+      {/* Floating 3D-like elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-10 left-[10%] w-20 h-20 border border-primary/20 rounded-lg rotate-12 animate-float" />
+        <div className="absolute top-1/3 right-[5%] w-16 h-16 border border-accent/20 rounded-full animate-float" style={{ animationDelay: '1s' }} />
+        <div className="absolute bottom-20 left-[15%] w-24 h-24 border border-primary/10 rounded-2xl -rotate-12 animate-float" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/2 right-[15%] w-12 h-12 bg-gradient-to-br from-primary/10 to-accent/10 rounded-lg rotate-45 animate-float" style={{ animationDelay: '0.5s' }} />
+        
+        {/* Gradient orbs */}
+        <div className="absolute top-20 right-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-10 left-1/4 w-80 h-80 bg-accent/5 rounded-full blur-3xl" />
+      </div>
+      
+      <div className="container relative z-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 animate-fade-in">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">

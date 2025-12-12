@@ -138,10 +138,25 @@ export default function PortfolioHero() {
         </div>
       </div>
       
-      {/* Background Decorations */}
+      {/* Background Decorations - Enhanced 3D-like elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl"></div>
+        {/* Gradient orbs */}
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        
+        {/* Floating geometric shapes */}
+        <div className="absolute top-[15%] right-[10%] w-20 h-20 border-2 border-primary/20 rounded-xl rotate-12 animate-float" />
+        <div className="absolute top-[60%] left-[5%] w-16 h-16 border border-accent/30 rounded-full animate-float" style={{ animationDelay: '2s' }} />
+        <div className="absolute bottom-[20%] right-[20%] w-12 h-12 bg-gradient-to-br from-primary/20 to-transparent rounded-lg rotate-45 animate-float" style={{ animationDelay: '1.5s' }} />
+        
+        {/* Morphing blob */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-br from-primary/5 via-accent/5 to-transparent animate-morph" />
+        
+        {/* Grid pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px]" />
+        
+        {/* Spinning ring */}
+        <div className="absolute top-[10%] left-[20%] w-32 h-32 border border-primary/10 rounded-full animate-spin-slow" />
       </div>
     </section>
   );
