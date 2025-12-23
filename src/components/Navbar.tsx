@@ -1,16 +1,18 @@
-
 import { useState, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useHolidayMode } from "@/hooks/useHolidayMode";
+import santaHat from "@/assets/santa-hat.png";
 
 export default function Navbar() {
   const { t } = useLanguage();
   const navigate = useNavigate();
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const holidayMode = useHolidayMode();
   const [scrolled, setScrolled] = useState(false);
   
   const navLinks = [
@@ -58,14 +60,24 @@ export default function Navbar() {
   return (
     <>
       <header className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        "fixed left-0 right-0 z-50 transition-all duration-300",
+        holidayMode !== "none" ? "top-10" : "top-0",
         scrolled 
           ? "bg-background/95 backdrop-blur-xl border-b border-border/50 shadow-lg py-2" 
           : "bg-background/80 backdrop-blur-sm py-4"
       )}>
         <nav className="container flex justify-between items-center">
           <div className="flex items-center space-x-2">
-            <a className="text-xl font-bold" href="/">Softech Guru</a>
+            <a className="text-xl font-bold relative" href="/">
+              {holidayMode !== "none" && (
+                <img 
+                  src={santaHat} 
+                  alt="Santa Hat" 
+                  className="absolute -top-5 -right-5 w-10 h-10 object-contain transform rotate-[70deg] rotateY-[180deg] z-10"
+                />
+              )}
+              Softech Guru
+            </a>
           </div>
 
           {/* Desktop Navigation */}
@@ -125,7 +137,16 @@ export default function Navbar() {
       )}>
         {/* Mobile Header */}
         <div className="flex justify-between items-center px-4 py-4 border-b border-border">
-          <a className="text-xl font-bold" href="/">Softech Guru</a>
+          <a className="text-xl font-bold relative" href="/">
+            {holidayMode !== "none" && (
+              <img 
+                src={santaHat} 
+                alt="Santa Hat" 
+                className="absolute -top-6 -left-2 w-12 h-12 object-contain transform rotate-[25deg] z-10"
+              />
+            )}
+            Softech Guru
+          </a>
           <Button 
             variant="ghost" 
             size="icon" 

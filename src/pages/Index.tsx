@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -10,8 +9,11 @@ import ModernServicesSection from "@/components/ModernServicesSection";
 import HowWeWorkRoadmap from "@/components/HowWeWorkRoadmap";
 import SEO from "@/components/SEO";
 import Preloader from "@/components/Preloader";
+import Snowfall from "@/components/Snowfall";
+import HolidayBanner from "@/components/HolidayBanner";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useHolidayMode } from "@/hooks/useHolidayMode";
 import { 
   Accordion,
   AccordionContent,
@@ -46,6 +48,7 @@ const faqs = [
 export default function Index() {
   const { t } = useLanguage();
   const [showPreloader, setShowPreloader] = useState(true);
+  const holidayMode = useHolidayMode();
   
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -105,6 +108,8 @@ export default function Index() {
   return (
     <>
       {showPreloader && <Preloader onComplete={() => setShowPreloader(false)} />}
+      {holidayMode !== "none" && <HolidayBanner mode={holidayMode} />}
+      {holidayMode !== "none" && <Snowfall />}
       <SEO
         title="Softech Guru - Creative Design Services | Website, Graphic & Architectural Design"
         description="Professional graphic design, website design, architectural visualization, and creative services. Custom logos, branding, 3D renders, and website care & support."
@@ -114,7 +119,7 @@ export default function Index() {
       <Navbar />
       <div className="min-h-screen flex flex-col page-transition-enter page-transition-enter-active bg-background">
       <main className="flex-1" role="main">
-        <div className="pt-20"></div>
+        <div className={holidayMode !== "none" ? "pt-28" : "pt-20"}></div>
         
         {/* Hero Section */}
         <PortfolioHero />
