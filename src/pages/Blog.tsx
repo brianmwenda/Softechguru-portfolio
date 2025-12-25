@@ -3,6 +3,8 @@ import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import HolidayBanner from "@/components/HolidayBanner";
+import { useHolidayMode } from "@/hooks/useHolidayMode";
 import { Calendar, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -66,6 +68,8 @@ const blogPosts = [
 ];
 
 export default function Blog() {
+  const holidayMode = useHolidayMode();
+  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -80,6 +84,7 @@ export default function Blog() {
 
   return (
     <>
+      {holidayMode !== "none" && <HolidayBanner mode={holidayMode} />}
       <SEO
         title="Blog - Web Development & Design Insights | Softech Guru"
         description="Latest insights, tips, and trends in web development, graphic design, photography, and video production. Expert advice from Softech Guru team."
@@ -92,7 +97,7 @@ export default function Blog() {
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative py-16 bg-gradient-to-br from-background via-background to-primary/5 overflow-hidden">
-          <div className="container relative z-10 pt-20">
+          <div className={`container relative z-10 ${holidayMode !== "none" ? "pt-[74px] sm:pt-28" : "pt-20"}`}>
             <div className="max-w-4xl mx-auto text-center animate-fade-in">
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
                 <span className="text-primary text-sm font-medium">📚 Blog</span>

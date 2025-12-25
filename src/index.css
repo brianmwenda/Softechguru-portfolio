@@ -272,3 +272,30 @@
 .animate-snowfall {
   animation: snowfall linear infinite;
 }
+
+/* Gentle snowfall animation for hero sections - fades at 50% */
+@keyframes snowfall-gentle {
+  0% {
+    transform: translateY(-5px) translateX(0);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  35% {
+    opacity: 0.8;
+    transform: translateY(40%) translateX(8px);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(50%) translateX(-3px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(50%) translateX(-3px);
+  }
+}
+
+.animate-snowfall-gentle {
+  animation: snowfall-gentle linear infinite;
+}

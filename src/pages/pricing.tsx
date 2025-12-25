@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import HolidayBanner from "@/components/HolidayBanner";
+import { useHolidayMode } from "@/hooks/useHolidayMode";
 import { Button } from "@/components/ui/button";
 import {
   Select,
@@ -46,6 +48,7 @@ const allServices = [
 
 export default function Apartments() {
   const { t } = useLanguage();
+  const holidayMode = useHolidayMode();
   const [filteredServices, setFilteredServices] = useState(allServices);
   const [categoryFilter, setCategoryFilter] = useState<string>("all");
   
@@ -87,6 +90,7 @@ export default function Apartments() {
 
   return (
     <>
+      {holidayMode !== "none" && <HolidayBanner mode={holidayMode} />}
       <SEO
         title="Pricing Plans - Affordable Web Development Services | Softech Guru"
         description="Transparent pricing for web development, website design, and digital services in Kenya. Starting from KES 25,000. No hidden fees, quality guaranteed."
@@ -96,7 +100,7 @@ export default function Apartments() {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       
-      <main className="flex-1 pt-20">
+      <main className={`flex-1 ${holidayMode !== "none" ? "pt-[74px] sm:pt-28" : "pt-20"}`}>
         {/* Header Section */}
         <section className="relative py-16 bg-gradient-to-br from-background via-background to-primary/5 overflow-hidden">
           <div className="container relative z-10">

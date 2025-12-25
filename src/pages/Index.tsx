@@ -9,7 +9,7 @@ import ModernServicesSection from "@/components/ModernServicesSection";
 import HowWeWorkRoadmap from "@/components/HowWeWorkRoadmap";
 import SEO from "@/components/SEO";
 import Preloader from "@/components/Preloader";
-import Snowfall from "@/components/Snowfall";
+
 import HolidayBanner from "@/components/HolidayBanner";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -109,7 +109,6 @@ export default function Index() {
     <>
       {showPreloader && <Preloader onComplete={() => setShowPreloader(false)} />}
       {holidayMode !== "none" && <HolidayBanner mode={holidayMode} />}
-      {holidayMode !== "none" && <Snowfall />}
       <SEO
         title="Softech Guru - Creative Design Services | Website, Graphic & Architectural Design"
         description="Professional graphic design, website design, architectural visualization, and creative services. Custom logos, branding, 3D renders, and website care & support."
@@ -119,7 +118,7 @@ export default function Index() {
       <Navbar />
       <div className="min-h-screen flex flex-col page-transition-enter page-transition-enter-active bg-background">
       <main className="flex-1" role="main">
-        <div className={holidayMode !== "none" ? "pt-28" : "pt-20"}></div>
+        <div className={holidayMode !== "none" ? "pt-[74px] sm:pt-28" : "pt-20"}></div>
         
         {/* Hero Section */}
         <PortfolioHero />

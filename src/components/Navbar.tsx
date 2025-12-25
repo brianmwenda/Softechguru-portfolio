@@ -61,7 +61,7 @@ export default function Navbar() {
     <>
       <header className={cn(
         "fixed left-0 right-0 z-50 transition-all duration-300",
-        holidayMode !== "none" ? "top-10" : "top-0",
+        holidayMode !== "none" ? "top-[34px] sm:top-10" : "top-0",
         scrolled 
           ? "bg-background/95 backdrop-blur-xl border-b border-border/50 shadow-lg py-2" 
           : "bg-background/80 backdrop-blur-sm py-4"

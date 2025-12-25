@@ -3,6 +3,8 @@ import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import HolidayBanner from "@/components/HolidayBanner";
+import { useHolidayMode } from "@/hooks/useHolidayMode";
 import { Users, Award, Clock, Heart, Monitor, Palette, PenTool, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -38,6 +40,8 @@ const services = [
 ];
 
 export default function About() {
+  const holidayMode = useHolidayMode();
+  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -55,6 +59,7 @@ export default function About() {
 
   return (
     <>
+      {holidayMode !== "none" && <HolidayBanner mode={holidayMode} />}
       <SEO
         title="About Us - Softech Guru | Professional Design Team"
         description="Learn about Softech Guru's journey in creative design. Professional website design, graphic design, architectural visualization, and branding services."
@@ -67,7 +72,7 @@ export default function About() {
       <main className="flex-1" role="main">
         {/* Hero Section */}
         <section className="relative py-20 bg-gradient-to-r from-sea-light to-white dark:from-sea-dark dark:to-background">
-          <div className="container relative z-10 pt-20">
+          <div className={`container relative z-10 ${holidayMode !== "none" ? "pt-[74px] sm:pt-28" : "pt-20"}`}>
             <div className="text-center max-w-3xl mx-auto">
               <span className="text-sm text-primary font-medium uppercase tracking-wider">
                 About Us

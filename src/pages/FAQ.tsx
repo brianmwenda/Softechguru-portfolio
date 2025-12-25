@@ -4,6 +4,8 @@ import { Search, ChevronDown, ChevronUp } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import HolidayBanner from "@/components/HolidayBanner";
+import { useHolidayMode } from "@/hooks/useHolidayMode";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -46,6 +48,7 @@ const faqs = [
 
 export default function FAQ() {
   const { t } = useLanguage();
+  const holidayMode = useHolidayMode();
   const [searchTerm, setSearchTerm] = useState("");
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [filteredFaqs, setFilteredFaqs] = useState(faqs);
@@ -81,6 +84,7 @@ export default function FAQ() {
 
   return (
     <>
+      {holidayMode !== "none" && <HolidayBanner mode={holidayMode} />}
       <SEO
         title="FAQ - Frequently Asked Questions | Softech Guru"
         description="Find answers to common questions about our web development, graphic design, and digital services. Learn about our process, pricing, and how we can help your business."
@@ -96,7 +100,7 @@ export default function FAQ() {
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background opacity-50"></div>
           <div className="absolute top-10 right-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 left-10 w-24 h-24 bg-accent/10 rounded-full blur-2xl"></div>
-          <div className="container relative z-10 pt-20">
+          <div className={`container relative z-10 ${holidayMode !== "none" ? "pt-[74px] sm:pt-28" : "pt-20"}`}>
             <div className="max-w-4xl mx-auto text-center animate-fade-in">
              
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight">

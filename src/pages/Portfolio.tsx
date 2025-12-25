@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import HolidayBanner from "@/components/HolidayBanner";
+import { useHolidayMode } from "@/hooks/useHolidayMode";
 import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -64,6 +66,22 @@ const galleryImages = [
     alt: "Book Management System",
     category: "website-design",
     label: "Website Design"
+  },
+
+  // Graphic Design - Posters
+  {
+    id: 64,
+    src: "/assets/images/christmas-poster.png",
+    alt: "Softech Guru Christmas Greeting Poster",
+    category: "graphic-design",
+    label: "Poster Design"
+  },
+  {
+    id: 65,
+    src: "/assets/images/blackball-rules-poster.png",
+    alt: "Black Ball Pool Rules Poster",
+    category: "graphic-design",
+    label: "Poster Design"
   },
 
   // Graphic Design - Posters
@@ -335,6 +353,7 @@ const categories = [
 
 export default function Gallery() {
   const { t } = useLanguage();
+  const holidayMode = useHolidayMode();
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const [filteredImages, setFilteredImages] = useState(galleryImages);
   const [activeFilter, setActiveFilter] = useState("all");
@@ -399,6 +418,7 @@ export default function Gallery() {
 
   return (
     <>
+      {holidayMode !== "none" && <HolidayBanner mode={holidayMode} />}
       <SEO
         title="Design Portfolio - Softech Guru | Website, Graphic & Architectural Design"
         description="Explore our portfolio of stunning website designs, logos, posters, and 3D architectural visualizations. Professional creative work by Softech Guru Kenya."
@@ -408,7 +428,7 @@ export default function Gallery() {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       
-      <main className="flex-1 pt-20">
+      <main className={`flex-1 ${holidayMode !== "none" ? "pt-[74px] sm:pt-28" : "pt-20"}`}>
         {/* Header Section */}
         <header className="relative py-16 bg-gradient-to-br from-background via-background to-primary/5 overflow-hidden">
           <div className="container relative z-10">
