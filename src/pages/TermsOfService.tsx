@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
-import { FileText, Palette, Building2, Globe, CreditCard, Clock, Scale, AlertTriangle, Mail } from "lucide-react";
+import { FileText, Palette, Building2, Globe, CreditCard, Clock, Scale, AlertTriangle, Mail, Megaphone } from "lucide-react";
 
 export default function TermsOfService() {
   useEffect(() => {
@@ -14,8 +14,22 @@ export default function TermsOfService() {
       icon: FileText,
       title: "Agreement to Terms",
       content: [
-        "By engaging Softech Guru for graphic design, architectural design, or web design services, you accept and agree to be bound by these terms and conditions.",
-        "These terms apply to all design projects, consultations, and creative services provided by Softech Guru."
+        "By engaging Softech Guru for digital marketing, graphic design, architectural design, or web design services, you accept and agree to be bound by these terms and conditions.",
+        "These terms apply to all marketing campaigns, design projects, consultations, and creative services provided by Softech Guru."
+      ]
+    },
+    {
+      icon: Megaphone,
+      title: "Digital Marketing Services",
+      subsections: [
+        {
+          subtitle: "Social Media Marketing",
+          items: ["Social media strategy and management", "Content creation and scheduling", "Community engagement and growth", "Influencer marketing campaigns"]
+        },
+        {
+          subtitle: "SEO & Online Advertising",
+          items: ["Search engine optimization (SEO)", "Google Ads and PPC campaigns", "Facebook and Instagram advertising", "Analytics and performance reporting"]
+        }
       ]
     },
     {
@@ -123,9 +137,9 @@ export default function TermsOfService() {
   return (
     <>
       <SEO
-        title="Terms of Service - Softech Guru Design Services"
-        description="Terms and conditions for graphic design, architectural design, and web design services by Softech Guru. Understand our policies, payment terms, and project guidelines."
-        keywords="terms of service, design terms, graphic design terms, architectural design terms, web design contract"
+        title="Terms of Service - Softech Guru Digital Marketing & Design Services"
+        description="Terms and conditions for digital marketing, graphic design, architectural design, and web design services by Softech Guru. Understand our policies, payment terms, and project guidelines."
+        keywords="terms of service, digital marketing terms, design terms, graphic design terms, architectural design terms, web design contract, SEO services terms"
       />
       <div className="min-h-screen flex flex-col bg-background">
         <Navbar />
@@ -143,10 +157,10 @@ export default function TermsOfService() {
                   Terms of <span className="text-primary">Service</span>
                 </h1>
                 <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                  Please read these terms carefully before engaging our graphic design, architectural design, or web design services.
+                  Please read these terms carefully before engaging our digital marketing, graphic design, architectural design, or web design services.
                 </p>
                 <p className="text-muted-foreground/70 text-sm mt-4">
-                  Last updated: December 9, 2025
+                  Last updated: December 30, 2025
                 </p>
               </div>
             </div>

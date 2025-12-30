@@ -76,13 +76,6 @@ const galleryImages = [
     category: "graphic-design",
     label: "Poster Design"
   },
-  {
-    id: 65,
-    src: "/assets/images/blackball-rules-poster.png",
-    alt: "Black Ball Pool Rules Poster",
-    category: "graphic-design",
-    label: "Poster Design"
-  },
 
   // Graphic Design - Posters
   {
@@ -420,9 +413,9 @@ export default function Gallery() {
     <>
       {holidayMode !== "none" && <HolidayBanner mode={holidayMode} />}
       <SEO
-        title="Design Portfolio - Softech Guru | Website, Graphic & Architectural Design"
-        description="Explore our portfolio of stunning website designs, logos, posters, and 3D architectural visualizations. Professional creative work by Softech Guru Kenya."
-        keywords="design portfolio Kenya, website design portfolio, logo design portfolio, graphic design portfolio, architectural visualization, 3D renders Nairobi"
+        title="Design Portfolio - Softech Guru | Digital Marketing, Graphic Design, Web Design & Architecture"
+        description="Explore our portfolio of stunning website designs, digital marketing campaigns, logos, posters, and 3D architectural visualizations. Professional creative work by Softech Guru Kenya."
+        keywords="design portfolio Kenya, digital marketing portfolio, website design portfolio, graphic design portfolio, logo design portfolio, architectural visualization, 3D renders Nairobi, web design Kenya"
         structuredData={portfolioStructuredData}
       />
     <div className="min-h-screen flex flex-col">

@@ -11,16 +11,16 @@ export const en = {
     getQuote: "Get Quote"
   },
   hero: {
-    subtitle: "Full-Stack Developer & Creative",
-    title: "Building Digital Experiences That Matter",
-    description: "Transforming ideas into stunning web applications, mobile apps, and digital solutions with modern technologies and creative design.",
-    talkToDeveloper: "Talk to Developer",
+    subtitle: "Digital Marketing & Creative Agency",
+    title: "Digital Marketing | Graphic Design | Architectural Design | Web Design",
+    description: "Expert digital marketing, SEO optimization, social media management, graphic design, and web development services to elevate your business online.",
+    talkToDeveloper: "Talk to Expert",
     exploreServices: "Explore Services",
     scrollDown: "Scroll Down"
   },
   services: {
-    title: "Our Services",
-    subtitle: "Complete digital solutions for your business needs",
+    title: "Digital Marketing & Design Services",
+    subtitle: "Complete digital marketing, SEO, social media, graphic design, and web development solutions",
     webDev: "Web Development",
     uiDesign: "UI/UX Design", 
     photography: "Photography",
@@ -28,9 +28,9 @@ export const en = {
     addToCart: "Add to Cart"
   },
   about: {
-    title: "About Me",
-    subtitle: "Passionate developer with 5+ years of experience",
-    description: "I specialize in creating modern, responsive web applications using cutting-edge technologies."
+    title: "About Us",
+    subtitle: "Digital marketing experts with 5+ years of experience",
+    description: "We specialize in digital marketing, SEO optimization, social media management, graphic design, and modern web development."
   },
   testimonials: {
     title: "Founder's Talk",
@@ -91,7 +91,7 @@ export const en = {
     }
   },
   footer: {
-    description: "Creating digital experiences that drive results and delight users.",
+    description: "Expert digital marketing, SEO, social media management, graphic design, and web development services that drive results.",
     quickLinks: "Quick Links",
     contact: "Contact Info",
     privacyPolicy: "Privacy Policy",

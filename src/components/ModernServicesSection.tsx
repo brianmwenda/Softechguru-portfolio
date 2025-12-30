@@ -4,7 +4,7 @@ import {
   Monitor, 
   PenTool, 
   Palette, 
-  Wrench,
+  Megaphone,
   ArrowRight
 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -35,11 +35,11 @@ const services = [
     popular: true
   },
   {
-    id: "website-care",
-    icon: <Wrench className="h-8 w-8" />,
-    title: "Website Care & Support",
-    description: "Ongoing maintenance, security updates, content changes, and technical support to keep your website running smoothly.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
+    id: "digital-marketing",
+    icon: <Megaphone className="h-8 w-8" />,
+    title: "Digital Marketing",
+    description: "Strategic digital marketing services including social media management, SEO optimization, content creation, and online advertising campaigns.",
+    image: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?q=80&w=2070&auto=format&fit=crop",
     popular: false
   }
 ];
@@ -95,7 +95,7 @@ export default function ModernServicesSection() {
                 {services.map((service, index) => (
                   <div 
                     key={service.id} 
-                    className="glass-card rounded-xl overflow-hidden animate-fade-in hover:shadow-xl transition-all duration-300 group cursor-pointer" 
+                    className="glass-card rounded-xl overflow-hidden animate-fade-in hover:shadow-xl transition-all duration-300 group cursor-pointer flex flex-col" 
                     style={{ animationDelay: `${(index + 1) * 100}ms` }}
                     onMouseEnter={() => setHoveredService(service.id)}
                     onMouseLeave={() => setHoveredService(null)}
@@ -113,16 +113,16 @@ export default function ModernServicesSection() {
                         </div>
                       )}
                     </div>
-                    <div className="p-6">
+                    <div className="p-6 flex flex-col flex-1">
                       <div className="flex items-center mb-4">
                         <div className="p-2 rounded-lg bg-primary/10 text-primary mr-3">
                           {service.icon}
                         </div>
                       </div>
                       <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-                      <p className="text-muted-foreground mb-4">{service.description}</p>
+                      <p className="text-muted-foreground mb-4 flex-1">{service.description}</p>
                       
-                      <div className="flex items-center text-primary font-medium text-sm group-hover:translate-x-2 transition-transform">
+                      <div className="flex items-center text-primary font-medium text-sm group-hover:translate-x-2 transition-transform mt-auto">
                         Get Quote <ArrowRight className="ml-2 h-4 w-4" />
                       </div>
                     </div>

@@ -34,8 +34,8 @@ const services = [
   },
   {
     icon: <Wrench className="h-8 w-8 text-primary" />,
-    title: "Website Care & Support",
-    description: "Ongoing maintenance and support to keep your website running smoothly."
+    title: "Digital Marketing",
+    description: "Strategic digital marketing services including social media, SEO, and online advertising."
   }
 ];
 
@@ -61,9 +61,9 @@ export default function About() {
     <>
       {holidayMode !== "none" && <HolidayBanner mode={holidayMode} />}
       <SEO
-        title="About Us - Softech Guru | Professional Design Team"
-        description="Learn about Softech Guru's journey in creative design. Professional website design, graphic design, architectural visualization, and branding services."
-        keywords="about Softech Guru, design agency Kenya, creative team Nairobi, professional designers, branding experts"
+        title="About Us - Softech Guru | Digital Marketing & Design Agency Kenya"
+        description="Learn about Softech Guru's journey in digital marketing and creative design. Professional digital marketing, website design, graphic design, and architectural visualization services."
+        keywords="about Softech Guru, digital marketing agency Kenya, design agency Nairobi, graphic design team, web design experts, SEO specialists Kenya"
         structuredData={aboutStructuredData}
       />
     <div className="min-h-screen flex flex-col">

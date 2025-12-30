@@ -40,8 +40,8 @@ const faqs = [
     answer: "We'll need your brand guidelines (if any), reference examples you like, project brief, and any specific requirements. We'll guide you through everything during our initial consultation."
   },
   {
-    question: "Do you offer ongoing website maintenance?",
-    answer: "Absolutely! Our Website Care & Support service includes regular updates, security monitoring, content changes, and technical support to keep your site running smoothly."
+    question: "Do you offer digital marketing services?",
+    answer: "Yes! Our Digital Marketing service includes SEO optimization, social media management, content marketing, and online advertising to grow your online presence."
   }
 ];
 
@@ -96,7 +96,7 @@ export default function Index() {
     ],
     "offers": {
       "@type": "Service",
-      "serviceType": ["Website Design", "Graphic Design", "Architectural Design", "Logo Design", "Website Maintenance"]
+      "serviceType": ["Digital Marketing", "Graphic Design", "Website Design", "Architectural Design", "Logo Design", "SEO Services"]
     }
   };
 
@@ -110,9 +110,9 @@ export default function Index() {
       {showPreloader && <Preloader onComplete={() => setShowPreloader(false)} />}
       {holidayMode !== "none" && <HolidayBanner mode={holidayMode} />}
       <SEO
-        title="Softech Guru - Creative Design Services | Website, Graphic & Architectural Design"
-        description="Professional graphic design, website design, architectural visualization, and creative services. Custom logos, branding, 3D renders, and website care & support."
-        keywords="graphic design Kenya, website design Nairobi, architectural design, logo design, branding services, 3D visualization, website maintenance, creative agency"
+        title="Softech Guru - Digital Marketing, Graphic Design, Web Design & Architectural Design Kenya"
+        description="Professional digital marketing, graphic design, website design, and architectural visualization services in Kenya. Expert SEO, social media marketing, custom logos, branding, 3D renders."
+        keywords="digital marketing Kenya, graphic design Nairobi, website design Kenya, architectural design, SEO services Kenya, social media marketing, logo design, branding services, 3D visualization, web design Nairobi, creative agency Kenya"
         structuredData={homeStructuredData}
       />
       <Navbar />

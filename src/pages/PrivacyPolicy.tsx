@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
-import { Shield, Eye, Lock, Users, FileText, Mail } from "lucide-react";
+import { Shield, Eye, Lock, Users, FileText, Mail, Megaphone } from "lucide-react";
 
 export default function PrivacyPolicy() {
   useEffect(() => {
@@ -14,20 +14,31 @@ export default function PrivacyPolicy() {
       icon: Eye,
       title: "Information We Collect",
       content: [
-        "We collect information you provide when requesting design services, including your name, email address, phone number, business details, and project requirements.",
+        "We collect information you provide when requesting design and marketing services, including your name, email address, phone number, business details, and project requirements.",
+        "For digital marketing services, we may collect social media access, analytics data, advertising account information, and business performance metrics.",
         "For graphic design projects, we may collect brand assets, logos, images, and content you provide for design work.",
         "For architectural design, we collect property details, site plans, specifications, and visual references.",
         "For web design, we gather content, images, branding materials, and any existing website information."
       ]
     },
     {
+      icon: Megaphone,
+      title: "Digital Marketing Data",
+      content: [
+        "For digital marketing campaigns, we may access your social media accounts, Google Analytics, advertising platforms, and email marketing tools.",
+        "Campaign performance data, audience insights, and advertising metrics are collected to optimize your marketing strategies.",
+        "We handle all marketing data with strict confidentiality and only use it to improve your campaign results."
+      ]
+    },
+    {
       icon: FileText,
       title: "How We Use Your Information",
       items: [
-        "Deliver graphic design, architectural design, and web design services",
+        "Deliver digital marketing, graphic design, architectural design, and web design services",
+        "Manage and optimize social media, SEO, and advertising campaigns",
         "Communicate project updates, revisions, and deliverables",
         "Process payments and maintain business records",
-        "Improve our design services and client experience",
+        "Improve our design and marketing services",
         "Send portfolio updates and service offerings (with your consent)",
         "Comply with legal and professional obligations"
       ]
@@ -78,9 +89,9 @@ export default function PrivacyPolicy() {
   return (
     <>
       <SEO
-        title="Privacy Policy - Softech Guru Design Services"
-        description="Learn how Softech Guru protects your personal information and design assets. Our privacy policy covers graphic design, architectural design, and web design services."
-        keywords="privacy policy, design services privacy, graphic design confidentiality, architectural design privacy"
+        title="Privacy Policy - Softech Guru Digital Marketing & Design Services"
+        description="Learn how Softech Guru protects your personal information, marketing data, and design assets. Our privacy policy covers digital marketing, graphic design, architectural design, and web design services."
+        keywords="privacy policy, digital marketing privacy, design services privacy, graphic design confidentiality, architectural design privacy, SEO privacy"
       />
       <div className="min-h-screen flex flex-col bg-background">
         <Navbar />
@@ -98,10 +109,10 @@ export default function PrivacyPolicy() {
                   Privacy <span className="text-primary">Policy</span>
                 </h1>
                 <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                  How we collect, use, and protect your information when you work with us on graphic design, architectural design, and web design projects.
+                  How we collect, use, and protect your information when you work with us on digital marketing, graphic design, architectural design, and web design projects.
                 </p>
                 <p className="text-muted-foreground/70 text-sm mt-4">
-                  Last updated: December 9, 2025
+                  Last updated: December 30, 2025
                 </p>
               </div>
             </div>
