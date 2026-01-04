@@ -23,6 +23,8 @@ const HolidayBanner = ({ mode }: HolidayBannerProps) => {
     );
   }
 
+  const currentYear = new Date().getFullYear();
+
   return (
     <div className="fixed top-0 left-0 right-0 z-[60] bg-gradient-to-r from-purple-700 via-blue-600 to-indigo-700 py-1.5 sm:py-2 px-4 overflow-hidden">
       <div className="container mx-auto flex items-center justify-center gap-3">
@@ -30,7 +32,7 @@ const HolidayBanner = ({ mode }: HolidayBannerProps) => {
         <PartyPopper className="w-4 h-4 text-pink-300 animate-bounce hidden sm:block" />
         <span className="text-white font-medium text-sm sm:text-base flex items-center gap-2">
           <Star className="w-4 h-4 text-yellow-300 animate-pulse" />
-          <span className="animate-pulse">🎆 Happy New Year 2025! 🎉</span>
+          <span className="animate-pulse">🎆 Happy New Year {currentYear}! 🎉</span>
           <Star className="w-4 h-4 text-yellow-300 animate-pulse" />
         </span>
         <PartyPopper className="w-4 h-4 text-pink-300 animate-bounce hidden sm:block" />
