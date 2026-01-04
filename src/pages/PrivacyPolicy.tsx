@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import HolidayBanner from "@/components/HolidayBanner";
+import { useHolidayMode } from "@/hooks/useHolidayMode";
 import { Shield, Eye, Lock, Users, FileText, Mail, Megaphone } from "lucide-react";
 
 export default function PrivacyPolicy() {
@@ -86,6 +88,8 @@ export default function PrivacyPolicy() {
     }
   ];
 
+  const holidayMode = useHolidayMode();
+
   return (
     <>
       <SEO
@@ -94,6 +98,7 @@ export default function PrivacyPolicy() {
         keywords="privacy policy, digital marketing privacy, design services privacy, graphic design confidentiality, architectural design privacy, SEO privacy"
       />
       <div className="min-h-screen flex flex-col bg-background">
+        {holidayMode !== "none" && <HolidayBanner mode={holidayMode} />}
         <Navbar />
         
         <main className="flex-1 pt-20">
