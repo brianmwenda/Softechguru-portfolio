@@ -69,7 +69,7 @@ export default function Navbar() {
         <nav className="container flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <a className="text-xl font-bold relative" href="/">
-              {holidayMode !== "none" && (
+              {holidayMode === "christmas" && (
                 <img 
                   src={santaHat} 
                   alt="Santa Hat" 
@@ -138,7 +138,7 @@ export default function Navbar() {
         {/* Mobile Header */}
         <div className="flex justify-between items-center px-4 py-4 border-b border-border">
           <a className="text-xl font-bold relative" href="/">
-            {holidayMode !== "none" && (
+            {holidayMode === "christmas" && (
               <img 
                 src={santaHat} 
                 alt="Santa Hat" 
