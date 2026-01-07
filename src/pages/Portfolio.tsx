@@ -10,64 +10,6 @@ import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const galleryImages = [
-  // Website Design - New Projects First
-  {
-    id: 44,
-    src: "/assets/images/ajani-bakery.png",
-    alt: "Ajani House Bakery Website",
-    category: "website-design",
-    label: "Website Design"
-  },
-  {
-    id: 45,
-    src: "/assets/images/trading-journal.png",
-    alt: "XAU/USD Trading Journal Dashboard",
-    category: "website-design",
-    label: "Website Design"
-  },
-  {
-    id: 46,
-    src: "/assets/images/meruride.png",
-    alt: "MeruRide Transport App",
-    category: "website-design",
-    label: "Website Design"
-  },
-  {
-    id: 47,
-    src: "/assets/images/veriscan-ai.png",
-    alt: "VeriScan AI Plagiarism Detector",
-    category: "website-design",
-    label: "Website Design"
-  },
-  {
-    id: 1,
-    src: "/assets/images/student4.PNG",
-    alt: "School Management System Website",
-    category: "website-design",
-    label: "Website Design"
-  },
-  {
-    id: 4,
-    src: "/assets/images/web.png",
-    alt: "E-commerce Website Design",
-    category: "website-design",
-    label: "Website Design"
-  },
-  {
-    id: 42,
-    src: "/assets/images/Go-ticketing-system.png",
-    alt: "E-commerce Web Application",
-    category: "website-design",
-    label: "Website Design"
-  },
-  {
-    id: 43,
-    src: "/assets/images/go book management system.png",
-    alt: "Book Management System",
-    category: "website-design",
-    label: "Website Design"
-  },
-
   // Graphic Design - Posters
   {
     id: 64,
@@ -338,7 +280,6 @@ const galleryImages = [
 
 const categories = [
   { id: "all", label: "All Work" },
-  { id: "website-design", label: "Website Design" },
   { id: "graphic-design", label: "Graphic Design" },
   { id: "logo-design", label: "Logo Design" },
   { id: "architectural-design", label: "Architectural Design" }
