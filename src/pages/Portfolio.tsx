@@ -10,7 +10,23 @@ import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const galleryImages = [
+  // Signage Design
+  {
+    id: 65,
+    src: "/assets/images/attila-signage.png",
+    alt: "Attila Chicken Farm Signage",
+    category: "signage-design",
+    label: "Signage Design"
+  },
+
   // Graphic Design - Posters
+  {
+    id: 66,
+    src: "/assets/images/attila-poster.png",
+    alt: "Attila Premium Chicken Poster",
+    category: "graphic-design",
+    label: "Poster Design"
+  },
   {
     id: 64,
     src: "/assets/images/christmas-poster.png",
@@ -282,6 +298,7 @@ const categories = [
   { id: "all", label: "All Work" },
   { id: "graphic-design", label: "Graphic Design" },
   { id: "logo-design", label: "Logo Design" },
+  { id: "signage-design", label: "Signage Design" },
   { id: "architectural-design", label: "Architectural Design" }
 ];
 
