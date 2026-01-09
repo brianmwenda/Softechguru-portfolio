@@ -43,7 +43,7 @@ const AboutUsStory = () => {
                 
                 {/* Founder Info */}
                 <h3 className="text-xl md:text-2xl font-bold mb-1">Brian Mwenda</h3>
-                <p className="text-primary font-medium mb-1">Graphic Designer / Digital Marketer</p>
+                <p className="text-primary font-medium mb-1">Web Developer / Graphic Designer / Digital Marketer</p>
                 <p className="text-muted-foreground text-xs mb-2">BSc. Computer Science</p>
                 <a 
                   href="https://www.linkedin.com/in/brian-mwenda-325524360" 
