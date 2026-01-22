@@ -256,13 +256,6 @@ const galleryImages = [
 
   // Architectural Design
   {
-    id: 48,
-    src: "/assets/images/floor-plan.png",
-    alt: "Residential Floor Plan Design",
-    category: "architectural-design",
-    label: "Floor Plan"
-  },
-  {
     id: 31,
     src: "/assets/images/3d (1).jpg",
     alt: "Isometric Living Room Interior Design",
