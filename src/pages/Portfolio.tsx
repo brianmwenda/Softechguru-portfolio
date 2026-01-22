@@ -15,14 +15,14 @@ const galleryImages = [
     id: 67,
     src: "/assets/images/attila-billboard-back.png",
     alt: "Attila Premium Chicken Billboard Back",
-    category: "graphic-design",
+    category: "billboards",
     label: "Billboard Design"
   },
   {
     id: 68,
     src: "/assets/images/attila-billboard-front.png",
     alt: "Attila Chicken Billboard Front",
-    category: "graphic-design",
+    category: "billboards",
     label: "Billboard Design"
   },
   {
@@ -36,14 +36,14 @@ const galleryImages = [
     id: 70,
     src: "/assets/images/attila-caps.png",
     alt: "Attila Branded Caps",
-    category: "graphic-design",
+    category: "merchandise",
     label: "Merchandise Design"
   },
   {
     id: 71,
     src: "/assets/images/attila-tshirts.png",
     alt: "Attila Branded T-Shirts",
-    category: "graphic-design",
+    category: "merchandise",
     label: "Merchandise Design"
   },
   {
@@ -323,6 +323,9 @@ const galleryImages = [
 const categories = [
   { id: "all", label: "All Work" },
   { id: "graphic-design", label: "Graphic Design" },
+  { id: "billboards", label: "Billboards" },
+  { id: "merchandise", label: "Merchandise" },
+  { id: "flyers", label: "Flyers" },
   { id: "logo-design", label: "Logo Design" },
   { id: "architectural-design", label: "Architectural Design" }
 ];
