@@ -29,7 +29,7 @@ const galleryImages = [
     id: 69,
     src: "/assets/images/attila-business-card.png",
     alt: "Attila Poultry Farm Business Card",
-    category: "graphic-design",
+    category: "business-cards",
     label: "Business Card"
   },
   {
@@ -50,7 +50,7 @@ const galleryImages = [
     id: 72,
     src: "/assets/images/attila-brochure.png",
     alt: "Attila Chicken Brochure Design",
-    category: "graphic-design",
+    category: "flyers-brochures",
     label: "Brochure Design"
   },
   {
@@ -325,7 +325,8 @@ const categories = [
   { id: "graphic-design", label: "Graphic Design" },
   { id: "billboards", label: "Billboards" },
   { id: "merchandise", label: "Merchandise" },
-  { id: "flyers", label: "Flyers" },
+  { id: "flyers-brochures", label: "Flyers & Brochures" },
+  { id: "business-cards", label: "Business Cards" },
   { id: "logo-design", label: "Logo Design" },
   { id: "architectural-design", label: "Architectural Design" }
 ];
