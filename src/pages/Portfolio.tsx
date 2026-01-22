@@ -10,27 +10,53 @@ import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const galleryImages = [
-  // Signage Design
+  // Graphic Design - Attila Branding
   {
-    id: 65,
-    src: "/assets/images/attila-signage.png",
-    alt: "Attila Chicken Farm Signage",
-    category: "signage-design",
-    label: "Signage Design"
+    id: 67,
+    src: "/assets/images/attila-billboard-back.png",
+    alt: "Attila Premium Chicken Billboard Back",
+    category: "graphic-design",
+    label: "Billboard Design"
   },
-
-  // Graphic Design - Posters
+  {
+    id: 68,
+    src: "/assets/images/attila-billboard-front.png",
+    alt: "Attila Chicken Billboard Front",
+    category: "graphic-design",
+    label: "Billboard Design"
+  },
+  {
+    id: 69,
+    src: "/assets/images/attila-business-card.png",
+    alt: "Attila Poultry Farm Business Card",
+    category: "graphic-design",
+    label: "Business Card"
+  },
+  {
+    id: 70,
+    src: "/assets/images/attila-caps.png",
+    alt: "Attila Branded Caps",
+    category: "graphic-design",
+    label: "Merchandise Design"
+  },
+  {
+    id: 71,
+    src: "/assets/images/attila-tshirts.png",
+    alt: "Attila Branded T-Shirts",
+    category: "graphic-design",
+    label: "Merchandise Design"
+  },
+  {
+    id: 72,
+    src: "/assets/images/attila-brochure.png",
+    alt: "Attila Chicken Brochure Design",
+    category: "graphic-design",
+    label: "Brochure Design"
+  },
   {
     id: 66,
     src: "/assets/images/attila-poster.png",
     alt: "Attila Premium Chicken Poster",
-    category: "graphic-design",
-    label: "Poster Design"
-  },
-  {
-    id: 64,
-    src: "/assets/images/christmas-poster.png",
-    alt: "Softech Guru Christmas Greeting Poster",
     category: "graphic-design",
     label: "Poster Design"
   },
@@ -298,7 +324,6 @@ const categories = [
   { id: "all", label: "All Work" },
   { id: "graphic-design", label: "Graphic Design" },
   { id: "logo-design", label: "Logo Design" },
-  { id: "signage-design", label: "Signage Design" },
   { id: "architectural-design", label: "Architectural Design" }
 ];
 
