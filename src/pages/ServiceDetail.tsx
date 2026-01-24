@@ -1,5 +1,5 @@
 
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { ArrowLeft, Check, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
@@ -30,7 +30,12 @@ const servicesData = {
       "Cross-Browser Compatibility"
     ],
     technologies: ["React", "TypeScript", "Tailwind CSS", "Next.js", "WordPress", "Shopify"],
-    partners: ["Vercel", "Netlify", "Cloudflare", "Google Cloud"]
+    partners: [
+      { name: "Vercel", logo: "https://assets.vercel.com/image/upload/v1588805858/repositories/vercel/logo.png" },
+      { name: "Netlify", logo: "https://cdn.worldvectorlogo.com/logos/netlify.svg" },
+      { name: "Cloudflare", logo: "https://cdn.worldvectorlogo.com/logos/cloudflare-1.svg" },
+      { name: "Google Cloud", logo: "https://cdn.worldvectorlogo.com/logos/google-cloud-1.svg" }
+    ]
   },
   "architectural-design": {
     title: "Architectural 3D Renders",
@@ -55,7 +60,12 @@ const servicesData = {
       "Material Selection"
     ],
     technologies: ["Blender", "SketchUp", "AutoCAD", "3ds Max", "Lumion", "V-Ray"],
-    partners: ["Autodesk", "Chaos Group", "Trimble"]
+    partners: [
+      { name: "Autodesk", logo: "https://cdn.worldvectorlogo.com/logos/autodesk-2.svg" },
+      { name: "Chaos Group", logo: "https://cdn.worldvectorlogo.com/logos/v-ray-5.svg" },
+      { name: "Trimble", logo: "https://cdn.worldvectorlogo.com/logos/sketchup-2.svg" },
+      { name: "Blender", logo: "https://cdn.worldvectorlogo.com/logos/blender-2.svg" }
+    ]
   },
   "graphic-design": {
     title: "Graphic Design",
@@ -80,7 +90,12 @@ const servicesData = {
       "Merchandise Design"
     ],
     technologies: ["Adobe Photoshop", "Adobe Illustrator", "Figma", "Canva Pro", "InDesign"],
-    partners: ["Adobe", "Figma", "Pantone"]
+    partners: [
+      { name: "Adobe", logo: "https://cdn.worldvectorlogo.com/logos/adobe-2.svg" },
+      { name: "Figma", logo: "https://cdn.worldvectorlogo.com/logos/figma-icon.svg" },
+      { name: "Canva", logo: "https://cdn.worldvectorlogo.com/logos/canva-1.svg" },
+      { name: "Pantone", logo: "https://cdn.worldvectorlogo.com/logos/pantone-2.svg" }
+    ]
   },
   "digital-marketing": {
     title: "Digital Marketing",
@@ -105,13 +120,29 @@ const servicesData = {
       "Brand Strategy"
     ],
     technologies: ["Google Analytics", "Meta Business Suite", "Hootsuite", "Mailchimp", "SEMrush"],
-    partners: ["Google", "Meta", "LinkedIn", "Twitter/X"]
+    partners: [
+      { name: "Google", logo: "https://cdn.worldvectorlogo.com/logos/google-icon.svg" },
+      { name: "Meta", logo: "https://cdn.worldvectorlogo.com/logos/meta-1.svg" },
+      { name: "LinkedIn", logo: "https://cdn.worldvectorlogo.com/logos/linkedin-icon-2.svg" },
+      { name: "X", logo: "https://cdn.worldvectorlogo.com/logos/x-2.svg" }
+    ]
   }
 };
 
 export default function ServiceDetail() {
   const { serviceId } = useParams<{ serviceId: string }>();
+  const navigate = useNavigate();
   const service = serviceId ? servicesData[serviceId as keyof typeof servicesData] : null;
+
+  const handleBackToServices = () => {
+    navigate('/', { replace: false });
+    setTimeout(() => {
+      const servicesSection = document.getElementById('services');
+      if (servicesSection) {
+        servicesSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
 
   if (!service) {
     return (
@@ -150,13 +181,13 @@ export default function ServiceDetail() {
           <div className="absolute inset-0 bg-black/60" />
         </div>
         <div className="container relative z-10 text-center text-white">
-          <Link 
-            to="/#services" 
+          <button 
+            onClick={handleBackToServices}
             className="inline-flex items-center text-white/80 hover:text-white mb-6 transition-colors"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Services
-          </Link>
+          </button>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">{service.title}</h1>
           <p className="text-xl text-white/90 max-w-2xl mx-auto">{service.subtitle}</p>
         </div>
@@ -227,11 +258,16 @@ export default function ServiceDetail() {
             </div>
             <div>
               <h3 className="text-2xl font-bold mb-6 text-center">Our Partners</h3>
-              <div className="flex flex-wrap justify-center gap-3">
+              <div className="flex flex-wrap justify-center items-center gap-6">
                 {service.partners.map((partner, index) => (
-                  <span key={index} className="px-4 py-2 bg-muted rounded-full text-sm font-medium">
-                    {partner}
-                  </span>
+                  <div key={index} className="p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <img 
+                      src={partner.logo} 
+                      alt={partner.name}
+                      className="h-10 w-auto object-contain"
+                      title={partner.name}
+                    />
+                  </div>
                 ))}
               </div>
             </div>
