@@ -47,6 +47,27 @@ const galleryImages = [
     label: "Merchandise Design"
   },
   {
+    id: 73,
+    src: "/assets/images/sg-tshirts.png",
+    alt: "Selecta Cyanu Branded T-Shirts",
+    category: "merchandise",
+    label: "Merchandise Design"
+  },
+  {
+    id: 74,
+    src: "/assets/images/sg-caps.png",
+    alt: "Softech Guru Branded Caps",
+    category: "merchandise",
+    label: "Merchandise Design"
+  },
+  {
+    id: 75,
+    src: "/assets/images/sg-hoodies.png",
+    alt: "Softech Guru Branded Hoodies",
+    category: "merchandise",
+    label: "Merchandise Design"
+  },
+  {
     id: 72,
     src: "/assets/images/attila-brochure.png",
     alt: "Attila Chicken Brochure Design",
