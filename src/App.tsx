@@ -13,6 +13,7 @@ import FAQ from "./pages/FAQ";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import NotFound from "./pages/NotFound";
+import ServiceDetail from "./pages/ServiceDetail";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import { CartProvider } from "./contexts/CartContext";
 import WhatsAppButton from "./components/WhatsAppButton";
@@ -40,6 +41,7 @@ const AppContent = () => {
             <Route path="/pricing" element={<Apartments />} />
             <Route path="/Portfolio" element={<Portfolio />} />
             <Route path="/pricing" element={<Pricing />} />
+            <Route path="/services/:serviceId" element={<ServiceDetail />} />
             <Route path="/about" element={<About />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />

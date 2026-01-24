@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Monitor, 
   PenTool, 
@@ -48,12 +49,6 @@ export default function ModernServicesSection() {
   const { t } = useLanguage();
   const [hoveredService, setHoveredService] = useState<string | null>(null);
 
-  const handleGetQuote = (service: typeof services[0]) => {
-    const whatsappMessage = `Hello! I'm interested in your ${service.title} service.\n\nService Details:\n- ${service.description}\n\nPlease provide me with more information and a quote.`;
-    const whatsappUrl = `https://wa.me/254701443181?text=${encodeURIComponent(whatsappMessage)}`;
-    window.open(whatsappUrl, '_blank');
-  };
-
   return (
     <section className="section bg-gradient-to-b from-background to-muted/20 relative overflow-hidden" id="services">
       {/* Floating visual elements */}
@@ -93,13 +88,13 @@ export default function ModernServicesSection() {
             {services.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {services.map((service, index) => (
-                  <div 
+                  <Link 
                     key={service.id} 
+                    to={`/services/${service.id}`}
                     className="glass-card rounded-xl overflow-hidden animate-fade-in hover:shadow-xl transition-all duration-300 group cursor-pointer flex flex-col" 
                     style={{ animationDelay: `${(index + 1) * 100}ms` }}
                     onMouseEnter={() => setHoveredService(service.id)}
                     onMouseLeave={() => setHoveredService(null)}
-                    onClick={() => handleGetQuote(service)}
                   >
                     <div className="aspect-video rounded-t-xl overflow-hidden relative">
                       <img 
@@ -123,10 +118,10 @@ export default function ModernServicesSection() {
                       <p className="text-muted-foreground mb-4 flex-1">{service.description}</p>
                       
                       <div className="flex items-center text-primary font-medium text-sm group-hover:translate-x-2 transition-transform mt-auto">
-                        Get Quote <ArrowRight className="ml-2 h-4 w-4" />
+                        More Information <ArrowRight className="ml-2 h-4 w-4" />
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
             ) : null }
