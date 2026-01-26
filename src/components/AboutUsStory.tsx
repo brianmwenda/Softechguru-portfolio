@@ -2,10 +2,11 @@ import { Rocket, Users, Target, Calendar, Linkedin } from "lucide-react";
 
 const AboutUsStory = () => {
   return (
-    <section id="about-us" className="py-16 bg-background relative overflow-hidden">
-      {/* Background decorations */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
+    <section id="about-us" className="py-16 bg-gradient-to-b from-background to-secondary/20 relative overflow-hidden">
+      {/* 3D Background decorations */}
+      <div className="absolute inset-0" style={{ background: 'var(--gradient-mesh)' }} />
+      <div className="absolute top-0 left-0 w-72 h-72 bg-primary/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/8 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-5xl mx-auto">
@@ -27,7 +28,7 @@ const AboutUsStory = () => {
             <div className="relative group">
               <div className="absolute -inset-2 rounded-2xl bg-gradient-to-tr from-primary/20 via-primary/5 to-transparent blur-lg opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
               
-              <div className="relative glass-card p-6 rounded-2xl text-center h-full flex flex-col justify-center">
+              <div className="relative bg-card/90 backdrop-blur-xl border border-border/50 rounded-2xl shadow-xl p-6 text-center h-full flex flex-col justify-center">
                 {/* Profile Image */}
                 <div className="relative mx-auto mb-5 w-24 h-24 md:w-28 md:h-28">
                   <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary to-primary/50 p-1">
@@ -77,7 +78,7 @@ const AboutUsStory = () => {
 
             {/* Right - Story Text */}
             <div className="flex flex-col gap-6 h-full">
-              <div className="glass-card p-6 border-l-4 border-primary flex-1">
+              <div className="bg-card/90 backdrop-blur-xl border border-border/50 rounded-2xl shadow-xl p-6 border-l-4 border-l-primary flex-1">
                 <h3 className="text-xl font-semibold text-foreground mb-3">How It All Began</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   In 2023, Softech Guru started as a small creative studio with a big dream. 
@@ -86,7 +87,7 @@ const AboutUsStory = () => {
                 </p>
               </div>
               
-              <div className="glass-card p-6 border-l-4 border-accent flex-1">
+              <div className="bg-card/90 backdrop-blur-xl border border-border/50 rounded-2xl shadow-xl p-6 border-l-4 border-l-primary flex-1">
                 <h3 className="text-xl font-semibold text-foreground mb-3">The Journey</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   From our first logo design to complex architectural visualizations, every project 
@@ -99,7 +100,7 @@ const AboutUsStory = () => {
 
           {/* Our Vision - Centered below */}
           <div className="max-w-3xl mx-auto">
-            <div className="glass-card p-8 bg-gradient-to-br from-primary/5 to-accent/5 text-center">
+            <div className="bg-card/90 backdrop-blur-xl border border-border/50 rounded-2xl shadow-xl p-8 bg-gradient-to-br from-primary/5 to-primary/10 text-center">
               <div className="flex items-center justify-center gap-3 mb-6">
                 <div className="p-3 rounded-full bg-primary/10">
                   <Rocket className="h-6 w-6 text-primary" />
