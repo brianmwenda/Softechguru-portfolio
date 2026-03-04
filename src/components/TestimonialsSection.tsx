@@ -72,17 +72,20 @@ export default function TestimonialsSection() {
   }, []);
   
   return (
-    <section className="py-16 bg-gradient-to-b from-background to-muted overflow-hidden relative">
-      {/* Floating 3D-like elements */}
+    <section className="py-16 bg-gradient-to-b from-background to-secondary/30 overflow-hidden relative">
+      {/* 3D Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-10 left-[10%] w-20 h-20 border border-primary/20 rounded-lg rotate-12 animate-float" />
-        <div className="absolute top-1/3 right-[5%] w-16 h-16 border border-accent/20 rounded-full animate-float" style={{ animationDelay: '1s' }} />
-        <div className="absolute bottom-20 left-[15%] w-24 h-24 border border-primary/10 rounded-2xl -rotate-12 animate-float" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-1/2 right-[15%] w-12 h-12 bg-gradient-to-br from-primary/10 to-accent/10 rounded-lg rotate-45 animate-float" style={{ animationDelay: '0.5s' }} />
+        <div className="absolute inset-0" style={{ background: 'var(--gradient-mesh)' }} />
+        
+        {/* Floating 3D shapes */}
+        <div className="absolute top-10 left-[10%] w-20 h-20 border border-primary/20 rounded-lg rotate-12 animate-float shadow-lg" />
+        <div className="absolute top-1/3 right-[5%] w-16 h-16 border border-primary/15 rounded-full animate-float" style={{ animationDelay: '1s' }} />
+        <div className="absolute bottom-20 left-[15%] w-24 h-24 border border-primary/15 rounded-2xl -rotate-12 animate-float" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/2 right-[15%] w-12 h-12 bg-gradient-to-br from-primary/15 to-transparent rounded-lg rotate-45 animate-float shadow-md" style={{ animationDelay: '0.5s' }} />
         
         {/* Gradient orbs */}
-        <div className="absolute top-20 right-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-10 left-1/4 w-80 h-80 bg-accent/5 rounded-full blur-3xl" />
+        <div className="absolute top-20 right-1/4 w-64 h-64 bg-primary/8 rounded-full blur-3xl" />
+        <div className="absolute bottom-10 left-1/4 w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
       </div>
       
       <div className="container relative z-10">
@@ -111,7 +114,7 @@ export default function TestimonialsSection() {
                       : "opacity-0 translate-x-8 z-0"
                 )}
               >
-                <div className="glass-card p-6 md:p-8 rounded-2xl h-full flex flex-col">
+                <div className="bg-card/90 backdrop-blur-xl border border-border/50 rounded-2xl shadow-xl p-6 md:p-8 h-full flex flex-col">
                   {/* Quote Icon */}
                   <Quote className="w-10 h-10 text-primary/30 mb-4 flex-shrink-0" />
                   

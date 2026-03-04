@@ -149,21 +149,25 @@ export default function Index() {
         </div>
 
         {/* Contact & FAQ Section */}
-        <section id="contact" className="relative section scroll-animate overflow-hidden" role="region" aria-labelledby="contact-heading">
-          {/* Floating geometric shapes */}
+        <section id="contact" className="relative section scroll-animate overflow-hidden bg-gradient-to-b from-secondary/30 to-background" role="region" aria-labelledby="contact-heading">
+          {/* 3D Background Elements */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-10 right-[10%] w-32 h-32 border-2 border-primary/10 rounded-full animate-spin-slow" />
-            <div className="absolute bottom-20 left-[5%] w-24 h-24 border border-accent/20 rotate-45 animate-float" />
-            <div className="absolute top-1/3 left-[8%] w-16 h-16 bg-gradient-to-br from-primary/10 to-transparent rounded-2xl rotate-12 animate-float" style={{ animationDelay: '1.5s' }} />
-            <div className="absolute bottom-1/3 right-[12%] w-20 h-20 border border-primary/15 rounded-lg -rotate-12 animate-float" style={{ animationDelay: '0.8s' }} />
+            {/* Gradient mesh background */}
+            <div className="absolute inset-0" style={{ background: 'var(--gradient-mesh)' }} />
             
-            {/* Gradient mesh */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-gradient-radial from-primary/5 via-transparent to-transparent" />
-            <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+            {/* Floating 3D shapes */}
+            <div className="absolute top-10 right-[10%] w-32 h-32 border-2 border-primary/20 rounded-full animate-spin-slow" />
+            <div className="absolute bottom-20 left-[5%] w-24 h-24 border border-primary/15 rotate-45 animate-float" />
+            <div className="absolute top-1/3 left-[8%] w-16 h-16 bg-gradient-to-br from-primary/15 to-transparent rounded-2xl rotate-12 animate-float shadow-lg" style={{ animationDelay: '1.5s' }} />
+            <div className="absolute bottom-1/3 right-[12%] w-20 h-20 border border-primary/20 rounded-lg -rotate-12 animate-float" style={{ animationDelay: '0.8s' }} />
+            
+            {/* Gradient orbs */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-gradient-radial from-primary/8 via-transparent to-transparent" />
+            <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
           </div>
-          <div className="container">
+          <div className="container relative z-10">
             <div className="max-w-4xl mx-auto text-center space-y-8 mb-16 animate-fade-in">
-              <h2 id="contact-heading" className="text-4xl md:text-5xl font-bold text-white">
+              <h2 id="contact-heading" className="text-4xl md:text-5xl font-bold text-foreground">
                 Let's Create Something Amazing
               </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -174,15 +178,15 @@ export default function Index() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Contact Information */}
               <div className="animate-fade-in [animation-delay:100ms]">
-                <h3 className="text-2xl font-bold mb-6 text-white">Get In Touch</h3>
+                <h3 className="text-2xl font-bold mb-6 text-foreground">Get In Touch</h3>
                 
-                <div className="glass-card p-6 space-y-6 mb-8">
+                <div className="bg-card/80 backdrop-blur-xl border border-border/50 rounded-2xl shadow-xl p-6 space-y-6 mb-8">
                   <div className="flex items-start">
                     <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
                       <Phone className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <h4 className="font-semibold mb-1 text-white">Phone</h4>
+                      <h4 className="font-semibold mb-1 text-foreground">Phone</h4>
                       <p className="text-muted-foreground">+(254) 701-443-181</p>
                     </div>
                   </div>
@@ -192,7 +196,7 @@ export default function Index() {
                       <Mail className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <h4 className="font-semibold mb-1 text-white">Email</h4>
+                      <h4 className="font-semibold mb-1 text-foreground">Email</h4>
                       <p className="text-muted-foreground">softechguruservices@gmail.com</p>
                     </div>
                   </div>
@@ -202,7 +206,7 @@ export default function Index() {
                       <MapPin className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <h4 className="font-semibold mb-1 text-white">Location</h4>
+                      <h4 className="font-semibold mb-1 text-foreground">Location</h4>
                       <p className="text-muted-foreground">Nairobi, Kenya</p>
                     </div>
                   </div>
@@ -212,7 +216,7 @@ export default function Index() {
                       <Clock className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <h4 className="font-semibold mb-1 text-white">Business Hours</h4>
+                      <h4 className="font-semibold mb-1 text-foreground">Business Hours</h4>
                       <p className="text-muted-foreground">
                         Monday - Friday: 9AM - 6PM<br />
                         Weekend: 10AM - 4PM
@@ -234,13 +238,13 @@ export default function Index() {
               
               {/* FAQ Section */}
               <div className="animate-fade-in [animation-delay:300ms]">
-                <h3 className="text-2xl font-bold mb-6 text-white">Frequently Asked Questions</h3>
+                <h3 className="text-2xl font-bold mb-6 text-foreground">Frequently Asked Questions</h3>
                 
-                <div className="glass-card p-6">
+                <div className="bg-card/80 backdrop-blur-xl border border-border/50 rounded-2xl shadow-xl p-6">
                   <Accordion type="single" collapsible className="w-full">
                     {faqs.map((faq, index) => (
                       <AccordionItem key={index} value={`item-${index}`}>
-                        <AccordionTrigger className="text-left text-white hover:text-primary">
+                        <AccordionTrigger className="text-left text-foreground hover:text-primary">
                           {faq.question}
                         </AccordionTrigger>
                         <AccordionContent className="text-muted-foreground">

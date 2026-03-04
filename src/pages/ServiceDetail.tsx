@@ -205,17 +205,18 @@ export default function ServiceDetail() {
       </section>
 
       {/* Our Process */}
-      <section className="section bg-muted/30">
-        <div className="container">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Our Process</h2>
+      <section className="section bg-secondary/30 relative overflow-hidden">
+        <div className="absolute inset-0" style={{ background: 'var(--gradient-mesh)' }} />
+        <div className="container relative z-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-foreground">Our Process</h2>
           <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
             {service.process.map((item, index) => (
               <div key={index} className="relative">
-                <div className="glass-card p-6 rounded-xl h-full">
-                  <div className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold mb-4">
+                <div className="bg-card/90 backdrop-blur-xl border border-border/50 rounded-xl shadow-lg p-6 h-full">
+                  <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold mb-4">
                     {index + 1}
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">{item.step}</h3>
+                  <h3 className="text-lg font-semibold mb-2 text-foreground">{item.step}</h3>
                   <p className="text-sm text-muted-foreground">{item.description}</p>
                 </div>
                 {index < service.process.length - 1 && (
@@ -228,14 +229,15 @@ export default function ServiceDetail() {
       </section>
 
       {/* Features */}
-      <section className="section">
-        <div className="container">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">What's Included</h2>
+      <section className="section relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-background to-secondary/20" />
+        <div className="container relative z-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-foreground">What's Included</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
             {service.features.map((feature, index) => (
-              <div key={index} className="flex items-center gap-3 p-4 glass-card rounded-lg">
+              <div key={index} className="flex items-center gap-3 p-4 bg-card/90 backdrop-blur-xl border border-border/50 rounded-lg shadow-md">
                 <Check className="h-5 w-5 text-primary flex-shrink-0" />
-                <span className="text-sm">{feature}</span>
+                <span className="text-sm text-foreground">{feature}</span>
               </div>
             ))}
           </div>
@@ -243,11 +245,12 @@ export default function ServiceDetail() {
       </section>
 
       {/* Technologies & Partners */}
-      <section className="section bg-muted/30">
-        <div className="container">
+      <section className="section bg-secondary/30 relative overflow-hidden">
+        <div className="absolute inset-0" style={{ background: 'var(--gradient-mesh)' }} />
+        <div className="container relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
             <div>
-              <h3 className="text-2xl font-bold mb-6 text-center">Technologies We Use</h3>
+              <h3 className="text-2xl font-bold mb-6 text-center text-foreground">Technologies We Use</h3>
               <div className="flex flex-wrap justify-center gap-3">
                 {service.technologies.map((tech, index) => (
                   <span key={index} className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">
@@ -257,10 +260,10 @@ export default function ServiceDetail() {
               </div>
             </div>
             <div>
-              <h3 className="text-2xl font-bold mb-6 text-center">Our Partners</h3>
+              <h3 className="text-2xl font-bold mb-6 text-center text-foreground">Our Partners</h3>
               <div className="flex flex-wrap justify-center items-center gap-6">
                 {service.partners.map((partner, index) => (
-                  <div key={index} className="p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                  <div key={index} className="p-4 bg-card border border-border/50 rounded-xl shadow-md hover:shadow-lg transition-shadow">
                     <img 
                       src={partner.logo} 
                       alt={partner.name}
@@ -276,10 +279,11 @@ export default function ServiceDetail() {
       </section>
 
       {/* CTA */}
-      <section className="section">
-        <div className="container">
-          <div className="glass-card p-12 rounded-2xl text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
+      <section className="section relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-background to-secondary/20" />
+        <div className="container relative z-10">
+          <div className="bg-card/90 backdrop-blur-xl border border-border/50 rounded-2xl shadow-xl p-12 text-center max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold mb-4 text-foreground">Ready to Get Started?</h2>
             <p className="text-muted-foreground mb-8">
               Let's discuss your project and create something amazing together.
             </p>

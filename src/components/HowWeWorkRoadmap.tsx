@@ -116,11 +116,12 @@ const HowWeWorkRoadmap = () => {
   const progress = ((currentStep + 1) / steps.length) * 100;
 
   return (
-    <section className="py-16 bg-gradient-to-b from-background via-muted/20 to-background relative overflow-hidden">
-      {/* Animated background elements */}
+    <section className="py-16 bg-gradient-to-b from-background via-secondary/30 to-background relative overflow-hidden">
+      {/* 3D Background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute inset-0" style={{ background: 'var(--gradient-mesh)' }} />
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/8 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl" />
       </div>
       
