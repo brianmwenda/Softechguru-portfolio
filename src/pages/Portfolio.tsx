@@ -48,22 +48,43 @@ const galleryImages = [
   },
   {
     id: 73,
-    src: "/assets/images/sg-tshirts.png",
-    alt: "Selecta Cyanu Branded T-Shirts",
+    src: "/assets/images/sg-cap-black.png",
+    alt: "Softech Guru Black Cap",
     category: "merchandise",
     label: "Merchandise Design"
   },
   {
     id: 74,
-    src: "/assets/images/sg-caps.png",
-    alt: "Softech Guru Branded Caps",
+    src: "/assets/images/sg-cap-red.png",
+    alt: "Softech Guru Red Cap",
     category: "merchandise",
     label: "Merchandise Design"
   },
   {
     id: 75,
-    src: "/assets/images/sg-hoodies.png",
-    alt: "Softech Guru Branded Hoodies",
+    src: "/assets/images/sg-cap-white.png",
+    alt: "Softech Guru White Cap",
+    category: "merchandise",
+    label: "Merchandise Design"
+  },
+  {
+    id: 76,
+    src: "/assets/images/sg-hoodie-black.png",
+    alt: "Softech Guru Black Hoodie",
+    category: "merchandise",
+    label: "Merchandise Design"
+  },
+  {
+    id: 77,
+    src: "/assets/images/sg-hoodie-red.png",
+    alt: "Softech Guru Red Hoodie",
+    category: "merchandise",
+    label: "Merchandise Design"
+  },
+  {
+    id: 78,
+    src: "/assets/images/sg-hoodie-white.png",
+    alt: "Softech Guru White Hoodie",
     category: "merchandise",
     label: "Merchandise Design"
   },
