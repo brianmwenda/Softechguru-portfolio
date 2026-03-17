@@ -510,6 +510,40 @@ export default function Gallery() {
             </div>
           </div>
         </section>
+
+        {/* Video Showcase */}
+        <section className="py-12">
+          <div className="container">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+              Printing <span className="text-primary">In Action</span>
+            </h2>
+            <p className="text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
+              Watch our large format printers bring designs to life with vibrant colors and precision.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { src: "/assets/videos/printing-process-1.mp4", label: "Banner Printing Process" },
+                { src: "/assets/videos/printing-process-2.mp4", label: "Large Format Print Run" },
+                { src: "/assets/videos/printing-process-3.mp4", label: "Wide Format Printing" },
+                { src: "/assets/videos/printing-process-4.mp4", label: "Color Printing Output" },
+                { src: "/assets/videos/printing-process-5.mp4", label: "Print Production" },
+              ].map((video, index) => (
+                <div key={index} className="rounded-xl overflow-hidden glass-card animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
+                  <video
+                    src={video.src}
+                    className="w-full aspect-video object-cover"
+                    controls
+                    muted
+                    playsInline
+                    preload="metadata"
+                  />
+                  <div className="p-3">
+                    <p className="text-sm font-medium text-muted-foreground">{video.label}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         
         {/* Lightbox */}
         {selectedImage !== null && (
