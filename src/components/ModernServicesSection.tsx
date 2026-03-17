@@ -6,6 +6,7 @@ import {
   PenTool, 
   Palette, 
   Megaphone,
+  Printer,
   ArrowRight
 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -42,6 +43,14 @@ const services = [
     description: "Strategic digital marketing services including social media management, SEO optimization, content creation, and online advertising campaigns.",
     image: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?q=80&w=2070&auto=format&fit=crop",
     popular: false
+  },
+  {
+    id: "printing-services",
+    icon: <Printer className="h-8 w-8" />,
+    title: "Printing Services",
+    description: "Professional large format printing including banners, posters, billboards, signage, and branded materials with vibrant colors and premium quality.",
+    image: "/assets/images/attila-printing-1.jpeg",
+    popular: true
   }
 ];
 

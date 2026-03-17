@@ -126,6 +126,36 @@ const servicesData = {
       { name: "LinkedIn", logo: "https://cdn.worldvectorlogo.com/logos/linkedin-icon-2.svg" },
       { name: "X", logo: "https://cdn.worldvectorlogo.com/logos/x-2.svg" }
     ]
+  },
+  "printing-services": {
+    title: "Printing Services",
+    subtitle: "Professional large format printing with premium quality",
+    heroImage: "/assets/images/attila-printing-1.jpeg",
+    description: "We offer professional printing services including large format banners, posters, billboards, signage, and branded materials. Our state-of-the-art wide format printers produce vibrant, high-resolution prints that make your brand stand out.",
+    process: [
+      { step: "Design Review", description: "We review your artwork and ensure it's print-ready with correct resolution and color profiles." },
+      { step: "Material Selection", description: "Choose from vinyl banners, canvas, flex, SAV stickers, mesh, and more based on your needs." },
+      { step: "Proofing", description: "A digital proof or test print to confirm colors and layout before full production." },
+      { step: "Printing", description: "High-quality wide format printing with vibrant eco-solvent or UV inks for durability." },
+      { step: "Finishing", description: "Trimming, hemming, grommeting, lamination, or mounting as required for installation." }
+    ],
+    features: [
+      "Large Format Banners",
+      "Billboard Printing",
+      "Poster Printing",
+      "Vehicle Wraps",
+      "Signage & Displays",
+      "Sticker Printing",
+      "Canvas Prints",
+      "Roll-Up Banners"
+    ],
+    technologies: ["Eco-Solvent Printing", "UV Printing", "Dye-Sublimation", "Wide Format", "Digital Cutting"],
+    partners: [
+      { name: "Roland DG", logo: "https://cdn.worldvectorlogo.com/logos/roland-1.svg" },
+      { name: "HP", logo: "https://cdn.worldvectorlogo.com/logos/hp-2.svg" },
+      { name: "Epson", logo: "https://cdn.worldvectorlogo.com/logos/epson-1.svg" },
+      { name: "3M", logo: "https://cdn.worldvectorlogo.com/logos/3m-5.svg" }
+    ]
   }
 };
 

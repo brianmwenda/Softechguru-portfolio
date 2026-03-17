@@ -331,6 +331,22 @@ const galleryImages = [
     alt: "Modern Black Villa with Landscaping",
     category: "architectural-design",
     label: "3D Render"
+  },
+
+  // Printing Services
+  {
+    id: 80,
+    src: "/assets/images/attila-printing-1.jpeg",
+    alt: "Large Format Banner Printing - Attila Chicken",
+    category: "printing",
+    label: "Banner Printing"
+  },
+  {
+    id: 81,
+    src: "/assets/images/attila-printing-2.jpeg",
+    alt: "Wide Format Poster Printing - Attila Chicken",
+    category: "printing",
+    label: "Poster Printing"
   }
 ];
 
@@ -342,7 +358,8 @@ const categories = [
   { id: "flyers-brochures", label: "Flyers & Brochures" },
   { id: "business-cards", label: "Business Cards" },
   { id: "logo-design", label: "Logo Design" },
-  { id: "architectural-design", label: "Architectural 3D Renders" }
+  { id: "architectural-design", label: "Architectural 3D Renders" },
+  { id: "printing", label: "Printing Services" }
 ];
 
 export default function Gallery() {
@@ -414,9 +431,9 @@ export default function Gallery() {
     <>
       {holidayMode !== "none" && <HolidayBanner mode={holidayMode} />}
       <SEO
-        title="Design Portfolio - Softech Guru | Digital Marketing, Graphic Design, Web Design & Architecture"
-        description="Explore our portfolio of stunning website designs, digital marketing campaigns, logos, posters, and 3D architectural visualizations. Professional creative work by Softech Guru Kenya."
-        keywords="design portfolio Kenya, digital marketing portfolio, website design portfolio, graphic design portfolio, logo design portfolio, architectural visualization, 3D renders Nairobi, web design Kenya"
+        title="Design Portfolio - Softech Guru | Graphic Design, Printing, Web Design & Architecture"
+        description="Explore our portfolio of stunning website designs, printing services, logos, posters, and 3D architectural visualizations. Professional creative work by Softech Guru Kenya."
+        keywords="design portfolio Kenya, printing services Kenya, large format printing Nairobi, banner printing, website design portfolio, graphic design portfolio, logo design portfolio, architectural visualization, 3D renders Nairobi, web design Kenya"
         structuredData={portfolioStructuredData}
       />
     <div className="min-h-screen flex flex-col">
@@ -487,6 +504,41 @@ export default function Gallery() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
                     <span className="text-xs text-primary font-medium mb-1">{image.label}</span>
                     <p className="text-white font-medium">{image.alt}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Video Showcase */}
+        <section className="py-12">
+          <div className="container">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+              Printing <span className="text-primary">In Action</span>
+            </h2>
+            <p className="text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
+              Watch our large format printers bring designs to life with vibrant colors and precision.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { src: "/assets/videos/printing-process-1.mp4", label: "Banner Printing Process" },
+                { src: "/assets/videos/printing-process-2.mp4", label: "Large Format Print Run" },
+                { src: "/assets/videos/printing-process-3.mp4", label: "Wide Format Printing" },
+                { src: "/assets/videos/printing-process-4.mp4", label: "Color Printing Output" },
+                { src: "/assets/videos/printing-process-5.mp4", label: "Print Production" },
+              ].map((video, index) => (
+                <div key={index} className="rounded-xl overflow-hidden glass-card animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
+                  <video
+                    src={video.src}
+                    className="w-full aspect-video object-cover"
+                    controls
+                    muted
+                    playsInline
+                    preload="metadata"
+                  />
+                  <div className="p-3">
+                    <p className="text-sm font-medium text-muted-foreground">{video.label}</p>
                   </div>
                 </div>
               ))}
