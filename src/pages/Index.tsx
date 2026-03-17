@@ -79,7 +79,7 @@ export default function Index() {
     "name": "Softech Guru",
     "url": "https://softechguru.com",
     "logo": "https://softechguru.com/assets/images/logo.png",
-    "description": "Professional graphic design, website design, architectural design, and creative services",
+    "description": "Professional graphic design, website design, printing services, architectural design, and creative services",
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "KE",
