@@ -358,7 +358,8 @@ const categories = [
   { id: "flyers-brochures", label: "Flyers & Brochures" },
   { id: "business-cards", label: "Business Cards" },
   { id: "logo-design", label: "Logo Design" },
-  { id: "architectural-design", label: "Architectural 3D Renders" }
+  { id: "architectural-design", label: "Architectural 3D Renders" },
+  { id: "printing", label: "Printing Services" }
 ];
 
 export default function Gallery() {
