@@ -431,9 +431,9 @@ export default function Gallery() {
     <>
       {holidayMode !== "none" && <HolidayBanner mode={holidayMode} />}
       <SEO
-        title="Design Portfolio - Softech Guru | Digital Marketing, Graphic Design, Web Design & Architecture"
-        description="Explore our portfolio of stunning website designs, digital marketing campaigns, logos, posters, and 3D architectural visualizations. Professional creative work by Softech Guru Kenya."
-        keywords="design portfolio Kenya, digital marketing portfolio, website design portfolio, graphic design portfolio, logo design portfolio, architectural visualization, 3D renders Nairobi, web design Kenya"
+        title="Design Portfolio - Softech Guru | Graphic Design, Printing, Web Design & Architecture"
+        description="Explore our portfolio of stunning website designs, printing services, logos, posters, and 3D architectural visualizations. Professional creative work by Softech Guru Kenya."
+        keywords="design portfolio Kenya, printing services Kenya, large format printing Nairobi, banner printing, website design portfolio, graphic design portfolio, logo design portfolio, architectural visualization, 3D renders Nairobi, web design Kenya"
         structuredData={portfolioStructuredData}
       />
     <div className="min-h-screen flex flex-col">
