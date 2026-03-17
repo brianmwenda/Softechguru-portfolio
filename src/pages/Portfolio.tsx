@@ -544,6 +544,7 @@ export default function Gallery() {
               ))}
             </div>
           </div>
+        </section>
         
         {/* Lightbox */}
         {selectedImage !== null && (
