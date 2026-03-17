@@ -6,6 +6,7 @@ import {
   PenTool, 
   Palette, 
   Megaphone,
+  Printer,
   ArrowRight
 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
