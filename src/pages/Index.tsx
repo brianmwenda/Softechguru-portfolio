@@ -110,9 +110,9 @@ export default function Index() {
       {showPreloader && <Preloader onComplete={() => setShowPreloader(false)} />}
       {holidayMode !== "none" && <HolidayBanner mode={holidayMode} />}
       <SEO
-        title="Softech Guru - Digital Marketing, Graphic Design, Web Design & Architectural Design Kenya"
-        description="Professional digital marketing, graphic design, website design, and architectural visualization services in Kenya. Expert SEO, social media marketing, custom logos, branding, 3D renders."
-        keywords="digital marketing Kenya, graphic design Nairobi, website design Kenya, architectural design, SEO services Kenya, social media marketing, logo design, branding services, 3D visualization, web design Nairobi, creative agency Kenya"
+        title="Softech Guru - Digital Marketing, Graphic Design, Printing, Web Design & Architecture Kenya"
+        description="Professional digital marketing, graphic design, printing services, website design, and architectural visualization in Kenya. Expert SEO, large format printing, custom logos, branding, 3D renders."
+        keywords="digital marketing Kenya, graphic design Nairobi, printing services Kenya, large format printing Nairobi, banner printing, website design Kenya, architectural design, SEO services Kenya, social media marketing, logo design, branding services, 3D visualization, web design Nairobi, creative agency Kenya"
         structuredData={homeStructuredData}
       />
       <Navbar />
