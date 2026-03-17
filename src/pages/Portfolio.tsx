@@ -331,6 +331,22 @@ const galleryImages = [
     alt: "Modern Black Villa with Landscaping",
     category: "architectural-design",
     label: "3D Render"
+  },
+
+  // Printing Services
+  {
+    id: 80,
+    src: "/assets/images/attila-printing-1.jpeg",
+    alt: "Large Format Banner Printing - Attila Chicken",
+    category: "printing",
+    label: "Banner Printing"
+  },
+  {
+    id: 81,
+    src: "/assets/images/attila-printing-2.jpeg",
+    alt: "Wide Format Poster Printing - Attila Chicken",
+    category: "printing",
+    label: "Poster Printing"
   }
 ];
 
