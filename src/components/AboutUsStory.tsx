@@ -33,7 +33,7 @@ const AboutUsStory = () => {
                   <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary to-primary/50 p-1">
                     <div className="w-full h-full rounded-full overflow-hidden bg-background">
                       <img 
-                        src="/assets/images/founder-profile.png" 
+                        src="/assets/images/founder-profile.jpg" 
                         alt="Brian Mwenda - Founder" 
                         className="w-full h-full object-cover object-top"
                       />
