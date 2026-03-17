@@ -25,11 +25,11 @@ import { Phone, Mail, Clock, MapPin, MessageCircle } from "lucide-react";
 const faqs = [
   {
     question: "What design services do you offer?",
-    answer: "We offer Website Design, Architectural Design (3D renders & floor plans), Graphic Design (logos, posters, branding), and ongoing Website Care & Support services."
+    answer: "We offer Website Design, Architectural Design (3D renders & floor plans), Graphic Design (logos, posters, branding), Printing Services (large format banners, billboards, signage), and Digital Marketing services."
   },
   {
     question: "How long does a typical design project take?",
-    answer: "Timelines vary by project: Simple logos take 3-5 days, website designs 1-3 weeks, architectural renders 1-2 weeks, and complete branding packages 2-4 weeks."
+    answer: "Timelines vary by project: Simple logos take 3-5 days, website designs 1-3 weeks, architectural renders 1-2 weeks, printing jobs 1-3 days, and complete branding packages 2-4 weeks."
   },
   {
     question: "Do you provide revisions?",
@@ -37,7 +37,11 @@ const faqs = [
   },
   {
     question: "What do I need to provide to get started?",
-    answer: "We'll need your brand guidelines (if any), reference examples you like, project brief, and any specific requirements. We'll guide you through everything during our initial consultation."
+    answer: "We'll need your brand guidelines (if any), reference examples you like, project brief, and any specific requirements. For printing, we'll also need print-ready files or we can design them for you."
+  },
+  {
+    question: "What printing services do you offer?",
+    answer: "We offer large format printing including banners, billboards, posters, vehicle wraps, signage, stickers, canvas prints, and roll-up banners with vibrant eco-solvent and UV inks."
   },
   {
     question: "Do you offer digital marketing services?",

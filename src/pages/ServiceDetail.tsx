@@ -155,6 +155,13 @@ const servicesData = {
       { name: "HP", logo: "https://cdn.worldvectorlogo.com/logos/hp-2.svg" },
       { name: "Epson", logo: "https://cdn.worldvectorlogo.com/logos/epson-1.svg" },
       { name: "3M", logo: "https://cdn.worldvectorlogo.com/logos/3m-5.svg" }
+    ],
+    videos: [
+      "/assets/videos/printing-process-1.mp4",
+      "/assets/videos/printing-process-2.mp4",
+      "/assets/videos/printing-process-3.mp4",
+      "/assets/videos/printing-process-4.mp4",
+      "/assets/videos/printing-process-5.mp4"
     ]
   }
 };
@@ -304,6 +311,32 @@ export default function ServiceDetail() {
           </div>
         </div>
       </section>
+
+      {/* Printing Videos Section */}
+      {'videos' in service && (service as any).videos && (
+        <section className="section">
+          <div className="container">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Printing In Action</h2>
+            <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+              Watch our wide format printers in action producing vibrant banners, posters, and signage.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              {(service as any).videos.map((video: string, index: number) => (
+                <div key={index} className="rounded-xl overflow-hidden glass-card">
+                  <video
+                    src={video}
+                    controls
+                    muted
+                    playsInline
+                    preload="metadata"
+                    className="w-full aspect-video object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* CTA */}
       <section className="section">
