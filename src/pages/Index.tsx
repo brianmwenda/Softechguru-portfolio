@@ -96,7 +96,7 @@ export default function Index() {
     ],
     "offers": {
       "@type": "Service",
-      "serviceType": ["Digital Marketing", "Graphic Design", "Website Design", "Architectural Design", "Logo Design", "SEO Services"]
+      "serviceType": ["Digital Marketing", "Graphic Design", "Website Design", "Architectural Design", "Logo Design", "SEO Services", "Printing Services", "Large Format Printing"]
     }
   };
 
