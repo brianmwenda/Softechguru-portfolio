@@ -155,6 +155,13 @@ const servicesData = {
       { name: "HP", logo: "https://cdn.worldvectorlogo.com/logos/hp-2.svg" },
       { name: "Epson", logo: "https://cdn.worldvectorlogo.com/logos/epson-1.svg" },
       { name: "3M", logo: "https://cdn.worldvectorlogo.com/logos/3m-5.svg" }
+    ],
+    videos: [
+      "/assets/videos/printing-process-1.mp4",
+      "/assets/videos/printing-process-2.mp4",
+      "/assets/videos/printing-process-3.mp4",
+      "/assets/videos/printing-process-4.mp4",
+      "/assets/videos/printing-process-5.mp4"
     ]
   }
 };
