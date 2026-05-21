@@ -16,7 +16,7 @@ const testimonials: Testimonial[] = [
   {
     id: 1,
     clientName: "EscrowPay Africa",
-    location: "Nairobi, Kenya",
+    location: "Nairobi, worldwide",
     clientAvatar: "/assets/images/escrowpayafricalinkedin_logo.jpeg",
     content: "Brian didn't just build us a website, he created an online experience that perfectly reflects our brand. From smooth animations to mobile responsiveness, every detail was spot on. He listened carefully to what we needed, delivered ahead of schedule, and even offered valuable SEO advice. We've seen a 60% increase in traffic since launching!",
     rating: 5
@@ -24,7 +24,7 @@ const testimonials: Testimonial[] = [
   {
     id: 2,
     clientName: "Cimak Trading Limited",
-    location: "Nairobi, Kenya",
+    location: "Nairobi, worldwide",
     clientAvatar: "/assets/images/profileholder.jpg",
     content: "Bringing Brian on as our senior web developer was one of the best decisions we've made. He not only overhauled our legacy codebase but also introduced scalable architecture and modern frameworks that drastically improved performance. His mentorship to junior devs and ability to translate complex needs into elegant solutions set a new standard for our team.",
     rating: 5
@@ -32,7 +32,7 @@ const testimonials: Testimonial[] = [
   {
     id: 3,
     clientName: "Samson Gitonga",
-    location: "Nairobi, Kenya",
+    location: "Nairobi, worldwide",
     clientAvatar: "/assets/images/profileholder.jpg",
     content: "Brian captured our wedding like a dream. The footage was cinematic, the editing was flawless, and the final video brought everyone to tears — in the best way. He was professional, kind, and invisible in the best way during the event. We'll treasure our wedding film for a lifetime!",
     rating: 5
@@ -40,7 +40,7 @@ const testimonials: Testimonial[] = [
   {
     id: 4,
     clientName: "Duratek ICT & Circuits LTD",
-    location: "Nairobi, Kenya",
+    location: "Nairobi, worldwide",
     clientAvatar: "/assets/images/profileholder.jpg",
     content: "Working with Brian on our rebranding campaign was a game changer. His design work was fresh, strategic, and deeply aligned with our message. From logos to social media kits, everything looked polished and professional. Our audience now recognizes us instantly, and engagement on our platforms has doubled!",
     rating: 5

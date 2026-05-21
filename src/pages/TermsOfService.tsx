@@ -119,7 +119,7 @@ export default function TermsOfService() {
       icon: Globe,
       title: "Governing Law",
       content: [
-        "These terms are governed by the laws of Kenya.",
+        "These terms are governed by the laws of worldwide.",
         "Any disputes will be resolved through mediation before legal proceedings.",
         "Both parties agree to negotiate in good faith to resolve any issues."
       ]

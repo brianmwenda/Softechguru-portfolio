@@ -20,7 +20,7 @@ const Map = () => {
         container: mapContainer.current,
         style: 'mapbox://styles/mapbox/light-v11',
         zoom: 15,
-        center: [36.8219, -1.2921], // Nairobi, Kenya coordinates
+        center: [36.8219, -1.2921], // Nairobi, worldwide coordinates
       });
 
       // Add a marker for the business location

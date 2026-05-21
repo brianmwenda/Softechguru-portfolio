@@ -93,8 +93,8 @@ export default function Apartments() {
       {holidayMode !== "none" && <HolidayBanner mode={holidayMode} />}
       <SEO
         title="Pricing Plans - Affordable Web Development Services | Softech Guru"
-        description="Transparent pricing for web development, website design, and digital services in Kenya. Starting from KES 25,000. No hidden fees, quality guaranteed."
-        keywords="web development pricing Kenya, website design cost, affordable web development, pricing plans Nairobi, custom website pricing"
+        description="Transparent pricing for web development, website design, and digital services worldwide. Starting from KES 25,000. No hidden fees, quality guaranteed."
+        keywords="web development pricing worldwide, website design cost, affordable web development, pricing plans worldwide, custom website pricing"
         structuredData={pricingStructuredData}
       />
     <div className="min-h-screen flex flex-col">

@@ -62,7 +62,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center">
                 <MapPin className="w-4 h-4 mr-2 text-primary" />
-                <span className="text-muted-foreground">Nairobi, Kenya, 00100</span>
+                <span className="text-muted-foreground">Nairobi, worldwide, 00100</span>
               </li>
               <li className="flex items-center">
                 <Globe className="w-4 h-4 mr-2 text-primary" />
