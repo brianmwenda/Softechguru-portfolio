@@ -88,7 +88,7 @@ export default function FAQ() {
       <SEO
         title="FAQ - Frequently Asked Questions | Softech Guru"
         description="Find answers to common questions about our web development, graphic design, and digital services. Learn about our process, pricing, and how we can help your business."
-        keywords="web development FAQ, website design questions, graphic design FAQ, digital services Kenya, Softech Guru FAQ"
+        keywords="web development FAQ, website design questions, graphic design FAQ, digital services worldwide, Softech Guru FAQ"
         structuredData={faqStructuredData}
       />
     <div className="min-h-screen flex flex-col">

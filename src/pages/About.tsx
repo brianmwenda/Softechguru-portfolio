@@ -61,9 +61,9 @@ export default function About() {
     <>
       {holidayMode !== "none" && <HolidayBanner mode={holidayMode} />}
       <SEO
-        title="About Us - Softech Guru | Digital Marketing & Design Agency Kenya"
+        title="About Us - Softech Guru | Digital Marketing & Design Agency worldwide"
         description="Learn about Softech Guru's journey in digital marketing and creative design. Professional digital marketing, website design, graphic design, and architectural visualization services."
-        keywords="about Softech Guru, digital marketing agency Kenya, design agency Nairobi, graphic design team, web design experts, SEO specialists Kenya"
+        keywords="about Softech Guru, digital marketing agency worldwide, design agency worldwide, graphic design team, web design experts, SEO specialists worldwide"
         structuredData={aboutStructuredData}
       />
     <div className="min-h-screen flex flex-col">
@@ -96,7 +96,7 @@ export default function About() {
                   Our Story
                 </h2>
                 <p className="text-muted-foreground mb-6">
-                  Founded in 2020, Softech Guru emerged from a passion for exceptional design. What started as a one-person creative studio has grown into a full-service design agency serving clients across Kenya and beyond.
+                  Founded in 2020, Softech Guru emerged from a passion for exceptional design. What started as a one-person creative studio has grown into a full-service design agency serving clients across worldwide and beyond.
                 </p>
                 <p className="text-muted-foreground mb-6">
                   We specialize in creating stunning website designs, powerful brand identities, eye-catching graphic designs, and immersive architectural visualizations. Our approach combines technical expertise with creative vision to deliver results that exceed expectations.

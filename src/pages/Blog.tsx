@@ -88,7 +88,7 @@ export default function Blog() {
       <SEO
         title="Blog - Web Development & Design Insights | Softech Guru"
         description="Latest insights, tips, and trends in web development, graphic design, photography, and video production. Expert advice from Softech Guru team."
-        keywords="web development blog, design insights, digital marketing tips, photography tips, video production, technology trends Kenya"
+        keywords="web development blog, design insights, digital marketing tips, photography tips, video production, technology trends worldwide"
         structuredData={blogStructuredData}
       />
     <div className="min-h-screen flex flex-col">

@@ -114,9 +114,9 @@ export default function Index() {
       {showPreloader && <Preloader onComplete={() => setShowPreloader(false)} />}
       {holidayMode !== "none" && <HolidayBanner mode={holidayMode} />}
       <SEO
-        title="Softech Guru - Digital Marketing, Graphic Design, Printing, Web Design & Architecture Kenya"
-        description="Professional digital marketing, graphic design, printing services, website design, and architectural visualization in Kenya. Expert SEO, large format printing, custom logos, branding, 3D renders."
-        keywords="digital marketing Kenya, graphic design Nairobi, printing services Kenya, large format printing Nairobi, banner printing, website design Kenya, architectural design, SEO services Kenya, social media marketing, logo design, branding services, 3D visualization, web design Nairobi, creative agency Kenya"
+        title="Softech Guru - Digital Marketing, Graphic Design, Printing, Web Design & Architecture worldwide"
+        description="Professional digital marketing, graphic design, printing services, website design, and architectural visualization worldwide. Expert SEO, large format printing, custom logos, branding, 3D renders."
+        keywords="digital marketing worldwide, graphic design worldwide, printing services worldwide, large format printing worldwide, banner printing, website design worldwide, architectural design, SEO services worldwide, social media marketing, logo design, branding services, 3D visualization, web design worldwide, creative agency worldwide"
         structuredData={homeStructuredData}
       />
       <Navbar />
@@ -207,7 +207,7 @@ export default function Index() {
                     </div>
                     <div>
                       <h4 className="font-semibold mb-1 text-white">Location</h4>
-                      <p className="text-muted-foreground">Nairobi, Kenya</p>
+                      <p className="text-muted-foreground">Nairobi, worldwide</p>
                     </div>
                   </div>
                   
