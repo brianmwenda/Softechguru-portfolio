@@ -96,7 +96,7 @@ export default function Index() {
       "email": "softechguruservices@gmail.com"
     },
     "sameAs": [
-      "https://linkedin.com/in/brian-mwenda-325524360"
+      "http://www.linkedin.com/in/alexander-kuhl-8b2209408"
     ],
     "offers": {
       "@type": "Service",
