@@ -34,7 +34,7 @@ const AboutUsStory = () => {
                     <div className="w-full h-full rounded-full overflow-hidden bg-background">
                       <img 
                         src="/assets/images/founder-profile.jpg" 
-                        alt="Brian Mwenda - Founder" 
+                        alt="Alexander Kuhl - Founder" 
                         className="w-full h-full object-cover object-top"
                       />
                     </div>
@@ -42,11 +42,11 @@ const AboutUsStory = () => {
                 </div>
                 
                 {/* Founder Info */}
-                <h3 className="text-xl md:text-2xl font-bold mb-1">Brian Mwenda</h3>
+                <h3 className="text-xl md:text-2xl font-bold mb-1">Alexander Kuhl</h3>
                 <p className="text-primary font-medium mb-1">Web Developer / Graphic Designer / Digital Marketer</p>
                 <p className="text-muted-foreground text-xs mb-2">BSc. Computer Science</p>
                 <a 
-                  href="https://www.linkedin.com/in/brian-mwenda-325524360" 
+                  href="http://www.linkedin.com/in/alexander-kuhl-8b2209408" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex justify-center text-primary hover:text-primary/80 transition-colors mb-3"
